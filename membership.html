@@ -41,15 +41,34 @@
 
         /* Header */
         header {
-            padding-bottom: 3rem;
-            border-bottom: 1px solid var(--sage-dark);
-            margin-bottom: 3rem;
+            padding-bottom: 2rem;
         }
 
         .header-top {
             display: flex;
             justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header-left {
+            display: flex;
             align-items: center;
+            gap: 2rem;
+        }
+
+        .header-info {
+            font-size: 1.125rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .header-info a {
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        .header-info a:hover {
+            color: var(--pink);
         }
 
         .logo-link {
@@ -71,20 +90,17 @@
             text-decoration: none;
             color: var(--black);
             letter-spacing: 0.02em;
-            transition: color 0.2s ease;
-            padding: 0.5rem 0;
+            transition: all 0.2s ease;
+            padding: 0.5rem 0.875rem;
+            background-color: var(--sage-dark);
+            border-radius: 100px;
         }
 
         nav a:hover {
-            color: var(--pink);
+            background-color: var(--pink);
+            color: var(--white);
         }
 
-        .header-info {
-            text-align: center;
-            font-size: 1rem;
-            padding-top: 1.5rem;
-            margin-top: 1.5rem;
-        }
 
         /* Page intro */
         .page-intro {
@@ -378,9 +394,15 @@
     <div class="container">
         <header>
             <div class="header-top">
-                <a href="index.html" class="logo-link">
-                    <img src="images/logo.png" alt="Scenic Routes logo">
-                </a>
+                <div class="header-left">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/logo.png" alt="Scenic Routes logo">
+                    </a>
+                    <div class="header-info">
+                        <a href="https://maps.google.com/?q=521+Balboa+Street,+San+Francisco,+CA+94118" target="_blank">521 Balboa Street, SF, CA 94118</a><br>
+                        Tuesday–Sunday, Noon–7pm
+                    </div>
+                </div>
                 <nav>
                     <a href="about.html">About</a>
                     <a href="#" target="_blank">Shop</a>
@@ -388,9 +410,6 @@
                     <a href="#" target="_blank">Newsletter</a>
                     <a href="membership.html">Membership</a>
                 </nav>
-            </div>
-            <div class="header-info">
-                521 Balboa Street, SF, CA 94118 · Tuesday–Sunday, Noon–7pm
             </div>
         </header>
 
