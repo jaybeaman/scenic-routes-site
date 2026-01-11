@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ description or 'Scenic Routes is a community-focused bicycle repair shop in San Francisco. We restore and rebuild old bikes for commuters and travelers.' }}">
+    <meta name="theme-color" content="#D4DFD2">
+    <title>{{ title }}{% if title != "Scenic Routes Community Bicycle Center" %} – Scenic Routes{% endif %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container{% if containerClass %} {{ containerClass }}{% endif %}">
+        {% include "partials/header.njk" %}
+
+        {{ content | safe }}
+
+        {% include "partials/footer.njk" %}
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
