@@ -1,0 +1,248 @@
+/*
+ * Scenic Routes - Buttondown Archive Custom CSS
+ *
+ * Copy and paste this into Buttondown:
+ * Settings → Archives → Custom CSS
+ *
+ * Colors:
+ * --sage: #D4DFD2
+ * --sage-dark: #b8c7b5
+ * --pink: #D64799
+ * --pink-hover: #c13d87
+ * --black: #1a1a1a
+ * --white: #fefefe
+ */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500&display=swap');
+
+/* Base styles */
+body,
+.app-container {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #D4DFD2;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* Header / Branding */
+.header-brand,
+.header-brand-name {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    color: #1a1a1a;
+}
+
+.header-navigation {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+}
+
+.header-navigation-link {
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.header-navigation-link:hover {
+    color: #D64799;
+}
+
+.header-navigation-link--subscribe {
+    background-color: #D64799;
+    color: #fefefe;
+    border: none;
+    padding: 0.75rem 1.25rem;
+}
+
+.header-navigation-link--subscribe:hover {
+    background-color: #c13d87;
+    color: #fefefe;
+}
+
+/* Email list / Archive index */
+.newsletter-name {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+}
+
+.subject {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.subject a {
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.subject a:hover {
+    color: #D64799;
+}
+
+.description {
+    font-family: 'DM Sans', sans-serif;
+    color: #1a1a1a;
+    opacity: 0.8;
+}
+
+.email-detail-date {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #1a1a1a;
+    opacity: 0.7;
+}
+
+/* Email detail page */
+.email-detail__header {
+    border-bottom: 1px solid #b8c7b5;
+}
+
+.email-body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: #1a1a1a;
+}
+
+.email-body h1,
+.email-body h2,
+.email-body h3 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.email-body a {
+    color: #D64799;
+    text-decoration: none;
+    border-bottom: 1px solid #D64799;
+}
+
+.email-body a:hover {
+    opacity: 0.8;
+}
+
+.email-body blockquote {
+    border-left: 2px solid #D64799;
+    padding-left: 1rem;
+    margin-left: 0;
+    font-style: italic;
+}
+
+/* Buttons */
+.archive__button {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+    background-color: #1a1a1a;
+    color: #fefefe;
+    border: 1px solid #1a1a1a;
+    padding: 0.875rem 1.5rem;
+    transition: all 0.2s ease;
+    border-radius: 0;
+}
+
+.archive__button:hover {
+    background-color: #D64799;
+    border-color: #D64799;
+}
+
+.archive__button--subscribe,
+.archive__button--upgrade {
+    background-color: #D64799;
+    border-color: #D64799;
+    color: #fefefe;
+}
+
+.archive__button--subscribe:hover,
+.archive__button--upgrade:hover {
+    background-color: #c13d87;
+    border-color: #c13d87;
+}
+
+.archive__success-button {
+    background-color: #D64799;
+    color: #fefefe;
+}
+
+/* Social share */
+.archive__social-share-link {
+    color: #1a1a1a;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.archive__social-share-link:hover {
+    color: #D64799;
+    opacity: 1;
+}
+
+/* Related emails widget */
+.related-emails-widget {
+    background-color: #fefefe;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Comments */
+.comment {
+    border-color: #b8c7b5;
+}
+
+.comment--author {
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Modal */
+.archive__modal-overlay {
+    background-color: rgba(26, 26, 26, 0.5);
+}
+
+.archive__modal-container {
+    background-color: #fefefe;
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Payment form */
+.archive__payment-form {
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Footer */
+.footer {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #1a1a1a;
+    opacity: 0.7;
+    border-top: 1px solid #b8c7b5;
+}
+
+/* Form inputs */
+input[type="email"],
+input[type="text"] {
+    font-family: 'DM Sans', sans-serif;
+    border: 1px solid #1a1a1a;
+    background: transparent;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 0;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus {
+    border-color: #D64799;
+    outline: none;
+}
+
+/* Remove default border-radius throughout */
+button,
+input,
+.archive__button {
+    border-radius: 0;
+}

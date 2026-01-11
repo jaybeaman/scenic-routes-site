@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Scenic Routes, a community-focused bicycle repair shop in San Francisco. Born during the pandemic, we believe the bicycle is a tool of freedom and happiness.">
+    <meta name="theme-color" content="#D4DFD2">
     <title>About – Scenic Routes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,11 +64,12 @@
         }
 
         nav a {
-            font-size: 0.875rem;
+            font-size: 1rem;
             text-decoration: none;
             color: var(--black);
             letter-spacing: 0.02em;
             transition: color 0.2s ease;
+            padding: 0.5rem 0;
         }
 
         nav a:hover {
@@ -98,7 +101,7 @@
 
         .about-text h1 {
             font-family: 'Instrument Serif', serif;
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-size: clamp(2.75rem, 5vw, 4rem);
             font-weight: 400;
             line-height: 1.1;
             letter-spacing: -0.03em;
@@ -106,7 +109,7 @@
         }
 
         .about-text p {
-            font-size: 1.0625rem;
+            font-size: 1.125rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
@@ -129,31 +132,46 @@
             margin-top: 3rem;
             font-family: 'Instrument Serif', serif;
             font-style: italic;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
         }
 
         .signoff p {
             margin-bottom: 0.5rem;
         }
 
-        /* Footer */
+        /* Footer - Shop Info */
         footer {
-            padding-top: 2rem;
-            border-top: 1px solid var(--sage-dark);
+            padding: 2.5rem;
+            margin-top: 2rem;
+            background-color: var(--white);
+            border-radius: 4px;
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
-            font-size: 0.8125rem;
-            opacity: 0.7;
+            align-items: flex-start;
+            gap: 2rem;
         }
 
         .location {
-            line-height: 1.5;
+            line-height: 1.6;
+            font-size: 1.0625rem;
+        }
+
+        .location strong {
+            font-size: 1.25rem;
+            display: block;
+            margin-bottom: 0.25rem;
         }
 
         .hours {
             text-align: right;
-            line-height: 1.5;
+            line-height: 1.6;
+            font-size: 1.0625rem;
+        }
+
+        .hours strong {
+            font-size: 1.25rem;
+            display: block;
+            margin-bottom: 0.25rem;
         }
 
         /* Mobile */
@@ -165,7 +183,8 @@
             header {
                 flex-direction: column;
                 gap: 1.5rem;
-                align-items: flex-start;
+                align-items: center;
+                text-align: center;
             }
 
             .logo-link img {
@@ -173,8 +192,9 @@
             }
 
             nav {
-                gap: 1.5rem;
+                gap: 1.25rem;
                 flex-wrap: wrap;
+                justify-content: center;
             }
 
             .page-content {
@@ -190,12 +210,14 @@
 
             footer {
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
+                align-items: center;
+                text-align: center;
+                gap: 1.5rem;
+                padding: 2rem;
             }
 
             .hours {
-                text-align: left;
+                text-align: center;
             }
         }
     </style>
@@ -260,11 +282,13 @@
 
         <footer>
             <div class="location">
-                <strong>Scenic Routes</strong><br>
+                <strong>Visit Us</strong>
+                Scenic Routes<br>
                 San Francisco, CA
             </div>
             <div class="hours">
-                Open Tuesday–Saturday<br>
+                <strong>Shop Hours</strong>
+                Tuesday–Saturday<br>
                 Noon–7pm
             </div>
         </footer>
