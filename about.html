@@ -26,6 +26,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            font-size: 18px;
+        }
+
         body {
             font-family: 'DM Sans', sans-serif;
             background-color: var(--sage);
@@ -34,7 +38,7 @@
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -46,8 +50,10 @@
 
         .header-top {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
+            gap: 1rem;
         }
 
         .header-left {
@@ -60,6 +66,7 @@
             font-size: 1.125rem;
             font-weight: 500;
             line-height: 1.5;
+            white-space: nowrap;
         }
 
         .header-info a {
@@ -82,7 +89,7 @@
 
         nav {
             display: flex;
-            gap: 2rem;
+            gap: 1rem;
         }
 
         nav a {
