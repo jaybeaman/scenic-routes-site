@@ -59,10 +59,13 @@
 
         /* Header */
         header {
+            padding-bottom: 2rem;
+        }
+
+        .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 2rem;
         }
 
         .logo-link {
@@ -95,9 +98,8 @@
         .header-info {
             text-align: center;
             font-size: 1rem;
-            padding: 1rem 0;
-            border-top: 1px solid var(--sage-dark);
-            margin-top: 1rem;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
         }
 
         /* Main content */
@@ -306,7 +308,7 @@
                 padding: 1.5rem;
             }
 
-            header {
+            .header-top {
                 flex-direction: column;
                 gap: 1.5rem;
                 align-items: center;
@@ -362,16 +364,18 @@
 <body>
     <div class="container">
         <header>
-            <a href="index.html" class="logo-link">
-                <img src="images/logo.png" alt="Scenic Routes logo">
-            </a>
-            <nav>
-                <a href="about.html">About</a>
-                <a href="#" target="_blank">Shop</a>
-                <a href="#" target="_blank">Events</a>
-                <a href="#" target="_blank">Newsletter</a>
-                <a href="membership.html">Membership</a>
-            </nav>
+            <div class="header-top">
+                <a href="index.html" class="logo-link">
+                    <img src="images/logo.png" alt="Scenic Routes logo">
+                </a>
+                <nav>
+                    <a href="about.html">About</a>
+                    <a href="#" target="_blank">Shop</a>
+                    <a href="#" target="_blank">Events</a>
+                    <a href="#" target="_blank">Newsletter</a>
+                    <a href="membership.html">Membership</a>
+                </nav>
+            </div>
             <div class="header-info">
                 521 Balboa Street, SF, CA 94118 · Tuesday–Sunday, Noon–7pm
             </div>
