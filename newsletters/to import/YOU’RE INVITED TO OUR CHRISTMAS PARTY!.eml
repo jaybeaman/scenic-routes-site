@@ -1,0 +1,649 @@
+Delivered-To: jbeaman@gmail.com
+Received: by 2002:a05:6850:6b4b:b0:6e5:24d9:8239 with SMTP id f11csp340584nnt;
+        Wed, 10 Dec 2025 12:37:27 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEa6elsxaFWWUd5lU6MxzVGJODfthdtfImNahl9WbXobM3D2rMV1vqqRufD5b93G7k0DwQl
+X-Received: by 2002:a17:90b:3806:b0:341:8bda:f04b with SMTP id 98e67ed59e1d1-34a906f99f2mr110871a91.7.1765399047137;
+        Wed, 10 Dec 2025 12:37:27 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1765399047; cv=none;
+        d=google.com; s=arc-20240605;
+        b=A8WMDawUwRZBNF85feKQepU/0D/JurVTPJRbitJ9aBMeSfAVLSY7rI0r/D+YRtC9zl
+         Xtll+4rWDh8P8YUFmajGAI3axayytkMs1Vkh0x6DKHfrDsnUovHWGPX80gh5W36pL4+I
+         jiaY8SqxLe5BPMtrJ3pjvgjpDbNQ93QPNCHZqeXO1OBG3NzA0SetNXiVmYC/M1nBp8Fw
+         XAPlGL4PiImdWhOf4ojbe+E9Bq0bUw2ArZvsykTE/cjueu0aM5poWuDyrps3ybn/3XCv
+         ue5HaVajHfba6qsF/3HSTLHgGF6Vxh8TFsmpn/ol6b+Rq0hVLohJRuHlyfedwZpqWWgc
+         vfEQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe-post:feedback-id:list-unsubscribe:sender
+         :message-id:to:from:subject:mime-version:date:dkim-signature
+         :dkim-signature;
+        bh=TZPcek5vAmA/7SlyCn7lzywmK/51Mv/7NPAIvtVwZkg=;
+        fh=4TbKyGIWs6U4EHh2/Sj8bLShT5RJP4c38C8Cdm/ez/E=;
+        b=fxW76wzTArc6Uk399geKUUK9trO2Isk+/oWmxqW+IEZcbiTYIREWwRUEfx1Hj5A+rh
+         rESPufQglasZQUp7/FNw2NqV3Drr3CjFJgcM+Y5iBzD+T68jAhHRaHoShKSwllZ5JbSx
+         eY0xZFnqDvTZdXy/pITQSMBftCNIYV4F4VrQoksaTz1zwUJzZ4dJffRnQMYvX8zWNUgW
+         SYnw0qOWqkpP6u5IievW8dvc9ncff6taRj8NkpLA7ujrCaSrj4cLA3AGNg+aT9AD2bcd
+         QqvjRHNJ874LPdJ0PiPks2aYma9rqfVZZpDPYjgm3x7s7smQJ4RV/VGMVq1uvAbOPVzB
+         V5Wg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mgcp03.squarespace-mail.com header.s=squarespace-mg header.b=iioRIRpI;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=Mvn8goKa;
+       spf=pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.95 as permitted sender) smtp.mailfrom="bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com"
+Return-Path: <bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com>
+Received: from m201-95.mailgun.net (m201-95.mailgun.net. [161.38.201.95])
+        by mx.google.com with UTF8SMTPS id 41be03b00d2f7-c0c2d3f6f23si1038051a12.309.2025.12.10.12.37.26
+        for <jbeaman@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 10 Dec 2025 12:37:27 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.95 as permitted sender) client-ip=161.38.201.95;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mgcp03.squarespace-mail.com header.s=squarespace-mg header.b=iioRIRpI;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=Mvn8goKa;
+       spf=pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.95 as permitted sender) smtp.mailfrom="bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com"
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mgcp03.squarespace-mail.com; q=dns/txt; s=squarespace-mg; t=1765399045; x=1765406245;
+ h=List-Unsubscribe-Post: List-Unsubscribe: Sender: Sender: Message-Id: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id;
+ bh=TZPcek5vAmA/7SlyCn7lzywmK/51Mv/7NPAIvtVwZkg=;
+ b=iioRIRpIOJExrOotGxJaD+w8jfVO9qGG5EnvHQwyVQ063U6DyGrHKEQQ6QpGD7ZLsuCpvQdXdC12PYcF+dH/PCQoXJ3ea29tljsyJComPEqpe5aL56w7cAlhXVY0e3GdTDQ/EAo1AXP/l/Oc834+KqzAYnESr5aq9kubu9beHxWbzqpvsIYFlRPamhyHUMozVTO5Xw3qnvnK6tSy1U2GgAnIxZnBUGb/ZV0e2o9XiAsiT+oQCK3BchDPirsWKxs8ENOu5YZg6byZVZDxfbJ/AQy7zYTThEBv81AaDGzK1VuRxiCZ+0CDKVCnyOsP9sD829fO/CJv8yyiIEpM6CrLsQ==
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1765399045; x=1765406245;
+ h=List-Unsubscribe-Post: List-Unsubscribe: Sender: Sender: Message-Id: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id;
+ bh=TZPcek5vAmA/7SlyCn7lzywmK/51Mv/7NPAIvtVwZkg=;
+ b=Mvn8goKaySlIEbX+zYvdk4sjaIcnVu/aVNDG4iT5+aHs0rS00rsjAuIz6er7daV5S8XccdIgQGOyc4j8S2UNbHvt/WXsmAwGY2ztZbPCoWYiOv7dNStUgkCg87wrklzv5yzJHizAlSAK8kBw9GbiVBFhe3w9kd7XYYJK9ft6cy8=
+X-Mailgun-Sid: WyIyZTU4NyIsImpiZWFtYW5AZ21haWwuY29tIiwiMzJjNGFjIl0=
+X-Feedback-Id: postmaster@mgcp03.squarespace-mail.com:UNSIGNED_CAMPAIGN-618d615066c6445d2a0e947f:610aa31bfaf8743c84887869:mailgun
+Received: by 940662d999bfb921522c9da90dd6078452e37fc616c968c98e5065f8dec21121 with HTTP
+ id 6939da05df8ce4a2ab578312; Wed, 10 Dec 2025 20:37:25 GMT
+X-Mailgun-Sending-Ip: 161.38.201.95
+Date: Wed, 10 Dec 2025 20:37:25 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="3cb2c47cc22aa6df4ed11a5f89ef73d69fb88a7da1c9a6954e588567eb0f"
+Subject: =?UTF-8?q?YOU=E2=80=99RE_INVITED_TO_OUR_CHRISTMAS_PARTY!?=
+From: Scenic Routes Community Bicycle Center <info@scenicroutessf.com>
+To: jbeaman@gmail.com
+X-Mailgun-Tag: UNSIGNED_CAMPAIGN
+X-Mailgun-Tag: 618d615066c6445d2a0e947f
+Message-Id: <6939da017d687b4d22d021e2.618d615066c6445d2a0e947f@mgcp03.squarespace-mail.com>
+Sender: Scenic Routes Community Bicycle Center <info@scenicroutessf.com>
+List-Unsubscribe: <https://campaign-preferences.com/unsubscribe/iPt9bKnzLbx1noJgOOuVLduoYXlayL6fPA_awM-7JNyqf6sTpjBY5S7fdPB_TxNsCQNUB1YN5oo7AAJ6hCwj8XqPypUYH8XMv9RDqog57VPRq3V2kn8a4aYvzg0JpflwOuGaQAN0dYO0PS8KhezVcaW10ONbI0kVFtHCvWEF5DmUNGIOZZluIg91wEcrS9DXrPPCTL4BkRU9ph03HlUBVUWTSC4ez688ME-ClVKTZcSSbdKSn7JCK3AHHkjsuGOt4EwchN9GiEAtWWHMyMSg_2tAkMzZ456h7LrES8rukjEbz_JtgivUfzS1B-QR1pLsEp8EXHWSk8K6C-hiDNwXWgXq8Z0s0xIoVmoW1GX1ZAa8O-1WRuH0G7k=>
+X-Website-Id: 618d615066c6445d2a0e947f
+Feedback-Id: b_6939d26bb8b55472bf542110:618d615066c6445d2a0e947f:mailgun
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailgun-Variables: {"emailMessageId": "6939da017d687b4d22d021e2", "mailingId":
+ "b_6939d26bb8b55472bf542110", "websiteId": "618d615066c6445d2a0e947f"}
+
+--3cb2c47cc22aa6df4ed11a5f89ef73d69fb88a7da1c9a6954e588567eb0f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+<https://www.scenicroutessf.com/?ss_source=3Dsscampaigns&ss_campaign_id=3D6=
+939d26bb8b55472bf542110&ss_email_id=3D6939da017d687b4d22d021e2&ss_campaign_=
+name=3DYOU%E2%80%99RE+INVITED+TO+OUR+CHRISTMAS+PARTY%21+&ss_campaign_sent_d=
+ate=3D2025-12-10T20%3A37%3A24Z> :) Slow News. That=E2=80=99s tomorrow! Swin=
+g by early to get in your holiday shopping, or show up fashionably late to =
+the hustle and bustle of holiday cheer. We=E2=80=99re closing shop at 6:00p=
+m to start the festivities, and we=E2=80=99d love to see you then! The Scen=
+ic Routes Team Visit Our Website!  <https://www.scenicroutessf.com/about?ss=
+_source=3Dsscampaigns&ss_campaign_id=3D6939d26bb8b55472bf542110&ss_email_id=
+=3D6939da017d687b4d22d021e2&ss_campaign_name=3DYOU%E2%80%99RE+INVITED+TO+OU=
+R+CHRISTMAS+PARTY%21+&ss_campaign_sent_date=3D2025-12-10T20%3A37%3A24Z> Sce=
+nic Routes Community Bicycle Center, 521 Balboa Street, San Francisco, Unit=
+ed States Powered by Squarespace <https://www.squarespace.com?channel=3Dpro=
+duct_refer&subchannel=3Dcustomer&source=3Demail_campaigns_button&campaign=
+=3D618d615066c6445d2a0e947f&utm_medium=3Dproduct_refer&utm_source=3Demail_c=
+ampaigns_button&ss_source=3Dsscampaigns&ss_campaign_id=3D6939d26bb8b55472bf=
+542110&ss_email_id=3D6939da017d687b4d22d021e2&ss_campaign_name=3DYOU%E2%80%=
+99RE+INVITED+TO+OUR+CHRISTMAS+PARTY%21+&ss_campaign_sent_date=3D2025-12-10T=
+20%3A37%3A24Z> Unsubscribe  <https://campaign-preferences.com/unsubscribe/1=
+2dVryCH7zpAokwADaR6r3qKkrjoRFX0yBNFDL7x_DzfzCTinsPIjDH4iWwcml7iMKawpzffGV-R=
+f_yqLSWEv_wwkX8--pGyqmom0gWYQ7iarAobrrCgtodvT2CTfN79fZN9Qrl6tNAIfUaxzh_MdXz=
+qa04A7aGA4_-p0JtQrkquLVKOjVf0gBWE2Nd2TFid04tx1b2-PgiGoEXFoq_IqDUVcQflJ1o3Wn=
+lixUpM7dIDDBZjzDPtD-oTB5JrN4nbOwsS0BAMqggVmOPXkW6YL7WP7C8x0Y6gjiTmhV13P8j0m=
+pQUp8rtq9UdW68LkNi-5E98Cyt7kO6chYI8gO9sxMdd8OnoJEBuPR0oBfuxeionL7VH5QkB0u4=
+=3D>
+--3cb2c47cc22aa6df4ed11a5f89ef73d69fb88a7da1c9a6954e588567eb0f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" lang=3D"en-=
+US" xml:lang=3D"en-US">
+ <head>
+  <title data-ignore-plain-text>YOU=E2=80=99RE INVITED TO OUR CHRISTMAS PAR=
+TY! </title>
+  <meta http-equiv=3D"content-type" content=3D"text/html; charset=3Dutf-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1, maximum-scale=3D1">
+  <meta name=3D"format-detection" content=3D"address=3Dno"> <!--[if (gte ms=
+o 9)|(IE)]>
+    <style type=3D"text/css" media=3D"screen">
+      li {
+        text-indent: -1em;
+      }
+    </style>
+    <![endif]-->
+  <style type=3D"text/css" media=3D"all">
+      body,
+=2Esection-text-area,
+=2Esection-text-area-wrapper,
+=2Esection-text-cell {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+}
+body {
+    width: 100% !important;
+    min-width: 100% !important;
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    mso-line-height-rule: exactly;
+}
+p {
+    margin-block: 0;
+}
+@media only screen and (max-width:  593px ) {
+    table#newsletter-table {
+        border: 0 !important;
+    }
+    table#newsletter-email {
+        width: 100% !important;
+    }
+    img.section-scaleable-image,
+    img.section-empty-img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    .bg-none {
+        background: none !important;
+    }
+    .hauto {
+        height: auto !important;
+    }
+    .show-desktop-only {
+        display: none !important;
+    }
+    .show-mobile-only {
+        display: block !important;
+        float: none !important;
+        line-height: auto !important;
+        max-height: inherit !important;
+        max-width: inherit !important;
+        margin-top: 0px !important;
+        overflow: visible !important;
+        visibility: inherit !important;
+        width: auto !important;
+    }
+    .stack-cell-wrap {
+        display: block !important;
+    }
+    .stack-cell-up {
+        display: table-header-group !important;
+    }
+    .stack-cell-down {
+        display: table-footer-group !important;
+    }
+    .mw100p {
+        max-width: 100% !important;
+    }
+    .section-horizontal-padding,
+    .padding-mobile-both {
+        padding-left: 22px !important;
+        padding-right: 22px !important;
+    }
+    .padding-mobile-left {
+        padding-left: 22px !important;
+    }
+    .padding-mobile-right {
+        padding-right: 22px !important;
+    }
+    .text-left {
+        text-align: left !important;
+    }
+    .text-right {
+        text-align: right !important;
+    }
+    .w100p {
+        width: 100% !important;
+    }
+}
+=2Ebutton-style-solid:hover,
+=2Ebutton-style-rounded:hover {
+    opacity: .8 !important;
+}
+a:hover {
+    text-decoration: none !important;
+}
+span.mail-merge-preview {
+    border-bottom: 2px dotted currentColor;
+    display: inline-block;
+    line-height: 1em !important;
+    margin-bottom: .125em !important;
+}
+table#newsletter-section-body .linked-site-title-link {
+    color: #0e8ac4 !important;
+}
+#header-header-section-split-left-0 .brand-name .linked-site-title-link {
+    color: #272727;
+    text-decoration: none;
+}
+#footer-footer-section-stacked-top-0 .brand-name .linked-site-title-link {
+    color: #000;
+    text-decoration: none;
+}
+#footer-footer-section-stacked-top-0 .footer-text .linked-site-title-link {
+    color: #0e8ac4;
+}
+body.renderedPreview #line-line-section-0 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-2 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-5 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+#button-button-section-6 .button-style-outline:hover {
+    background-color: #000 !important;
+    border: 1px solid #000 !important;
+}
+#button-button-section-6 .button-style-outline:hover .button-section-label =
+{
+    color: #fff !important;
+}
+
+    </style> <!--[if mso]>
+    <noscript>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    </noscript>
+    <![endif]--> <!--[if (mso)|(mso 16)]>
+      <style type=3D"text/css">
+        a {text-decoration: none;}
+      </style>
+    <![endif]-->
+ </head>
+ <body style=3D"padding:0;margin:0;text-align:center;background-color:#fff;=
+">
+  <table role=3D"article" aria-label=3D"YOU=E2=80=99RE INVITED TO OUR CHRIS=
+TMAS PARTY! " lang=3D"en-US" cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0" align=3D"center" id=3D"newsletter-table" style=3D"font-size:16px;font-we=
+ight:normal;width:100%;padding:0px;background-color:#fff;border-top:44px so=
+lid #fff;border-bottom:44px solid #fff;margin:0 auto;text-align:center;tabl=
+e-layout:fixed;">
+   <tbody>
+    <tr>
+     <td align=3D"center" valign=3D"top" bgcolor=3D"#FFFFFF" id=3D"newslett=
+er-cell" style=3D"font-size:.9375em;">
+      <div data-ignore-plain-text class=3D"newsletter-preview-text" style=
+=3D"color:transparent;display:none !important;height:0;max-height:0;max-wid=
+th:0;opacity:0;overflow:hidden;mso-hide:all;visibility:hidden;width:0;">
+       Join us December 11th at 6:00pm for joy and holiday cheer! =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F
+      </div>
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"594"=
+ bgcolor=3D"#D9E5DD" id=3D"newsletter-email">
+       <tbody>
+        <tr>
+         <td align=3D"center" valign=3D"top" id=3D"newsletter-email-wrapper=
+" class=3D"fixed-sans">
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-header">
+           <tbody>
+            <tr>
+             <td align=3D"center" valign=3D"middle" id=3D"newsletter-sectio=
+n-header-cell">
+              <div id=3D"header-header-section-split-left-0">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"header-se=
+ction header-section-split section-content" style=3D"background-color:trans=
+parent;">
+                <tbody>
+                 <tr>
+                  <td class=3D"section-content-cell" style=3D"padding-top:2=
+2px;padding-right:22px;padding-bottom:0px;padding-left:22px;">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                    <tbody>
+                     <tr>
+                      <td align=3D"left" valign=3D"middle" width=3D"50%" cl=
+ass=3D"section-text-area"><a class=3D"brand-logo-link" href=3D"https://q8w2=
+=2Eengage.squarespace-mail.com/r?m=3D69=
+39da017d687b4d22d021e2&amp;u=3Dhttps%3=
+A%2F%2Fwww.scenicroutessf.com%2F%3Fss_source%3Dsscampaigns%26ss_campaign_id=
+%3D6939d26bb8b55472bf542110%26ss_email_id%3D6939da017d687b4d22d021e2%26ss_c=
+ampaign_name%3DYOU%25E2%2580%2599RE%2BINVITED%2BTO%2BOUR%2BCHRISTMAS%2BPART=
+Y%2521%2B%26ss_campaign_sent_date%3D2025-12-10T20%253A37%253A24Z&amp;w=3D61=
+8d615066c6445d2a0e947f&amp;c=3Db_6939d26bb8b55472bf542110&amp;l=3Den-US&amp=
+;s=3DKDWxDz-X1utCLryWtCiZlFh9VHw%3D" style=3D"color:#0e8ac4 !important;"><i=
+mg class=3D"brand-logo" src=3D"https://images.squarespace-cdn.com/content/v=
+1/618d615066c6445d2a0e947f/6d9767f2-4d83-4528-a527-15a5475b6d66/slow+is+for=
+ever+logo.png" height=3D"66" alt=3D"Scenic Routes Community Bicycle Center"=
+ style=3D"font-size:.5794190358467243em;display:block;border:0;text-decorat=
+ion:none;line-height:0;font-weight:normal;font-family:'Andale Mono', 'Lucid=
+a Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mon=
+o', Courier, monospace;color:#272727;height:auto;max-height:66px;max-width:=
+100%;width:auto;margin-left:0px;"></a></td>
+                      <td align=3D"right" valign=3D"middle" width=3D"50%" c=
+lass=3D"section-text-area"><p class=3D"email-title" style=3D"line-height:1.=
+618em;margin:0 0 1.25em 0;font-weight:normal;margin-top:0;margin-bottom:0;f=
+ont-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream =
+Vera Sans Mono', 'Liberation Mono', Courier, monospace;font-size:11px;mso-l=
+ine-height-alt:11px;color:#000;white-space:pre-wrap;margin-right:0px;"><em>=
+:)</em></p></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div></td>
+            </tr>
+           </tbody>
+          </table>
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-body">
+           <tbody>
+            <tr>
+             <td align=3D"center" valign=3D"top" width=3D"100%" id=3D"newsl=
+etter-section-body-cell">
+              <div id=3D"line-line-section-0">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:92%;min-width:92%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:10px;padding-right:0;p=
+adding-bottom:10px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#272727;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-1">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell" style=3D"padding-top:0px;padding-right:9px;padding-bottom:0px;pa=
+dding-left:9px;color:#272727;background-color:transparent;"><h2 style=3D"co=
+lor:inherit;margin:1.414em 0 .5em;font-weight:400;line-height:1.25em;font-s=
+ize:3.9710634675000014em;mso-line-height-alt:3.9710634675000014em;margin-to=
+p:0;margin-bottom:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sa=
+ns Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace=
+;letter-spacing:-.05em;text-align:center;">Slow News.</h2></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-2">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:95%;min-width:95%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:2px;padding-right:0;pa=
+dding-bottom:2px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"image-image-section-below-3">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                    <tbody>
+                     <tr>
+                      <td class=3D"show-desktop-only section-spacing-left" =
+width=3D"44"></td>
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"><img class=3D"section-scaleable-image" src=3D"=
+https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/1f0d45e=
+2-bb42-46e3-90d3-974c0c7bddd1/Black+White+Minimalist+Photo+Wedding+Thank+Yo=
+u+Card+%281%29.jpg?content-type=3Dimage%2Fjpeg&amp;format=3D750w" width=3D"=
+594" alt=3D"" style=3D"font-size:.5794190358467243em;display:block;border:0=
+;text-decoration:none;line-height:0;background-color:transparent;font-weigh=
+t:normal;height:auto;width:100%;max-width:100%;font-family:'Andale Mono', '=
+Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberatio=
+n Mono', Courier, monospace;"></td>
+                      <td class=3D"show-desktop-only section-spacing-right"=
+ width=3D"44"></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-4">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">That=E2=80=99s tomorrow! Swing by=
+ early to get in your holiday shopping, or show up fashionably late to the =
+hustle and bustle of holiday cheer.</p><p class=3D"" style=3D"color:inherit=
+;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font-weight:norm=
+al;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstr=
+eam Vera Sans Mono', 'Liberation Mono', Courier, monospace;">We=E2=80=99re =
+closing shop at 6:00pm to start the festivities, and we=E2=80=99d love to s=
+ee you then!</p><p class=3D"" style=3D"color:inherit;font-size:.9375em;line=
+-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-bottom:0;font=
+-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Ver=
+a Sans Mono', 'Liberation Mono', Courier, monospace;">The Scenic Routes Tea=
+m</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-5">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:96%;min-width:96%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:3px;padding-right:0;pa=
+dding-bottom:3px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"button-button-section-6">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"button-se=
+ction section-content" style=3D"width:100%;background-color:transparent;">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell section-text-area" style=3D"padding-top:22px;padding-right:22px=
+;padding-bottom:22px;padding-left:22px;"><a href=3D"https://q8w2.engage.squ=
+arespace-mail.com/r?m=3D6939da017d687b4d22d021e2&amp;u=3Dhttps%3A%2F%2Fwww.=
+scenicroutessf.com%2Fabout%3Fss_source%3Dsscampaigns%26ss_campaign_id%3D693=
+9d26bb8b55472bf542110%26ss_email_id%3D6939da017d687b4d22d021e2%26ss_campaig=
+n_name%3DYOU%25E2%2580%2599RE%2BINVITED%2BTO%2BOUR%2BCHRISTMAS%2BPARTY%2521=
+%2B%26ss_campaign_sent_date%3D2025-12-10T20%253A37%253A24Z&amp;w=3D618d6150=
+66c6445d2a0e947f&amp;c=3Db_6939d26bb8b55472bf542110&amp;l=3Den-US&amp;s=3Dx=
+Tr_B2-nxa4MoCew70aJva_Zoao%3D" class=3D"button-section-box button-style-sol=
+id" style=3D"color:#0e8ac4 !important;display:inline-block;line-height:11px=
+;margin:0;mso-padding-alt:0;text-align:center;text-decoration:none;transiti=
+on:.15s;width:auto;background-color:#000;border:0;padding:17px 0;"><i class=
+=3D"button-section-mso" style=3D"letter-spacing:29.92px;mso-font-width:-100=
+%;mso-text-raise:26.950000000000003px;">&nbsp;</i><span class=3D"button-sec=
+tion-label" style=3D"line-height:inherit;margin:0;font-family:'Andale Mono'=
+, 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Libera=
+tion Mono', Courier, monospace;font-weight:700;color:#efefef;display:inline=
+-block;font-size:11px;min-width:1px;mso-text-raise:15.95px;"><span data-let=
+ter-spacing=3D"3" style=3D"font-size:inherit;font-weight:inherit;line-heigh=
+t:inherit;margin:0;letter-spacing:0.2em;">Visit Our Website!</span></span><=
+i class=3D"button-section-mso" style=3D"letter-spacing:29.92px;mso-font-wid=
+th:-100%;mso-text-raise:26.950000000000003px;">&nbsp;</i></a></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div></td>
+            </tr>
+           </tbody>
+          </table>
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-footer">
+           <tbody>
+            <tr>
+             <td align=3D"center" valign=3D"top" id=3D"newsletter-section-f=
+ooter-cell">
+              <div id=3D"footer-footer-section-stacked-top-0">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"footer-se=
+ction footer-section-stacked section-content" style=3D"background-color:tra=
+nsparent;">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"top" class=3D"section-text=
+-area section-content-cell" style=3D"padding-top:22px;padding-right:22px;pa=
+dding-bottom:22px;padding-left:22px;"><p class=3D"footer-company-info" styl=
+e=3D"line-height:1.618em;font-weight:normal;margin-top:0;font-family:'Andal=
+e Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', =
+'Liberation Mono', Courier, monospace;color:#111;font-size:11px;margin:0 0 =
+13.75px 0;padding:0;"><a style=3D"color:#111;text-decoration:none;font-size=
+:inherit;font-family:inherit;font-weight:inherit;line-height:inherit;cursor=
+:default;">Scenic Routes Community Bicycle Center, 521 Balboa Street, San F=
+rancisco, United States</a></p> <p class=3D"footer-links" style=3D"line-hei=
+ght:1.618em;font-weight:normal;font-family:'Andale Mono', 'Lucida Console',=
+ 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier=
+, monospace;font-size:11px;color:#313131;margin:0 0 13.75px 0;padding:0;">P=
+owered by <a href=3D"https://q8w2.engage.squarespace-mail.com/r?m=3D6939da0=
+17d687b4d22d021e2&amp;u=3Dhttps%3A%2F%2Fwww.squarespace.com%3Fchannel%3Dpro=
+duct_refer%26subchannel%3Dcustomer%26source%3Demail_campaigns_button%26camp=
+aign%3D618d615066c6445d2a0e947f%26utm_medium%3Dproduct_refer%26utm_source%3=
+Demail_campaigns_button%26ss_source%3Dsscampaigns%26ss_campaign_id%3D6939d2=
+6bb8b55472bf542110%26ss_email_id%3D6939da017d687b4d22d021e2%26ss_campaign_n=
+ame%3DYOU%25E2%2580%2599RE%2BINVITED%2BTO%2BOUR%2BCHRISTMAS%2BPARTY%2521%2B=
+%26ss_campaign_sent_date%3D2025-12-10T20%253A37%253A24Z&amp;w=3D618d615066c=
+6445d2a0e947f&amp;c=3Db_6939d26bb8b55472bf542110&amp;l=3Den-US&amp;s=3DISV7=
+qJIlOpx_9LWzwBEuZxaduMs%3D" class=3D"sqsp-link" style=3D"color:#313131;text=
+-decoration:underline;display:inline-block;">Squarespace</a></p> <p class=
+=3D"footer-links" style=3D"line-height:1.618em;font-weight:normal;margin-bo=
+ttom:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bi=
+tstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;font-size:11=
+px;color:#313131;margin:0 0 13.75px 0;padding:0;"><a href=3D"https://q8w2.e=
+ngage.squarespace-mail.com/r?m=3D6939da017d687b4d22d021e2&amp;u=3Dhttps%3A%=
+2F%2Fcampaign-preferences.com%2Funsubscribe%2F12dVryCH7zpAokwADaR6r3qKkrjoR=
+FX0yBNFDL7x_DzfzCTinsPIjDH4iWwcml7iMKawpzffGV-Rf_yqLSWEv_wwkX8--pGyqmom0gWY=
+Q7iarAobrrCgtodvT2CTfN79fZN9Qrl6tNAIfUaxzh_MdXzqa04A7aGA4_-p0JtQrkquLVKOjVf=
+0gBWE2Nd2TFid04tx1b2-PgiGoEXFoq_IqDUVcQflJ1o3WnlixUpM7dIDDBZjzDPtD-oTB5JrN4=
+nbOwsS0BAMqggVmOPXkW6YL7WP7C8x0Y6gjiTmhV13P8j0mpQUp8rtq9UdW68LkNi-5E98Cyt7k=
+O6chYI8gO9sxMdd8OnoJEBuPR0oBfuxeionL7VH5QkB0u4%3D&amp;w=3D618d615066c6445d2=
+a0e947f&amp;c=3Db_6939d26bb8b55472bf542110&amp;l=3Den-US&amp;s=3D46H8mCsErn=
+aR5NlV9RDq8ktm9Is%3D" class=3D"unsubscribe-link" style=3D"color:#313131;tex=
+t-decoration:underline;"> <span class=3D"unsubscribe-link-text" style=3D"fo=
+nt-size:inherit;font-weight:inherit;line-height:inherit;margin:0;">Unsubscr=
+ibe</span> </a></p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div></td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table></td>
+    </tr>
+   </tbody>
+  </table> <img src=3D"https://q8w2.engage.squarespace-mail.com/v2/a.gif?m=
+=3D6939da017d687b4d22d021e2&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_6939=
+d26bb8b55472bf542110&amp;s=3DLc_BaZULf7T_64IVYRrxXcaXFlY%3D" alt=3D"" width=
+=3D"0" height=3D"0">
+ </body>
+</html>
+--3cb2c47cc22aa6df4ed11a5f89ef73d69fb88a7da1c9a6954e588567eb0f--

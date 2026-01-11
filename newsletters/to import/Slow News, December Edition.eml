@@ -1,0 +1,1167 @@
+Delivered-To: jbeaman@gmail.com
+Received: by 2002:a05:6850:32a2:b0:60d:d392:2961 with SMTP id u2csp3878712nnb;
+        Tue, 10 Dec 2024 17:33:55 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHJc+TKcjlwrbWEh/RMf41yPYx0gGcBq2DPdJShcCEC1EbUduxCJ1XoHiied7Pl63kaXdgh
+X-Received: by 2002:a17:90b:1b46:b0:2ee:a00d:2ef8 with SMTP id 98e67ed59e1d1-2f1280683admr642144a91.8.1733880834852;
+        Tue, 10 Dec 2024 17:33:54 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1733880834; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Rilobd3Q56eTgiThQyGBPABoqqMwFj+EMmO3TQ4Nn2hP64XRVQ2ElIa4oHcHCtXkqT
+         GOs/lUEgyU2dFDSbkFecLO6Y1SstNm2dstUGE6/zuwRrv3a1eHEPwE887xllF1BtQIT1
+         z3Y7afF19t64hP8iWTupQLVLYp5I3DKTKqDmuj4mpcdq85xR4gXgPTmRdHHhUIoasww7
+         0eWzmFUWJXmOPaJD9hZErFtYIpBRFu8GHgjKbDxxtBLJt8xuSwcO+cfGp1lVb/Rkqx8q
+         TkK5KWc4F4ghL7a365lt0gtmtgm39LHpzuMHZsdckKSTIypKet/lH19QqLaIn038Eogm
+         K1Og==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=sender:list-unsubscribe:feedback-id:message-id
+         :list-unsubscribe-post:to:from:subject:mime-version:date
+         :dkim-signature:dkim-signature;
+        bh=V5pYwykmYphfGTejmHKP8ofThB77MnOdNTzrqNIj7Tw=;
+        fh=4TbKyGIWs6U4EHh2/Sj8bLShT5RJP4c38C8Cdm/ez/E=;
+        b=j/8+LnRzYR7lJ8mqhtrB787iUAnGba83+NymZ7+E3oEchNF5zzggp7rQVHijubL5ne
+         9K6zE3FTKHeWNyFq5K2fhP1L2xsvvXnZIZn5yftKawrjNYZnMCkdD7O6GDomDHPOlcI/
+         +4ZCvAmmCNbcx1XrOtxyQxhq0P1zEDGAPZm7BWuZFOAZw+vGO0I5gbyNeD/NH5WLnhos
+         ke7lhNEOKG3O9M6OZMSfvSCGxUsG5Qn39aIxLtX0QwJw2VMx+f0qJdJbu9Z8ckXnRBK7
+         17M7uWDdmtcdwWEpi0orIaw15FHP1XaKt7C3SoKeS8HU5gOqSrT9vvTjdRaWRwsK4AIQ
+         c6TA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mgcp03.squarespace-mail.com header.s=squarespace header.b=6e7yfgmo;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=tGHJYKMK;
+       spf=pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.94 as permitted sender) smtp.mailfrom="bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com"
+Return-Path: <bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com>
+Received: from m201-94.mailgun.net (m201-94.mailgun.net. [161.38.201.94])
+        by mx.google.com with UTF8SMTPS id 98e67ed59e1d1-2efdeff5fb5si2553434a91.79.2024.12.10.17.33.54
+        for <jbeaman@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 10 Dec 2024 17:33:54 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.94 as permitted sender) client-ip=161.38.201.94;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mgcp03.squarespace-mail.com header.s=squarespace header.b=6e7yfgmo;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=tGHJYKMK;
+       spf=pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.94 as permitted sender) smtp.mailfrom="bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com"
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mgcp03.squarespace-mail.com; q=dns/txt; s=squarespace; t=1733880833; x=1733888033;
+ h=sender: sender: List-Unsubscribe: message-id: List-Unsubscribe-Post: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id;
+ bh=V5pYwykmYphfGTejmHKP8ofThB77MnOdNTzrqNIj7Tw=;
+ b=6e7yfgmogij62VUSYdcXINZ3hf6I7UrNMH0OFGAOKUZLRNYWSFi4Zpy89nAlLFy4cIiFEWZ4+8Nf2jd3yxiqf2CSdsZDLSAEMk0PcTzQXGZxK+wMofU2hwcpfymbnLgcoW5yygjzwWwduPPiWI+n72oHceGI3tdb75Hj2H5tFc6FYYm22+6E+XM6JUmO9e8NbYVy2SB64RqLf4WAU6koKhd24ukkWWNKXM6IUoAbUAEKrlkkhaf70oj/R0Bzxo8YKHBFur91/Xoup9Ir2KOfg8whOuBbnV0D5ozBSjSlmGMLSjvVMe6FNMV04GYZYVlFFBulrHs3nT2eJtnW8XKU3A==
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1733880833; x=1733888033;
+ h=sender: sender: List-Unsubscribe: message-id: List-Unsubscribe-Post: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id;
+ bh=V5pYwykmYphfGTejmHKP8ofThB77MnOdNTzrqNIj7Tw=;
+ b=tGHJYKMKrkiWQCs9CW7zxoUOcniihxQG7NMlX8iSkNF+JvdsVuYyxri95dLDaeBll/Xb4RsWj5yU5HpDyknRTUraA/rZc1PZJCQ0IGl4NxsHeoisV41VOqQadTenoTAfTe3e54galxIFWkOm+uFkeKpeeXhp2Hy/OCZUFG9L7js=
+X-Feedback-Id: postmaster@mgcp03.squarespace-mail.com:UNSIGNED_CAMPAIGN:610aa31bfaf8743c84887869:mailgun
+X-Mailgun-Sending-Ip: 161.38.201.94
+X-Mailgun-Sending-Ip-Pool-Name: 
+X-Mailgun-Sending-Ip-Pool: 
+X-Mailgun-Sid: WyIyZTU4NyIsImpiZWFtYW5AZ21haWwuY29tIiwiMzJjNGFjIl0=
+Received: by 5b6077bd0920 with HTTP id 6758ec017117bd054cf33337; Wed, 11 Dec 2024
+ 01:33:53 GMT
+Date: Wed, 11 Dec 2024 01:33:53 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="162a09563ed2cd9cd44a163dcf3c491eaf47a46b5c54792a9e6410fd5dc0"
+Subject: Slow News, December Edition
+From: Scenic Routes Community Bicycle Center <info@scenicroutessf.com>
+To: jbeaman@gmail.com
+X-Mailgun-Tag: UNSIGNED_CAMPAIGN
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+message-id: <6758ebfb48d26852a5b88146.618d615066c6445d2a0e947f@mgcp03.squarespace-mail.com>
+Feedback-ID: b_67589091f0aa4a26dcf69385:618d615066c6445d2a0e947f:mailgun
+List-Unsubscribe: <https://campaign-preferences.com/unsubscribe/Lvc1z5pA8eCTvnbVQeuG5NH1E3OyYCr15nAz_hX0MLC7J0McbzOyzFrcqfMPgObJYPhbtKUraCfE6plzfyoL0pcLNT34rN9O-HWnimXnuE7fdvlBQtLQRatjaFpauzKQqNQHwS-dINpNeqkhyIFpb7X6BAnY_0KhY7EWJo0a7CbFHCji1wXO4030ebtKdgxJruH62q5U7ybMa9QbbYA12s8u3wWlJ3sRpm47YWQ_NDDWvLp2TaYZfli54CmMVjzqjntZPoxmEqC9GjG8GFJDkE_W1gQP6D3IYba-56Qlzy6jfQPks8jD4psHMt4SHACw7vv9H_ILvCEPeSWiLeoN9TWbx6t1seC_63j7nkJFhQ8GVpPJjur44vU=>
+X-Website-Id: 618d615066c6445d2a0e947f
+sender: Scenic Routes Community Bicycle Center <info@scenicroutessf.com>
+X-Mailgun-Variables: {"emailMessageId": "6758ebfb48d26852a5b88146", "mailingId":
+ "b_67589091f0aa4a26dcf69385", "websiteId": "618d615066c6445d2a0e947f"}
+
+--162a09563ed2cd9cd44a163dcf3c491eaf47a46b5c54792a9e6410fd5dc0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+<https://www.scenicroutessf.com/?ss_source=3Dsscampaigns&ss_campaign_id=3D6=
+7589091f0aa4a26dcf69385&ss_email_id=3D6758ebfb48d26852a5b88146&ss_campaign_=
+name=3DSlow+News%2C+December+Edition&ss_campaign_sent_date=3D2024-12-11T01%=
+3A33%3A52Z> Take 4, December 10th, 2024 Slow News. Hi Neighbors, Another mo=
+nth is upon us; the last of the year! And what a year it has been. For me, =
+personally, I found myself cemented into life at Scenic Routes in a way I n=
+ever could=E2=80=99ve imagined last December. For the shop, we saw ourselve=
+s expand, diversify, and cemented into our community in ways no one could=
+=E2=80=99ve imagined a few years ago. Thank you all for making us a part of=
+ your lives (as your bike mechanics, as your sticker dealers, as your Wedne=
+sday fish pick up site, as your ride leaders, and as your friends). We woul=
+dn=E2=80=99t be anything as a bike shop or community center without you, an=
+d that isn=E2=80=99t even an exaggeration. For Christmas, all we want is fo=
+r you to come to our party on Thursday, December 12th at 6:00pm, and to ask=
+ your weird aunt in Arkansas for a gift card to the shop. And if you really=
+ want to give us a gift, buy yourself a gift card and throw it in the recyc=
+ling bin. Or use it in 2027. If you=E2=80=99re looking for other goodies to=
+ fill your stockings and wrap with care, here is an incomplete list of our =
+offerings for you to consider: In the under $10 range Squeezy Bean Bart Bra=
+kes - give the gift of keeping your bike from rolling around with these han=
+dmade brake straps. In fun colors too! Stickers - take a look at our politi=
+cally charged, emotionally minded sticker collection. Haven=E2=80=99t you a=
+lways dreamed of a little pink sticker that reads =E2=80=9Cplease don=E2=80=
+=99t make me talk to your boyfriend=E2=80=9D ??? Patch Kits, Chain Lube, Ti=
+re Levers, etc. - basic maintenance items for anyone who owns a bike! In th=
+e under $20 range Visto Safety Triangles - give the gift of reflective visi=
+bility to keep your buddies safe, with an added bonus that they are handmad=
+e in the bay! Crank Brothers Multi Tool - A necessity for any bike commuter=
+! Pretty self explanatory. Calling in Sick Magazine - The hottest publicati=
+on of the indie bike world, a perfect addition to anyone=E2=80=99s coffee t=
+able. In the under $50 range =E2=80=9CSlow is Forever=E2=80=9D Dad Hats - l=
+iterally the hottest accessory of the year. Keep those heads covered and sp=
+read the slow lifestyle. Newbaum=E2=80=99s Cushioned Bar Tape - tired of lo=
+oking at your friend=E2=80=99s grimy, fraying bar tape? Grab them a couple =
+rolls of the coziest bar tape around! Available in a seemingly endless vari=
+ety of colors. Bivo Stainless Steel Water Bottle - I never knew a water bot=
+tle could change your life until I owned one of these. Save your loved one =
+from the scourge of micro plastics and give them the gift of steel! In the =
+under $100 range =E2=80=9CSlow is Forever=E2=80=9D Crewneck - Soft, cozy, a=
+nd embroidered in the City, your Scenic Routes fan will cherish this additi=
+on to their wardrobe! A front Rack and Wald Basket - Being given the gift o=
+f no longer having to wear a backpack? Priceless! Send them our way to have=
+ it installed. A set of Panaracer Gravel King Tires - What an instant bicyc=
+le improvement! The tan sidewalls add a special little somethin=E2=80=99 to=
+ anyone=E2=80=99s bike, and a new set of tires can be such a treat, just ma=
+ke sure you actually know the correct size!!! Don=E2=80=99t be buying tires=
+ willy-nilly. Tunitas Stowaway Bag - Everyone needs a place to store their =
+treasures!! Keep your phone and snacks in close reach with these beautiful,=
+ San Francisco made bags. In the well over $100 range (you generous dog) Cl=
+everhood Rain Cape - Dry arms, dry legs, and a dry backpack?? The Cleverhoo=
+d Rain Capes are rain gear FOR cyclists. A wild improvement for any winter =
+commuter. A year of Scenic Routes Membership - Check out our different tier=
+s below. The gift that keeps on giving, all year long! Quercus Bike - Tryin=
+g to turn a friend into a cyclist? We=E2=80=99ve got bikes for sale! Bring =
+them by for a test ride, and you might just find the perfect bike!! (Let me=
+ put a caveat here that these prices are approximate and things may be more=
+ or less, I=E2=80=99m not at the shop while I=E2=80=99m putting this list t=
+ogether. My memory is imperfect.) Obviously, and I hope this goes without s=
+aying, you don=E2=80=99t have to buy anything from us for us to love you an=
+d want you to be a part of our community and spend time at our shop, but if=
+ you=E2=80=99re going to buy crap (and have stuff bought for you) anyway yo=
+u might as well do it in your neighborhood. We spend an ample amount of tim=
+e and energy deciding what to stock on our shelves, and we think you=E2=80=
+=99ll find our stuff really neat. We have locks and t-shirts and bags and g=
+izmos and gadgets and goodies. We have lights and tires and doodads. We hav=
+e bikes and baskets and bits and bobs. Cheers to all of you. I hope you all=
+ have ample time to ride your bikes this holiday season as the Christmas li=
+ghts twinkle in your eyes. Thank you for an exceptional year. We=E2=80=99ll=
+ see you in January with dreams and goals for the year to come! - Ayla Memb=
+ership Tiers  <https://www.scenicroutessf.com/membership?ss_source=3Dsscamp=
+aigns&ss_campaign_id=3D67589091f0aa4a26dcf69385&ss_email_id=3D6758ebfb48d26=
+852a5b88146&ss_campaign_name=3DSlow+News%2C+December+Edition&ss_campaign_se=
+nt_date=3D2024-12-11T01%3A33%3A52Z> P.s. We love our members but we can=E2=
+=80=99t remember you all by name! Remember to tell us you=E2=80=99re a memb=
+er when you pop by the shop!! Visit our Site :)  <https://www.scenicroutess=
+f.com?ss_source=3Dsscampaigns&ss_campaign_id=3D67589091f0aa4a26dcf69385&ss_=
+email_id=3D6758ebfb48d26852a5b88146&ss_campaign_name=3DSlow+News%2C+Decembe=
+r+Edition&ss_campaign_sent_date=3D2024-12-11T01%3A33%3A52Z> Scenic Routes C=
+ommunity Bicycle Center, 521 Balboa Street, San Francisco, United States Po=
+wered by Squarespace <https://www.squarespace.com?channel=3Dproduct_refer&s=
+ubchannel=3Dcustomer&source=3Demail_campaigns_button&campaign=3D618d615066c=
+6445d2a0e947f&utm_medium=3Dproduct_refer&utm_source=3Demail_campaigns_butto=
+n&ss_source=3Dsscampaigns&ss_campaign_id=3D67589091f0aa4a26dcf69385&ss_emai=
+l_id=3D6758ebfb48d26852a5b88146&ss_campaign_name=3DSlow+News%2C+December+Ed=
+ition&ss_campaign_sent_date=3D2024-12-11T01%3A33%3A52Z> Unsubscribe  <https=
+://campaign-preferences.com/unsubscribe/9uH4kdhs8F-2OOxjxhXHfojcyIZRjGvUgWh=
+kgBdd0Yd0vEcaXyC30skIX1OFjIu_s0sJdnlr5AJvuzLavNYKTWxHMIOE_9PkIqBOz5l9-NrOXu=
+x2rSZqCKWm5oieMj4sLBbwhUWrk4YQXLCVgWzrZ5qJKIhM1nq4dTv1vXKBph1kErH-7yEEmL3G6=
+dtsWK6e3iccN2vldOKCsLAC6nWl8lk0LwyietjFgZBZq7dEYwjAujZWCR3ZN48YBV-oFqFtfMSJ=
+Owkeg7sAEBAOfaseW6wP9Z0KsstGerI9eH1kFyLaAtn_NsZIv64K_HqfhDK_hvL17zpUfv43CKB=
+gtWrUr2CLeMT1SIUD-HgwCRpWN9dyQKl3OJT-pdA=3D>
+--162a09563ed2cd9cd44a163dcf3c491eaf47a46b5c54792a9e6410fd5dc0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" lang=3D"en-=
+US" xml:lang=3D"en-US">
+ <head>=20
+  <title data-ignore-plain-text>Slow News, December Edition</title>=20
+  <meta http-equiv=3D"content-type" content=3D"text/html; charset=3Dutf-8">=
+=20
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1, maximum-scale=3D1">=20
+  <meta name=3D"format-detection" content=3D"address=3Dno">=20
+  <!--[if (gte mso 9)|(IE)]>
+    <style type=3D"text/css" media=3D"screen">
+      li {
+        text-indent: -1em;
+      }
+    </style>
+    <![endif]-->=20
+  <style type=3D"text/css" media=3D"all">
+      body,
+=2Esection-text-area,
+=2Esection-text-area-wrapper,
+=2Esection-text-cell {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+}
+body {
+    width: 100% !important;
+    min-width: 100% !important;
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    mso-line-height-rule: exactly;
+}
+p {
+    margin-block: 0;
+}
+@media only screen and (max-width:  593px ) {
+    table#newsletter-table {
+        border: 0 !important;
+    }
+    table#newsletter-email {
+        width: 100% !important;
+    }
+    img.section-scaleable-image,
+    img.section-empty-img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    .bg-none {
+        background: none !important;
+    }
+    .hauto {
+        height: auto !important;
+    }
+    .show-desktop-only {
+        display: none !important;
+    }
+    .show-mobile-only {
+        display: block !important;
+        float: none !important;
+        line-height: auto !important;
+        max-height: inherit !important;
+        max-width: inherit !important;
+        margin-top: 0px !important;
+        overflow: visible !important;
+        visibility: inherit !important;
+        width: auto !important;
+    }
+    .stack-cell-wrap {
+        display: block !important;
+    }
+    .stack-cell-up {
+        display: table-header-group !important;
+    }
+    .stack-cell-down {
+        display: table-footer-group !important;
+    }
+    .mw100p {
+        max-width: 100% !important;
+    }
+    .section-horizontal-padding,
+    .padding-mobile-both {
+        padding-left: 22px !important;
+        padding-right: 22px !important;
+    }
+    .padding-mobile-left {
+        padding-left: 22px !important;
+    }
+    .padding-mobile-right {
+        padding-right: 22px !important;
+    }
+    .text-left {
+        text-align: left !important;
+    }
+    .text-right {
+        text-align: right !important;
+    }
+    .w100p {
+        width: 100% !important;
+    }
+}
+=2Ebutton-style-solid:hover,
+=2Ebutton-style-rounded:hover {
+    opacity: .8 !important;
+}
+a:hover {
+    text-decoration: none !important;
+}
+span.mail-merge-preview {
+    border-bottom: 2px dotted currentColor;
+    display: inline-block;
+    line-height: 1em !important;
+    margin-bottom: .125em !important;
+}
+table#newsletter-section-body .linked-site-title-link {
+    color: #0e8ac4 !important;
+}
+#header-header-section-split-left-0 .brand-name .linked-site-title-link {
+    color: #272727;
+    text-decoration: none;
+}
+#footer-footer-section-stacked-top-0 .brand-name .linked-site-title-link {
+    color: #000;
+    text-decoration: none;
+}
+#footer-footer-section-stacked-top-0 .footer-text .linked-site-title-link {
+    color: #0e8ac4;
+}
+body.renderedPreview #line-line-section-0 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-2 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-6 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+#button-button-section-7 .button-style-outline:hover {
+    background-color: #000 !important;
+    border: 1px solid #000 !important;
+}
+#button-button-section-7 .button-style-outline:hover .button-section-label =
+{
+    color: #fff !important;
+}
+body.renderedPreview #line-line-section-8 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+#button-button-section-10 .button-style-outline:hover {
+    background-color: #9c7760 !important;
+    border: 1px solid #9c7760 !important;
+}
+#button-button-section-10 .button-style-outline:hover .button-section-label=
+ {
+    color: #000 !important;
+}
+body.renderedPreview #line-line-section-11 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+
+    </style>=20
+  <!--[if mso]>
+    <noscript>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    </noscript>
+    <![endif]-->=20
+  <!--[if (mso)|(mso 16)]>
+      <style type=3D"text/css">
+        a {text-decoration: none;}
+      </style>
+    <![endif]-->=20
+ </head>=20
+ <body style=3D"padding:0;margin:0;text-align:center;background-color:#fff;=
+">=20
+  <table role=3D"article" aria-label=3D"Slow News, December Edition" lang=
+=3D"en-US" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"center=
+" id=3D"newsletter-table" style=3D"font-size:16px;font-weight:normal;width:=
+100%;padding:0px;background-color:#fff;border-top:44px solid #fff;border-bo=
+ttom:44px solid #fff;margin:0 auto;text-align:center;table-layout:fixed;">=
+=20
+   <tbody>
+    <tr>=20
+     <td align=3D"center" valign=3D"top" bgcolor=3D"#FFFFFF" id=3D"newslett=
+er-cell" style=3D"font-size:.9375em;">=20
+      <div data-ignore-plain-text class=3D"newsletter-preview-text" style=
+=3D"color:transparent;display:none !important;height:0;max-height:0;max-wid=
+th:0;opacity:0;overflow:hidden;mso-hide:all;visibility:hidden;width:0;">
+        Hi Neighbors, Happy December!=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&n=
+bsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=20
+      </div>=20
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"594"=
+ bgcolor=3D"#D9E5DD" id=3D"newsletter-email">=20
+       <tbody>
+        <tr>=20
+         <td align=3D"center" valign=3D"top" id=3D"newsletter-email-wrapper=
+" class=3D"fixed-sans">=20
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-header">=20
+           <tbody>
+            <tr>=20
+             <td align=3D"center" valign=3D"middle" id=3D"newsletter-sectio=
+n-header-cell">=20
+              <div id=3D"header-header-section-split-left-0">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"header-se=
+ction header-section-split section-content" style=3D"background-color:trans=
+parent;">=20
+                <tbody>
+                 <tr>=20
+                  <td class=3D"section-content-cell" style=3D"padding-top:2=
+2px;padding-right:22px;padding-bottom:0px;padding-left:22px;">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"left" valign=3D"middle" width=3D"50%" cl=
+ass=3D"section-text-area"> <a class=3D"brand-logo-link" href=3D"https://mgc=
+p03.engage.squarespace-mail.com/r?m=3D6758ebfb48d26852a5b88146&amp;u=3Dhttp=
+s%3A%2F%2Fwww.scenicroutessf.com%2F%3Fss_source%3Dsscampaigns%26ss_campaign=
+_id%3D67589091f0aa4a26dcf69385%26ss_email_id%3D6758ebfb48d26852a5b88146%26s=
+s_campaign_name%3DSlow%2BNews%252C%2BDecember%2BEdition%26ss_campaign_sent_=
+date%3D2024-12-11T01%253A33%253A52Z&amp;w=3D618d615066c6445d2a0e947f&amp;c=
+=3Db_67589091f0aa4a26dcf69385&amp;l=3Den-US&amp;s=3D_J1MLETx2SOUs0ZYVt8Xk1b=
+tw_4%3D" style=3D"color:#0e8ac4 !important;"><img class=3D"brand-logo" src=
+=3D"https://images.squarespace-cdn.com/content/v1/618d615066c6445d2a0e947f/=
+6d9767f2-4d83-4528-a527-15a5475b6d66/slow+is+forever+logo.png" height=3D"66=
+" alt=3D"Scenic Routes Community Bicycle Center" style=3D"font-size:.579419=
+0358467243em;display:block;border:0;text-decoration:none;line-height:0;font=
+-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mo=
+no', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;colo=
+r:#272727;height:auto;max-height:66px;max-width:100%;width:auto;margin-left=
+:0px;"></a> </td>=20
+                      <td align=3D"right" valign=3D"middle" width=3D"50%" c=
+lass=3D"section-text-area"> <p class=3D"email-title" style=3D"line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;margin-bottom:0;=
+font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream=
+ Vera Sans Mono', 'Liberation Mono', Courier, monospace;font-size:11px;mso-=
+line-height-alt:11px;color:#000;white-space:pre-wrap;margin-right:0px;"><em=
+>Take 4, December 10th, 2024</em></p> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div> </td>=20
+            </tr>=20
+           </tbody>
+          </table>=20
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-body">=20
+           <tbody>
+            <tr>=20
+             <td align=3D"center" valign=3D"top" width=3D"100%" id=3D"newsl=
+etter-section-body-cell">=20
+              <div id=3D"line-line-section-0">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:92%;min-width:92%;">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:10px;padding-right:0;p=
+adding-bottom:10px;padding-left:0;">=20
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#272727;">
+                        &nbsp;
+                       </div> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-1">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell" style=3D"padding-top:0px;padding-right:9px;padding-bottom:0px;pa=
+dding-left:9px;color:#272727;background-color:transparent;"> <h2 style=3D"c=
+olor:inherit;margin:1.414em 0 .5em;font-weight:400;line-height:1.25em;font-=
+size:3.9710634675000014em;mso-line-height-alt:3.9710634675000014em;margin-t=
+op:0;margin-bottom:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu S=
+ans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospac=
+e;letter-spacing:-.05em;text-align:center;">Slow News. </h2> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"line-line-section-2">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:94%;min-width:94%;">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:1px;padding-right:0;pa=
+dding-bottom:0px;padding-left:0;">=20
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-3">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:0px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:=
+1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-top:0;font-family:'An=
+dale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono=
+', 'Liberation Mono', Courier, monospace;">Hi Neighbors,&nbsp;<br></p><p st=
+yle=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:norm=
+al;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstr=
+eam Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-height:1.38=
+;margin-top:0pt;margin-bottom:0pt;" class=3D"">Another month is upon us; th=
+e last of the year! And what a year it has been. For me, personally, I foun=
+d myself cemented into life at Scenic Routes in a way I never could=E2=80=
+=99ve imagined last December. For the shop, we saw ourselves expand, divers=
+ify, and cemented into our community in ways no one could=E2=80=99ve imagin=
+ed a few years ago. Thank you all for making us a part of your lives (as yo=
+ur bike mechanics, as your sticker dealers, as your Wednesday fish pick up =
+site, as your ride leaders, and as your friends). We wouldn=E2=80=99t be an=
+ything as a bike shop or community center without you, and that isn=E2=80=
+=99t even an exaggeration.&nbsp;<br></p><p class=3D"" style=3D"color:inheri=
+t;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font-weight:nor=
+mal;height:1.618em;font-family:'Andale Mono', 'Lucida Console', 'DejaVu San=
+s Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;=
+"></p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-=
+weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mon=
+o', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-=
+height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D"">For Christmas, al=
+l we want is for you to<strong> come to our party on Thursday, December 12t=
+h at 6:00pm</strong>, and to ask your weird aunt in Arkansas for a gift car=
+d to the shop. And if you really want to give us a gift, buy yourself a gif=
+t card and throw it in the recycling bin.&nbsp;Or use it in 2027.</p><p sty=
+le=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:norma=
+l;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstre=
+am Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-height:1.38;=
+margin-top:0pt;margin-bottom:0pt;" class=3D""><br></p><p style=3D"color:inh=
+erit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:normal;font-family:'=
+Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mo=
+no', 'Liberation Mono', Courier, monospace;line-height:1.38;margin-top:0pt;=
+margin-bottom:0pt;" class=3D"">If you=E2=80=99re looking for other goodies =
+to fill your stockings and wrap with care, here is an incomplete list of ou=
+r offerings for you to consider:</p><p class=3D"" style=3D"color:inherit;fo=
+nt-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;=
+font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream=
+ Vera Sans Mono', 'Liberation Mono', Courier, monospace;"><br></p><p style=
+=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:normal;=
+font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream=
+ Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-height:1.38;ma=
+rgin-top:0pt;margin-bottom:0pt;" class=3D""><span style=3D"font-size:inheri=
+t;font-weight:inherit;line-height:inherit;margin:0;text-decoration:underlin=
+e;">In the under $10 range</span></p>
+                   <ul data-rte-list=3D"default" style=3D"padding-left:25px=
+;">
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>Squee=
+zy Bean Bart Brakes </strong>- give the gift of keeping your bike from roll=
+ing around with these handmade brake straps. In fun colors too!&nbsp;</p></=
+li>
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>Stick=
+ers </strong>- take a look at our politically charged, emotionally minded s=
+ticker collection. Haven=E2=80=99t you always dreamed of a little pink stic=
+ker that reads =E2=80=9Cplease don=E2=80=99t make me talk to your boyfriend=
+=E2=80=9D ???</p></li>
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>Patch=
+ Kits, Chain Lube, Tire Levers, etc.</strong> - basic maintenance items for=
+ anyone who owns a bike!&nbsp;</p></li>
+                   </ul><p style=3D"color:inherit;font-size:.9375em;margin:=
+0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console'=
+, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courie=
+r, monospace;line-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""=
+><span style=3D"font-size:inherit;font-weight:inherit;line-height:inherit;m=
+argin:0;text-decoration:underline;">In the under $20 range</span></p>
+                   <ul data-rte-list=3D"default" style=3D"padding-left:25px=
+;">
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>Visto=
+ Safety Triangles</strong> - give the gift of reflective visibility to keep=
+ your buddies safe, with an added bonus that they are handmade in the bay!<=
+/p></li>
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>Crank=
+ Brothers Multi Tool - </strong>A necessity for any bike commuter! Pretty s=
+elf explanatory.&nbsp;</p></li>
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>Calli=
+ng in Sick Magazine - </strong>The hottest publication of the indie bike wo=
+rld, a perfect addition to anyone=E2=80=99s coffee table.&nbsp;</p></li>
+                   </ul><p style=3D"color:inherit;font-size:.9375em;margin:=
+0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console'=
+, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courie=
+r, monospace;line-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""=
+><span style=3D"font-size:inherit;font-weight:inherit;line-height:inherit;m=
+argin:0;text-decoration:underline;">In the under $50 range</span></p>
+                   <ul data-rte-list=3D"default" style=3D"padding-left:25px=
+;">
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>=E2=
+=80=9CSlow is Forever=E2=80=9D Dad Hats</strong> - literally the hottest ac=
+cessory of the year. Keep those heads covered and spread the slow lifestyle=
+=2E&nbsp;</p></li>
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>Newba=
+um=E2=80=99s Cushioned Bar Tape - </strong>tired of looking at your friend=
+=E2=80=99s grimy, fraying bar tape? Grab them a couple rolls of the coziest=
+ bar tape around! Available in a seemingly endless variety of colors.&nbsp;=
+</p></li>
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>Bivo =
+Stainless Steel Water Bottle</strong> - I never knew a water bottle could c=
+hange your life until I owned one of these. Save your loved one from the sc=
+ourge of micro plastics and give them the gift of steel!&nbsp;</p></li>
+                   </ul><p style=3D"color:inherit;font-size:.9375em;margin:=
+0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console'=
+, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courie=
+r, monospace;line-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""=
+><span style=3D"font-size:inherit;font-weight:inherit;line-height:inherit;m=
+argin:0;text-decoration:underline;">In the under $100 range&nbsp;</span></p=
+>
+                   <ul data-rte-list=3D"default" style=3D"padding-left:25px=
+;">
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>=E2=
+=80=9CSlow is Forever=E2=80=9D Crewneck </strong>- Soft, cozy, and embroide=
+red in the City, your Scenic Routes fan will cherish this addition to their=
+ wardrobe!&nbsp;</p></li>
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>A fro=
+nt Rack and Wald Basket - </strong>Being given the gift of no longer having=
+ to wear a backpack? Priceless! Send them our way to have it installed. </p=
+></li>
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>A set=
+ of Panaracer Gravel King Tires - </strong>What an instant bicycle improvem=
+ent! The tan sidewalls add a special little somethin=E2=80=99 to anyone=E2=
+=80=99s bike, and a new set of tires can be such a treat, just make sure yo=
+u actually know the correct size!!! Don=E2=80=99t be buying tires willy-nil=
+ly.&nbsp;</p></li>
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>Tunit=
+as Stowaway Bag</strong> - Everyone needs a place to store their treasures!=
+! Keep your phone and snacks in close reach with these beautiful, San Franc=
+isco made bags.&nbsp;</p></li>
+                   </ul><p style=3D"color:inherit;font-size:.9375em;margin:=
+0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console'=
+, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courie=
+r, monospace;line-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""=
+><span style=3D"font-size:inherit;font-weight:inherit;line-height:inherit;m=
+argin:0;text-decoration:underline;">In the well over $100 range (you genero=
+us dog)</span></p>
+                   <ul data-rte-list=3D"default" style=3D"padding-left:25px=
+;">
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>Cleve=
+rhood Rain Cape -</strong>&nbsp;Dry arms, dry legs, and a dry backpack?? Th=
+e Cleverhood Rain Capes are rain gear FOR cyclists. A wild improvement for =
+any winter commuter.&nbsp;</p></li>
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>A yea=
+r of Scenic Routes Membership - </strong>Check out our different tiers belo=
+w. The gift that keeps on giving, all year long!&nbsp;</p></li>
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>Querc=
+us Bike - </strong>&nbsp;Trying to turn a friend into a cyclist? We=E2=80=
+=99ve got bikes for sale! Bring them by for a test ride, and you might just=
+ find the perfect bike!!</p></li>
+                   </ul> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"image-image-section-below-4">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td>=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td class=3D"show-desktop-only section-spacing-left" =
+width=3D"44"></td>=20
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"> <img class=3D"section-scaleable-image" src=3D=
+"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/b6543d=
+69-f376-4357-a2e0-0199cf72229f/quercus.jpg?content-type=3Dimage%2Fjpeg&amp;=
+format=3D750w" width=3D"594" alt=3D"" style=3D"font-size:.5794190358467243e=
+m;display:block;border:0;text-decoration:none;line-height:0;background-colo=
+r:transparent;font-weight:normal;height:auto;width:100%;max-width:100%;font=
+-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Ver=
+a Sans Mono', 'Liberation Mono', Courier, monospace;"> </td>=20
+                      <td class=3D"show-desktop-only section-spacing-right"=
+ width=3D"44"></td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-5">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:=
+1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-top:0;font-family:'An=
+dale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono=
+', 'Liberation Mono', Courier, monospace;">(Let me put a caveat here that t=
+hese prices are approximate and things may be more or less, I=E2=80=99m not=
+ at the shop while I=E2=80=99m putting this list together. My memory is imp=
+erfect.)&nbsp;</p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.=
+25em 0;font-weight:normal;height:1.618em;font-family:'Andale Mono', 'Lucida=
+ Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono=
+', Courier, monospace;line-height:1.38;margin-top:0pt;margin-bottom:0pt;" c=
+lass=3D""></p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em=
+ 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu =
+Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospa=
+ce;line-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D"">Obviously=
+, and I hope this goes without saying, you don=E2=80=99t have to buy anythi=
+ng from us for us to love you and want you to be a part of our community an=
+d spend time at our shop, but if you=E2=80=99re going to buy crap (and have=
+ stuff bought for you) anyway you might as well do it in your neighborhood.=
+ We spend an ample amount of time and energy deciding what to stock on our =
+shelves, and we think you=E2=80=99ll find our stuff really neat. We have lo=
+cks and t-shirts and bags and gizmos and gadgets and goodies. We have light=
+s and tires and doodads. We have bikes and baskets and bits and bobs.&nbsp;=
+</p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-we=
+ight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono'=
+, 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-he=
+ight:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D"">Cheers to all of yo=
+u. I hope you all have ample time to ride your bikes this holiday season as=
+ the Christmas lights twinkle in your eyes. Thank you for an exceptional ye=
+ar. We=E2=80=99ll see you in January with dreams and goals for the year to =
+come!</p><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height=
+:1.618em;margin:0 0 1.25em 0;font-weight:normal;height:1.618em;font-family:=
+'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans M=
+ono', 'Liberation Mono', Courier, monospace;"></p><p style=3D"color:inherit=
+;font-size:.9375em;margin:0 0 1.25em 0;font-weight:normal;font-family:'Anda=
+le Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',=
+ 'Liberation Mono', Courier, monospace;line-height:1.38;margin-top:0pt;marg=
+in-bottom:0pt;" class=3D"">- Ayla&nbsp;</p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"line-line-section-6">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:94%;min-width:94%;">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:22px;padding-right:0;p=
+adding-bottom:0px;padding-left:0;">=20
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"button-button-section-7">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"button-se=
+ction section-content" style=3D"width:100%;background-color:transparent;">=
+=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell section-text-area" style=3D"padding-top:7px;padding-right:22px;=
+padding-bottom:6px;padding-left:22px;"> <a href=3D"https://mgcp03.engage.sq=
+uarespace-mail.com/r?m=3D6758ebfb48d26852a5b88146&amp;u=3Dhttps%3A%2F%2Fwww=
+=2Escenicroutessf.com%2Fmembership%3Fss=
+_source%3Dsscampaigns%26ss_campaign_id=
+%3D67589091f0aa4a26dcf69385%26ss_email_id%3D6758ebfb48d26852a5b88146%26ss_c=
+ampaign_name%3DSlow%2BNews%252C%2BDecember%2BEdition%26ss_campaign_sent_dat=
+e%3D2024-12-11T01%253A33%253A52Z&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db=
+_67589091f0aa4a26dcf69385&amp;l=3Den-US&amp;s=3DOAGi3Q5m5-146GpchKt1JZpJGTs=
+%3D" class=3D"button-section-box button-style-solid" style=3D"color:#0e8ac4=
+ !important;display:inline-block;line-height:11px;margin:0;mso-padding-alt:=
+0;text-align:center;text-decoration:none;transition:.15s;width:auto;backgro=
+und-color:#000;border:0;padding:17px 0;"><i class=3D"button-section-mso" st=
+yle=3D"letter-spacing:29.92px;mso-font-width:-100%;mso-text-raise:26.950000=
+000000003px;">&nbsp;</i><span class=3D"button-section-label" style=3D"line-=
+height:inherit;margin:0;font-family:'Andale Mono', 'Lucida Console', 'DejaV=
+u Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monos=
+pace;font-weight:700;color:#efefef;display:inline-block;font-size:11px;min-=
+width:1px;mso-text-raise:15.95px;"><span data-letter-spacing=3D"3" style=3D=
+"font-size:inherit;font-weight:inherit;line-height:inherit;margin:0;letter-=
+spacing:0.2em;">Membership Tiers</span></span><i class=3D"button-section-ms=
+o" style=3D"letter-spacing:29.92px;mso-font-width:-100%;mso-text-raise:26.9=
+50000000000003px;">&nbsp;</i></a> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"line-line-section-8">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:92%;min-width:92%;">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:5px;padding-right:0;pa=
+dding-bottom:5px;padding-left:0;">=20
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#272727;">
+                        &nbsp;
+                       </div> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-9">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:=
+1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-top:0;margin-bottom:0=
+;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstrea=
+m Vera Sans Mono', 'Liberation Mono', Courier, monospace;">P.s. We love our=
+ members but we can=E2=80=99t remember you all by name! Remember to tell us=
+ you=E2=80=99re a member when you pop by the shop!! </p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"button-button-section-10">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"button-se=
+ction section-content" style=3D"width:100%;background-color:transparent;">=
+=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell section-text-area" style=3D"padding-top:16px;padding-right:22px=
+;padding-bottom:1px;padding-left:22px;"> <a href=3D"https://mgcp03.engage.s=
+quarespace-mail.com/r?m=3D6758ebfb48d26852a5b88146&amp;u=3Dhttps%3A%2F%2Fww=
+w.scenicroutessf.com%3Fss_source%3Dsscampaigns%26ss_campaign_id%3D67589091f=
+0aa4a26dcf69385%26ss_email_id%3D6758ebfb48d26852a5b88146%26ss_campaign_name=
+%3DSlow%2BNews%252C%2BDecember%2BEdition%26ss_campaign_sent_date%3D2024-12-=
+11T01%253A33%253A52Z&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_67589091f0a=
+a4a26dcf69385&amp;l=3Den-US&amp;s=3DXnuE5PvADL1vZUkA3B_CG0PSz2o%3D" class=
+=3D"button-section-box button-style-solid" style=3D"color:#0e8ac4 !importan=
+t;display:inline-block;line-height:11px;margin:0;mso-padding-alt:0;text-ali=
+gn:center;text-decoration:none;transition:.15s;width:auto;background-color:=
+#9c7760;border:0;padding:17px 0;"><i class=3D"button-section-mso" style=3D"=
+letter-spacing:29.92px;mso-font-width:-100%;mso-text-raise:26.9500000000000=
+03px;">&nbsp;</i><span class=3D"button-section-label" style=3D"line-height:=
+inherit;margin:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans =
+Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;fo=
+nt-weight:700;color:#fff;display:inline-block;font-size:11px;min-width:1px;=
+mso-text-raise:15.95px;"><strong><span data-letter-spacing=3D"3" style=3D"f=
+ont-size:inherit;font-weight:inherit;line-height:inherit;margin:0;letter-sp=
+acing:0.2em;">Visit our Site :)</span></strong></span><i class=3D"button-se=
+ction-mso" style=3D"letter-spacing:29.92px;mso-font-width:-100%;mso-text-ra=
+ise:26.950000000000003px;">&nbsp;</i></a> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"line-line-section-11">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:93%;min-width:93%;">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:22px;padding-right:0;p=
+adding-bottom:22px;padding-left:0;">=20
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div> </td>=20
+            </tr>=20
+           </tbody>
+          </table>=20
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-footer">=20
+           <tbody>
+            <tr>=20
+             <td align=3D"center" valign=3D"top" id=3D"newsletter-section-f=
+ooter-cell">=20
+              <div id=3D"footer-footer-section-stacked-top-0">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"footer-se=
+ction footer-section-stacked section-content" style=3D"background-color:tra=
+nsparent;">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"top" class=3D"section-text=
+-area section-content-cell" style=3D"padding-top:22px;padding-right:22px;pa=
+dding-bottom:22px;padding-left:22px;"> <p class=3D"footer-company-info" sty=
+le=3D"line-height:1.618em;font-weight:normal;margin-top:0;font-family:'Anda=
+le Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',=
+ 'Liberation Mono', Courier, monospace;color:#111;font-size:11px;margin:0 0=
+ 13.75px 0;padding:0;"> <a style=3D"color:#111;text-decoration:none;font-si=
+ze:inherit;font-family:inherit;font-weight:inherit;line-height:inherit;curs=
+or:default;">Scenic Routes Community Bicycle Center, 521 Balboa Street, San=
+ Francisco, United States</a> </p> <p class=3D"footer-links" style=3D"line-=
+height:1.618em;font-weight:normal;font-family:'Andale Mono', 'Lucida Consol=
+e', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Cour=
+ier, monospace;font-size:11px;color:#313131;margin:0 0 13.75px 0;padding:0;=
+"> Powered by <a href=3D"https://mgcp03.engage.squarespace-mail.com/r?m=3D6=
+758ebfb48d26852a5b88146&amp;u=3Dhttps%3A%2F%2Fwww.squarespace.com%3Fchannel=
+%3Dproduct_refer%26subchannel%3Dcustomer%26source%3Demail_campaigns_button%=
+26campaign%3D618d615066c6445d2a0e947f%26utm_medium%3Dproduct_refer%26utm_so=
+urce%3Demail_campaigns_button%26ss_source%3Dsscampaigns%26ss_campaign_id%3D=
+67589091f0aa4a26dcf69385%26ss_email_id%3D6758ebfb48d26852a5b88146%26ss_camp=
+aign_name%3DSlow%2BNews%252C%2BDecember%2BEdition%26ss_campaign_sent_date%3=
+D2024-12-11T01%253A33%253A52Z&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_67=
+589091f0aa4a26dcf69385&amp;l=3Den-US&amp;s=3DZ4wXQampJ1DnMUVfh1TMxvNq74I%3D=
+" class=3D"sqsp-link" style=3D"color:#313131;text-decoration:underline;disp=
+lay:inline-block;">Squarespace</a> </p> <p class=3D"footer-links" style=3D"=
+line-height:1.618em;font-weight:normal;margin-bottom:0;font-family:'Andale =
+Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'L=
+iberation Mono', Courier, monospace;font-size:11px;color:#313131;margin:0 0=
+ 13.75px 0;padding:0;"> <a href=3D"https://mgcp03.engage.squarespace-mail.c=
+om/r?m=3D6758ebfb48d26852a5b88146&amp;u=3Dhttps%3A%2F%2Fcampaign-preference=
+s.com%2Funsubscribe%2F9uH4kdhs8F-2OOxjxhXHfojcyIZRjGvUgWhkgBdd0Yd0vEcaXyC30=
+skIX1OFjIu_s0sJdnlr5AJvuzLavNYKTWxHMIOE_9PkIqBOz5l9-NrOXux2rSZqCKWm5oieMj4s=
+LBbwhUWrk4YQXLCVgWzrZ5qJKIhM1nq4dTv1vXKBph1kErH-7yEEmL3G6dtsWK6e3iccN2vldOK=
+CsLAC6nWl8lk0LwyietjFgZBZq7dEYwjAujZWCR3ZN48YBV-oFqFtfMSJOwkeg7sAEBAOfaseW6=
+wP9Z0KsstGerI9eH1kFyLaAtn_NsZIv64K_HqfhDK_hvL17zpUfv43CKBgtWrUr2CLeMT1SIUD-=
+HgwCRpWN9dyQKl3OJT-pdA%3D&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_675890=
+91f0aa4a26dcf69385&amp;l=3Den-US&amp;s=3Dg4Dy2O-5m_HzfHDyiMnRBbkGb3Q%3D" cl=
+ass=3D"unsubscribe-link" style=3D"color:#313131;text-decoration:underline;"=
+> <span class=3D"unsubscribe-link-text" style=3D"font-size:inherit;font-wei=
+ght:inherit;line-height:inherit;margin:0;">Unsubscribe</span> </a> </p> </t=
+d>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div> </td>=20
+            </tr>=20
+           </tbody>
+          </table> </td>=20
+        </tr>=20
+       </tbody>
+      </table> </td>=20
+    </tr>=20
+   </tbody>
+  </table> =20
+  <img src=3D"https://mgcp03.engage.squarespace-mail.com/v2/a.gif?m=3D6758e=
+bfb48d26852a5b88146&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_67589091f0aa=
+4a26dcf69385&amp;s=3DgKc1Cu74Ix9eN_ECoR_Kd2FV_po%3D" alt=3D"" width=3D"0" h=
+eight=3D"0">
+ </body>
+</html>
+--162a09563ed2cd9cd44a163dcf3c491eaf47a46b5c54792a9e6410fd5dc0--

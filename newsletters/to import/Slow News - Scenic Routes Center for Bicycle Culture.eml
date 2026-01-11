@@ -1,0 +1,1348 @@
+Delivered-To: jbeaman@gmail.com
+Received: by 2002:a05:6850:2d0a:b0:673:e52:c995 with SMTP id eq10csp5829944nnb;
+        Sat, 5 Jul 2025 14:02:14 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHXjXhv/Iu1TmcSA+Jr5kQi0ucgtB0QYm0/sJ6KUR0twnxrZpJDRfC9NZZK2HciIEW9cvsU
+X-Received: by 2002:a17:902:f690:b0:22e:6d69:1775 with SMTP id d9443c01a7336-23c85f8d949mr39765645ad.11.1751749334176;
+        Sat, 05 Jul 2025 14:02:14 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1751749334; cv=none;
+        d=google.com; s=arc-20240605;
+        b=fXqEkaAlGLbYoReTIbLMoWuETVl/IbRR7NNpXudS7lk4tfE39FNuEm1F453YAuj5W0
+         Y8l1vthvf/8WYmJ1XLOMCcoKz4h28xrmXD7dJjlaGP/uh6m8Zurvk9N2jM+Qest17SL0
+         PuCIeDJEl0XYV44tXdxFV4yEN6l1EfLFuTJiCfweHGH/qSdXjfatxlhmpkYW7M2iRGW3
+         NUY8b67IwYTbvd+aZbp1SJMYhbbivWMGik6X/UX7CD8LX4vXrwPS0e2gsFJxKOrNrmQ0
+         RrjKkCZmIGYmdaq7391+QlRWtHsqqd+l61dsJqFZu99vE/AeXa0aVlnnc7NAw5PXOQBd
+         pblw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=sender:list-unsubscribe:feedback-id:message-id
+         :list-unsubscribe-post:to:from:subject:mime-version:date
+         :dkim-signature:dkim-signature;
+        bh=HxP88kxjjCkvO7XK2wxGuB2W/LPL+2JX83d25OYtUSg=;
+        fh=4TbKyGIWs6U4EHh2/Sj8bLShT5RJP4c38C8Cdm/ez/E=;
+        b=MvzrEOjxAG1nkFXPgZGbvPbzGb1qCZLtutbqKXP56GMJUL9eHED+FuvaJjZsr3/exg
+         Tl9WxxOYwhh4KbA1oyi2z9QJJMuOk7oVIxx4x7ehIl9wsbIvqEpXXAE32iE9rbvdkaXl
+         Pb1O0Lx97POZpmxMNZHcX1EqPVJdera7nLAOhD/P0jseZEEriEQ4NqQ56S3dRZp13Ih6
+         fmdsvB7lMadtKHdH7Jk5lhxj0AUTSoZsnupvoVxRAbwdl0l+A3D2+vYA+ISSVo0JzYB7
+         QjA0n9zsR1zphvPyTFkDLTD43Wsxddp7Rpe/2B34cUMK5dMISuAKGw/t2Brw072DCGfv
+         knnw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mgcp03.squarespace-mail.com header.s=squarespace header.b=j5mztl4R;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=lcw8DL8N;
+       spf=pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.94 as permitted sender) smtp.mailfrom="bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com"
+Return-Path: <bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com>
+Received: from m201-94.mailgun.net (m201-94.mailgun.net. [161.38.201.94])
+        by mx.google.com with UTF8SMTPS id 41be03b00d2f7-b38ee4bcc0bsi6101839a12.256.2025.07.05.14.02.13
+        for <jbeaman@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 05 Jul 2025 14:02:14 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.94 as permitted sender) client-ip=161.38.201.94;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mgcp03.squarespace-mail.com header.s=squarespace header.b=j5mztl4R;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=lcw8DL8N;
+       spf=pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.94 as permitted sender) smtp.mailfrom="bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com"
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mgcp03.squarespace-mail.com; q=dns/txt; s=squarespace; t=1751749332; x=1751756532;
+ h=sender: sender: List-Unsubscribe: message-id: List-Unsubscribe-Post: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id;
+ bh=HxP88kxjjCkvO7XK2wxGuB2W/LPL+2JX83d25OYtUSg=;
+ b=j5mztl4RHm11+qgHF3YDGIli00FcNIxTTs/8IWtdXOA0R6YcXivZPh8aZKR473JSPac5/GD85GXuiw/j7uE+n+3q6YDg1lhShUF4wrQxbpKchTwZRm0rLB6WvbFusqSsfDYHX9GZbp86tOOrxc9zknIZ42O6++4y7OAxjjZiGNFj65FA9fgJNRnHvPZjfaZ/Cyb/CIPza9HmLHYwDFWOVzqltpP3SWgGqdzs2InMg4XxhhjPu7YoSJSMIOJBGJRo5NdiCfj81JVj/+RCpRXwo2zJNaJ65twy53fir5gwKVoFUGb0wGfUAKExQk+F/GzaKD2e9vjI8n7V+h4eQ7dxKQ==
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1751749332; x=1751756532;
+ h=sender: sender: List-Unsubscribe: message-id: List-Unsubscribe-Post: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id;
+ bh=HxP88kxjjCkvO7XK2wxGuB2W/LPL+2JX83d25OYtUSg=;
+ b=lcw8DL8NoGEAvzuL1v8oKBRDQSvsLYLf4xkiWVLv+KJBX/MVumZl/z7Jzfx1LhnNkdP1vUi/yfGfuoR08WqRqywZinHs7eBi2kQNs/c3pripdfiTQausD5LRbsSArN8bP2M3NNYnJQd26XAhAlICLx428DneItTol1r51gQwOOQ=
+X-Mailgun-Sid: WyIyZTU4NyIsImpiZWFtYW5AZ21haWwuY29tIiwiMzJjNGFjIl0=
+X-Feedback-Id: postmaster@mgcp03.squarespace-mail.com:UNSIGNED_CAMPAIGN-618d615066c6445d2a0e947f:610aa31bfaf8743c84887869:mailgun
+Received: by 07e2e6248834 with HTTP id 686992d48f28aa44797ca207; Sat, 05 Jul 2025
+ 21:02:12 GMT
+X-Mailgun-Sending-Ip: 161.38.201.94
+Date: Sat, 05 Jul 2025 21:02:12 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="7d686f1ea6cb8709837edd3f54f13fbe4cb777abaf8bad4ffa8a019e68f2"
+Subject: Slow News - Scenic Routes Center for Bicycle Culture
+From: Scenic Routes Community Bicycle Center <info@scenicroutessf.com>
+To: jbeaman@gmail.com
+X-Mailgun-Tag: UNSIGNED_CAMPAIGN
+X-Mailgun-Tag: 618d615066c6445d2a0e947f
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+message-id: <686992be230d32367079ba38.618d615066c6445d2a0e947f@mgcp03.squarespace-mail.com>
+Feedback-ID: b_6867265d93049403844c3902:618d615066c6445d2a0e947f:mailgun
+X-Website-Id: 618d615066c6445d2a0e947f
+List-Unsubscribe: <https://campaign-preferences.com/unsubscribe/5KFPc4F3ObBC8vi63pTx0AdgSymjvDcJyJRLzZg-6TXtMltMQOGvFc4wbvVcvLApOi0Kddp4EcltXiZTfEIawX12J8vmbxKGGL82mkCgF7G9Zdicu-ag-Zv1ojHaApcKVLzEIcL7QvcpKI0XSAPi5gprf84w24WiOPvsnqx4mohSG6827gaqAN5_3eqZuafeod9zBAIgvs7v3kk01guU0hwQMC3rp2VY50k3rNFPkZ4FhX5La8kpBhk5Lo8mkNAEcMKWegOM1rgq7ZWhpkkC_f9PyuyhY858TMDM-_X2fzNaZjLYPmRxBdtDjJW-7WOLO9liyXvU8GbetLA09lQa_JzeVaD4jyMZUi_mmKKCeS_CjXEfm8WGIXM=>
+sender: Scenic Routes Community Bicycle Center <info@scenicroutessf.com>
+X-Mailgun-Variables: {"emailMessageId": "686992be230d32367079ba38", "mailingId":
+ "b_6867265d93049403844c3902", "websiteId": "618d615066c6445d2a0e947f"}
+
+--7d686f1ea6cb8709837edd3f54f13fbe4cb777abaf8bad4ffa8a019e68f2
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+<https://www.scenicroutessf.com/?ss_source=3Dsscampaigns&ss_campaign_id=3D6=
+867265d93049403844c3902&ss_email_id=3D686992be230d32367079ba38&ss_campaign_=
+name=3DSlow+News+-+Scenic+Routes+Center+for+Bicycle+Culture&ss_campaign_sen=
+t_date=3D2025-07-05T21%3A02%3A12Z> Take 10, June 5th 2025 Slow News. Hey Ne=
+ighbors! May I introduce to you the =E2=80=9CScenic Routes Center for Bicyc=
+le Culture.=E2=80=9D Wait, what? Isn=E2=80=99t this Scenic Routes Community=
+ Bicycle Center? Well yes, it is, and it always will be, but it is also now=
+ the Center for Bicycle Culture. And in six months it might be something el=
+se. We like to keep our options open and hold our truths lightly over here.=
+ You never know what you=E2=80=99re going to get when you walk in the doors=
+ of 521 Balboa, but we will always give you our authenticity, attention, an=
+d time. Our new little name means nothing except some additions to our stic=
+ker and merch collection, but it does beg the question, what is bicycle cul=
+ture? What is the bicycle culture that we want to promote when people walk =
+through the doors of our shop, when people look at our instagram, or read o=
+ur newsletter? What we really want is for people to feel safe. Safe to ask =
+their questions, safe to be new at something, safe from the casual violence=
+ of motor vehicles, and safe to participate in an activity that requires us=
+ to move our bodies in ways that sometimes feel uncomfortable. We want the =
+culture of bicycles to be one that is radically opposed to the extractive, =
+capitalist, often soul crushing world that we live in. Our bikes are our mo=
+des of transportation, our means of exercise, and beautiful pieces of art w=
+ork, but they are also a symbol that says =E2=80=9CHey! I am daring to live=
+ outside the status quo.=E2=80=9D Being a part of the bicycle culture that =
+Scenic Routes hopes to promote doesn=E2=80=99t even necessarily mean riding=
+ a bike all that often. As someone who is chronically ill, there are months=
+ that go by where the furthest my bike travels is from my house to the bike=
+ shop. Seven whole blocks. But what a thrilling way to commute to work, fee=
+l the wind in my hair, and move my body before sitting down to work on othe=
+r people=E2=80=99s bikes for the day. The thrill isn=E2=80=99t about the sp=
+eed or the distance or the difficulty, but the feeling of floating over the=
+ city streets and watching the buildings blur together as you turn corner a=
+fter corner. Our bicycle culture is about allowing yourself the opportunity=
+ to connect to your physical body in a joyful way. Part of that joy is abou=
+t reimagining what bikes can look like. If you=E2=80=99ve walked into the s=
+hop recently, you might have noticed bright pink and yellow frames with pur=
+ple tires and blue cable housing and little star shaped beads adorning them=
+=2E One new customer thought we excl=
+usively had children=E2=80=99s bikes. But=
+ just because our bikes are shockingly cute, it doesn't mean they aren=E2=
+=80=99t capable. They are well equipped to take you on all the rides your h=
+eart desires, even if those desires change day to day. If some days your he=
+art=E2=80=99s desires are to ride up Mount Tam and watch the fog roll over =
+the hills and other days your heart=E2=80=99s desires are to cruise to the =
+farmer=E2=80=99s market and fill your basket with stone fruit and fresh bak=
+ed bread, our bikes are the ones for you, and our bicycle culture is the on=
+e for you. Our bicycle culture is about reimagining the bounds of what bike=
+s can be used for, along with what they can look like. The newest addition =
+to my gaggle of bikes is a front bucket Larry v. Harry Bullit, bought just =
+to cart my giant puppy around. Molly Haden flies around the city on her car=
+go bike with people, plants, and pressure cargo every day of the week, and =
+the countless cargo bike parents doing morning drop off via bike instead of=
+ car are sweet reminders that cities are navigable without the constraints =
+of a motor vehicle. In fact, not only is the city navigable, but it is a so=
+urce of immense joy when you aren=E2=80=99t stuck behind red lights in a me=
+tal box. Running your daily errands while pedaling your legs isn=E2=80=99t =
+just a means of movement, it is a means of resistance. That is what our bic=
+ycle culture is about. Our bicycle culture is about reimagining the bounds =
+of what bikes can be used for, along with what they can look like. The newe=
+st addition to my gaggle of bikes is a front bucket Larry v. Harry Bullitt,=
+ bought just to cart my giant puppy around. Molly Haden flies around the ci=
+ty on her cargo bike with people, plants, and pressure cargo every day of t=
+he week, and the countless cargo bike parents doing morning drop off via bi=
+ke instead of car are sweet reminders that cities are navigable without the=
+ constraints of a motor vehicle. In fact, not only is the city navigable, b=
+ut it is a source of immense joy when you aren=E2=80=99t stuck behind red l=
+ights in a metal box. Running your daily errands while pedaling your legs i=
+sn=E2=80=99t just a means of movement, it is a means of resistance. That is=
+ what our bicycle culture is about. There is a place for you within the wor=
+ld of bicycles. This magical tool is not reserved for athletes and children=
+=2E It is for everyone, in every season=
+ of their lives. This month at Scenic=20=
+Routes. Things are happening. Community is happening: Thursday, July 10th, =
+7:30pm - NIGHT MOVES COMMUNITY BIKE RIDE Join us for a bop to the beach. We=
+ will meet at the shop, meander through Golden Gate Park, and post up Ocean=
+ Beach to (hopefully) watch the sun set and listen to the waves crash. I=E2=
+=80=99m making homemade fudge (I just bought a candy thermometer and I=E2=
+=80=99m really excited about it haha!) and we will be serving tea. Bring a =
+mug, warm clothes, and bike lights if you have them. This is a beginner fri=
+endly, good times, slow rollin=E2=80=99 kind of ride. We=E2=80=99ll see you=
+ there! Meet at 7:15, Roll at 7:30. Thursday, July 17th, 7:00pm Rotating Me=
+chanic=E2=80=99s Class - ALL ABOUT BRAKES! Come learn all the ways in which=
+ your bike stops rollin=E2=80=99. Rim Brakes, Disc Brakes, Mechanical Brake=
+s, Hydraulic Brakes, All about BRAKES! Learn how to tell when your pads nee=
+d changing, how to use your barrel adjusters, and how to skid out like a 12=
+ year old boy trying to impress his crush. Sign up here: Class Signup  <htt=
+ps://www.scenicroutessf.com/goodsandclasses/classes?ss_source=3Dsscampaigns=
+&ss_campaign_id=3D6867265d93049403844c3902&ss_email_id=3D686992be230d323670=
+79ba38&ss_campaign_name=3DSlow+News+-+Scenic+Routes+Center+for+Bicycle+Cult=
+ure&ss_campaign_sent_date=3D2025-07-05T21%3A02%3A12Z> Thursday, July 31st, =
+7:00pm - SCENIC ROUTES COMMUNITY NIGHT! Join us at the shop to gab and gigg=
+le and have a sweet night of friendship and connection. Bring your bike que=
+stions, your life questions, and a generous spirit. Community Night was Sce=
+nic Routes=E2=80=99 first event, and will forever be my favorite. See you t=
+here! Sunday, July 27th, 11:00am - DAY GROOVES QUEER COMMUNITY BIKE RIDE! A=
+ ride for the girls, the gays, the theys, the queens, and the queers. Every=
+one crushed last month=E2=80=99s Twin Peaks ride, but let=E2=80=99s keep th=
+ings a little more casual this month. We are going to bop around the dirt t=
+rails in the park, and post up at the Fly Wheel Coffee Kiosk for some giggl=
+ing and gossiping to end the day. Meet at 10:45, Roll at 11:00. P.S. Starti=
+ng in August, Scenic Routes will have a new monthly ride geared towards fam=
+ilies! We will meet outside the Conservatory of Flowers on JFK, cruise arou=
+nd the car-free areas of the park, and end somewhere for a little picnic an=
+d a story time! The ride will be the first Sunday of every month at 9:00am.=
+ More details to come, but I=E2=80=99m really excited for this new addition=
+ to our calendar! I hope you=E2=80=99re all finding pockets of sunshine in =
+our foggy little neighborhood, and basking in the warmth of your community.=
+ We=E2=80=99ll see you soon :) Ayla Visit Our Site!  <https://www.scenicrou=
+tessf.com/about?ss_source=3Dsscampaigns&ss_campaign_id=3D6867265d9304940384=
+4c3902&ss_email_id=3D686992be230d32367079ba38&ss_campaign_name=3DSlow+News+=
+-+Scenic+Routes+Center+for+Bicycle+Culture&ss_campaign_sent_date=3D2025-07-=
+05T21%3A02%3A12Z> Scenic Routes Community Bicycle Center, 521 Balboa Street=
+, San Francisco, United States Powered by Squarespace <https://www.squaresp=
+ace.com?channel=3Dproduct_refer&subchannel=3Dcustomer&source=3Demail_campai=
+gns_button&campaign=3D618d615066c6445d2a0e947f&utm_medium=3Dproduct_refer&u=
+tm_source=3Demail_campaigns_button&ss_source=3Dsscampaigns&ss_campaign_id=
+=3D6867265d93049403844c3902&ss_email_id=3D686992be230d32367079ba38&ss_campa=
+ign_name=3DSlow+News+-+Scenic+Routes+Center+for+Bicycle+Culture&ss_campaign=
+_sent_date=3D2025-07-05T21%3A02%3A12Z> Unsubscribe  <https://campaign-prefe=
+rences.com/unsubscribe/srWYWUrcbx7TpGe5xUDcaoxf4LWuyl69Suwv5gznAPftngJ0_CHp=
+CWDtsEScPAKdz0zB-CbBW-aw_wu8zH-XhmxXnpQowKhYEByDOnZRM7sb9yK1Y69aGQBLnEFU-v8=
+f42oSeWuhqp5t3m_yNVdK-_CToyGzzuoC7sVU6ct-bxx_ZNqyF2LIuNBZOhpAReKyIr4NaTXXyp=
+RiFLZ2qNkGUp77lQ_nnypug623vnrS9rK7OWiaL_oAEWZkYtGDV2bs2_oFLAkoaG2GhWUnar7Hv=
+p8RVOKqZFcsXQW-r7BPWBS1G-h6T9D31T4Nh44k5c2sge4CoGkPjwm6Zz40AWR9mUMQtDMBNHAo=
+RqovKMy8pUYTDx3XT3Q14us=3D>
+--7d686f1ea6cb8709837edd3f54f13fbe4cb777abaf8bad4ffa8a019e68f2
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" lang=3D"en-=
+US" xml:lang=3D"en-US">
+ <head>
+  <title data-ignore-plain-text>Slow News - Scenic Routes Center for Bicycl=
+e Culture</title>
+  <meta http-equiv=3D"content-type" content=3D"text/html; charset=3Dutf-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1, maximum-scale=3D1">
+  <meta name=3D"format-detection" content=3D"address=3Dno"> <!--[if (gte ms=
+o 9)|(IE)]>
+    <style type=3D"text/css" media=3D"screen">
+      li {
+        text-indent: -1em;
+      }
+    </style>
+    <![endif]-->
+  <style type=3D"text/css" media=3D"all">
+      body,
+=2Esection-text-area,
+=2Esection-text-area-wrapper,
+=2Esection-text-cell {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+}
+body {
+    width: 100% !important;
+    min-width: 100% !important;
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    mso-line-height-rule: exactly;
+}
+p {
+    margin-block: 0;
+}
+@media only screen and (max-width:  593px ) {
+    table#newsletter-table {
+        border: 0 !important;
+    }
+    table#newsletter-email {
+        width: 100% !important;
+    }
+    img.section-scaleable-image,
+    img.section-empty-img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    .bg-none {
+        background: none !important;
+    }
+    .hauto {
+        height: auto !important;
+    }
+    .show-desktop-only {
+        display: none !important;
+    }
+    .show-mobile-only {
+        display: block !important;
+        float: none !important;
+        line-height: auto !important;
+        max-height: inherit !important;
+        max-width: inherit !important;
+        margin-top: 0px !important;
+        overflow: visible !important;
+        visibility: inherit !important;
+        width: auto !important;
+    }
+    .stack-cell-wrap {
+        display: block !important;
+    }
+    .stack-cell-up {
+        display: table-header-group !important;
+    }
+    .stack-cell-down {
+        display: table-footer-group !important;
+    }
+    .mw100p {
+        max-width: 100% !important;
+    }
+    .section-horizontal-padding,
+    .padding-mobile-both {
+        padding-left: 22px !important;
+        padding-right: 22px !important;
+    }
+    .padding-mobile-left {
+        padding-left: 22px !important;
+    }
+    .padding-mobile-right {
+        padding-right: 22px !important;
+    }
+    .text-left {
+        text-align: left !important;
+    }
+    .text-right {
+        text-align: right !important;
+    }
+    .w100p {
+        width: 100% !important;
+    }
+}
+=2Ebutton-style-solid:hover,
+=2Ebutton-style-rounded:hover {
+    opacity: .8 !important;
+}
+a:hover {
+    text-decoration: none !important;
+}
+span.mail-merge-preview {
+    border-bottom: 2px dotted currentColor;
+    display: inline-block;
+    line-height: 1em !important;
+    margin-bottom: .125em !important;
+}
+table#newsletter-section-body .linked-site-title-link {
+    color: #0e8ac4 !important;
+}
+#header-header-section-split-left-0 .brand-name .linked-site-title-link {
+    color: #272727;
+    text-decoration: none;
+}
+#footer-footer-section-stacked-top-0 .brand-name .linked-site-title-link {
+    color: #000;
+    text-decoration: none;
+}
+#footer-footer-section-stacked-top-0 .footer-text .linked-site-title-link {
+    color: #0e8ac4;
+}
+body.renderedPreview #line-line-section-0 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-2 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-14 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+#button-button-section-20 .button-style-outline:hover {
+    background-color: #000 !important;
+    border: 1px solid #000 !important;
+}
+#button-button-section-20 .button-style-outline:hover .button-section-label=
+ {
+    color: #fff !important;
+}
+body.renderedPreview #line-line-section-24 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+#button-button-section-25 .button-style-outline:hover {
+    background-color: #000 !important;
+    border: 1px solid #000 !important;
+}
+#button-button-section-25 .button-style-outline:hover .button-section-label=
+ {
+    color: #fff !important;
+}
+body.renderedPreview #line-line-section-26 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+
+    </style> <!--[if mso]>
+    <noscript>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    </noscript>
+    <![endif]--> <!--[if (mso)|(mso 16)]>
+      <style type=3D"text/css">
+        a {text-decoration: none;}
+      </style>
+    <![endif]-->
+ </head>
+ <body style=3D"padding:0;margin:0;text-align:center;background-color:#fff;=
+">
+  <table role=3D"article" aria-label=3D"Slow News - Scenic Routes Center fo=
+r Bicycle Culture" lang=3D"en-US" cellpadding=3D"0" cellspacing=3D"0" borde=
+r=3D"0" align=3D"center" id=3D"newsletter-table" style=3D"font-size:16px;fo=
+nt-weight:normal;width:100%;padding:0px;background-color:#fff;border-top:44=
+px solid #fff;border-bottom:44px solid #fff;margin:0 auto;text-align:center=
+;table-layout:fixed;">
+   <tbody>
+    <tr>
+     <td align=3D"center" valign=3D"top" bgcolor=3D"#FFFFFF" id=3D"newslett=
+er-cell" style=3D"font-size:.9375em;">
+      <div data-ignore-plain-text class=3D"newsletter-preview-text" style=
+=3D"color:transparent;display:none !important;height:0;max-height:0;max-wid=
+th:0;opacity:0;overflow:hidden;mso-hide:all;visibility:hidden;width:0;">
+       Hi Neighbors, Happy July! =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F
+      </div>
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"594"=
+ bgcolor=3D"#D9E5DD" id=3D"newsletter-email">
+       <tbody>
+        <tr>
+         <td align=3D"center" valign=3D"top" id=3D"newsletter-email-wrapper=
+" class=3D"fixed-sans">
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-header">
+           <tbody>
+            <tr>
+             <td align=3D"center" valign=3D"middle" id=3D"newsletter-sectio=
+n-header-cell">
+              <div id=3D"header-header-section-split-left-0">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"header-se=
+ction header-section-split section-content" style=3D"background-color:trans=
+parent;">
+                <tbody>
+                 <tr>
+                  <td class=3D"section-content-cell" style=3D"padding-top:2=
+2px;padding-right:22px;padding-bottom:0px;padding-left:22px;">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                    <tbody>
+                     <tr>
+                      <td align=3D"left" valign=3D"middle" width=3D"50%" cl=
+ass=3D"section-text-area"><a class=3D"brand-logo-link" href=3D"https://mgcp=
+03.engage.squarespace-mail.com/r?m=3D686992be230d32367079ba38&amp;u=3Dhttps=
+%3A%2F%2Fwww.scenicroutessf.com%2F%3Fss_source%3Dsscampaigns%26ss_campaign_=
+id%3D6867265d93049403844c3902%26ss_email_id%3D686992be230d32367079ba38%26ss=
+_campaign_name%3DSlow%2BNews%2B-%2BScenic%2BRoutes%2BCenter%2Bfor%2BBicycle=
+%2BCulture%26ss_campaign_sent_date%3D2025-07-05T21%253A02%253A12Z&amp;w=3D6=
+18d615066c6445d2a0e947f&amp;c=3Db_6867265d93049403844c3902&amp;l=3Den-US&am=
+p;s=3D-ojA5e4-EsO7oDt5Gjd1Ukrh2dE%3D" style=3D"color:#0e8ac4 !important;"><=
+img class=3D"brand-logo" src=3D"https://images.squarespace-cdn.com/content/=
+v1/618d615066c6445d2a0e947f/6d9767f2-4d83-4528-a527-15a5475b6d66/slow+is+fo=
+rever+logo.png" height=3D"66" alt=3D"Scenic Routes Community Bicycle Center=
+" style=3D"font-size:.5794190358467243em;display:block;border:0;text-decora=
+tion:none;line-height:0;font-weight:normal;font-family:'Andale Mono', 'Luci=
+da Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mo=
+no', Courier, monospace;color:#272727;height:auto;max-height:66px;max-width=
+:100%;width:auto;margin-left:0px;"></a></td>
+                      <td align=3D"right" valign=3D"middle" width=3D"50%" c=
+lass=3D"section-text-area"><p class=3D"email-title" style=3D"line-height:1.=
+618em;margin:0 0 1.25em 0;font-weight:normal;margin-top:0;margin-bottom:0;f=
+ont-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream =
+Vera Sans Mono', 'Liberation Mono', Courier, monospace;font-size:11px;mso-l=
+ine-height-alt:11px;color:#000;white-space:pre-wrap;margin-right:0px;"><em>=
+Take 10, June 5th 2025</em></p></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div></td>
+            </tr>
+           </tbody>
+          </table>
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-body">
+           <tbody>
+            <tr>
+             <td align=3D"center" valign=3D"top" width=3D"100%" id=3D"newsl=
+etter-section-body-cell">
+              <div id=3D"line-line-section-0">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:92%;min-width:92%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:10px;padding-right:0;p=
+adding-bottom:10px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#272727;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-1">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell" style=3D"padding-top:0px;padding-right:9px;padding-bottom:0px;pa=
+dding-left:9px;color:#272727;background-color:transparent;"><h2 style=3D"co=
+lor:inherit;margin:1.414em 0 .5em;font-weight:400;line-height:1.25em;font-s=
+ize:3.9710634675000014em;mso-line-height-alt:3.9710634675000014em;margin-to=
+p:0;margin-bottom:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sa=
+ns Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace=
+;letter-spacing:-.05em;text-align:center;">Slow News.</h2></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-2">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:95%;min-width:95%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:2px;padding-right:0;pa=
+dding-bottom:2px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"spacer-spacer-section-3">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"spacer-se=
+ction section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell" height=3D"22" style=3D"height:22px;"></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"image-image-section-below-4">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                    <tbody>
+                     <tr>
+                      <td class=3D"show-desktop-only section-spacing-left" =
+width=3D"44"></td>
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"><img class=3D"section-scaleable-image" src=3D"=
+https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/09ddb23=
+0-0414-41f2-a46d-0e9e8dd19755/Screenshot+2025-07-03+at+6.11.17%E2%80%AFPM.p=
+ng?content-type=3Dimage%2Fpng&amp;format=3D750w" width=3D"594" alt=3D"" sty=
+le=3D"font-size:.5794190358467243em;display:block;border:0;text-decoration:=
+none;line-height:0;background-color:transparent;font-weight:normal;height:a=
+uto;width:100%;max-width:100%;font-family:'Andale Mono', 'Lucida Console', =
+'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier,=
+ monospace;"></td>
+                      <td class=3D"show-desktop-only section-spacing-right"=
+ width=3D"44"></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"spacer-spacer-section-5">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"spacer-se=
+ction section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell" height=3D"22" style=3D"height:22px;"></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-6">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">Hey Neighbors!</p><p class=3D"" s=
+tyle=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25=
+em 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaV=
+u Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monos=
+pace;">May I introduce to you the =E2=80=9CScenic Routes Center for Bicycle=
+ Culture.=E2=80=9D Wait, what? Isn=E2=80=99t this Scenic Routes Community B=
+icycle Center? Well yes, it is, and it always will be, but it is also now t=
+he Center for Bicycle Culture. And in six months it might be something else=
+=2E We like to keep our options open an=
+d hold our truths lightly over here. Y=
+ou never know what you=E2=80=99re going to get when you walk in the doors o=
+f 521 Balboa, but we will always give you our authenticity, attention, and =
+time.&nbsp;</p><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-=
+height:1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-bottom:0;font-=
+family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera=
+ Sans Mono', 'Liberation Mono', Courier, monospace;">Our new little name me=
+ans nothing except some additions to our sticker and merch collection, but =
+it does beg the question, what is bicycle culture? What is the bicycle cult=
+ure that we want to promote when people walk through the doors of our shop,=
+ when people look at our instagram, or read our newsletter? What we really =
+want is for people to feel safe. Safe to ask their questions, safe to be ne=
+w at something, safe from the casual violence of motor vehicles, and safe t=
+o participate in an activity that requires us to move our bodies in ways th=
+at sometimes feel uncomfortable. We want the culture of bicycles to be one =
+that is radically opposed to the extractive, capitalist, often soul crushin=
+g world that we live in. Our bikes are our modes of transportation, our mea=
+ns of exercise, and beautiful pieces of art work, but they are also a symbo=
+l that says =E2=80=9CHey! I am daring to live outside the status quo.=E2=80=
+=9D</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"spacer-spacer-section-7">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"spacer-se=
+ction section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell" height=3D"22" style=3D"height:22px;"></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"image-image-section-below-8">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                    <tbody>
+                     <tr>
+                      <td class=3D"show-desktop-only section-spacing-left" =
+width=3D"44"></td>
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"><img class=3D"section-scaleable-image" src=3D"=
+https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/49d911e=
+e-e971-4bdc-91b1-90dd313a7b60/2025-06-08-5.jpg?content-type=3Dimage%2Fjpeg&=
+amp;format=3D750w" width=3D"594" alt=3D"" style=3D"font-size:.5794190358467=
+243em;display:block;border:0;text-decoration:none;line-height:0;background-=
+color:transparent;font-weight:normal;height:auto;width:100%;max-width:100%;=
+font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream=
+ Vera Sans Mono', 'Liberation Mono', Courier, monospace;"></td>
+                      <td class=3D"show-desktop-only section-spacing-right"=
+ width=3D"44"></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"spacer-spacer-section-9">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"spacer-se=
+ction section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell" height=3D"22" style=3D"height:22px;"></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-10">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">Being a part of the bicycle cultu=
+re that Scenic Routes hopes to promote doesn=E2=80=99t even necessarily mea=
+n riding a bike all that often. As someone who is chronically ill, there ar=
+e months that go by where the furthest my bike travels is from my house to =
+the bike shop. Seven whole blocks. But what a thrilling way to commute to w=
+ork, feel the wind in my hair, and move my body before sitting down to work=
+ on other people=E2=80=99s bikes for the day. The thrill isn=E2=80=99t abou=
+t the speed or the distance or the difficulty, but the feeling of floating =
+over the city streets and watching the buildings blur together as you turn =
+corner after corner. Our bicycle culture is about allowing yourself the opp=
+ortunity to connect to your physical body in a joyful way. Part of that joy=
+ is about reimagining what bikes can look like. If you=E2=80=99ve walked in=
+to the shop recently, you might have noticed bright pink and yellow frames =
+with purple tires and blue cable housing and little star shaped beads adorn=
+ing them. One new customer thought we exclusively had children=E2=80=99s bi=
+kes. But just because our bikes are shockingly cute, it doesn't mean they a=
+ren=E2=80=99t capable. They are well equipped to take you on all the rides =
+your heart desires, even if those desires change day to day. If some days y=
+our heart=E2=80=99s desires are to ride up Mount Tam and watch the fog roll=
+ over the hills and other days your heart=E2=80=99s desires are to cruise t=
+o the farmer=E2=80=99s market and fill your basket with stone fruit and fre=
+sh baked bread, our bikes are the ones for you, and our bicycle culture is =
+the one for you.&nbsp;</p><p style=3D"color:inherit;font-size:.9375em;margi=
+n:0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Consol=
+e', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Cour=
+ier, monospace;line-height:1.8;margin-top:0pt;margin-bottom:0pt;" class=3D"=
+">Our bicycle culture is about reimagining the bounds of what bikes can be =
+used for, along with what they can look like. The newest addition to my gag=
+gle of bikes is a front bucket Larry v. Harry Bullit, bought just to cart m=
+y giant puppy around. Molly Haden flies around the city on her cargo bike w=
+ith people, plants, and pressure cargo every day of the week, and the count=
+less cargo bike parents doing morning drop off via bike instead of car are =
+sweet reminders that cities are navigable without the constraints of a moto=
+r vehicle. In fact, not only is the city navigable, but it is a source of i=
+mmense joy when you aren=E2=80=99t stuck behind red lights in a metal box. =
+Running your daily errands while pedaling your legs isn=E2=80=99t just a me=
+ans of movement, it is a means of resistance. That is what our bicycle cult=
+ure is about.&nbsp;&nbsp;</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"image-image-section-thumbnail-11">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" align=3D"center" bgcolor=3D"transparent" c=
+lass=3D"image-section thumbnail-layout section-content">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-image-cell section-content-cell section-hoverable-image" data-aspect=3D"=
+ORIGINAL" style=3D"padding:0;"><img class=3D"section-thumbnail-image" src=
+=3D"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/667=
+576ae-6a4f-4a03-acaa-4a4cc9a64307/2025-06-14-1+%281%29.jpg?content-type=3Di=
+mage%2Fjpeg&amp;format=3D750w" width=3D"175.20000000000002" style=3D"font-s=
+ize:.5794190358467243em;display:block;border:0;text-decoration:none;line-he=
+ight:0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'Dej=
+aVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mon=
+ospace;height:auto;max-width:100%;max-height:250px;width:175.20000000000002=
+px;" alt=3D""></td>
+                      <td width=3D"0" height=3D"0"></td>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-image-cell section-content-cell section-hoverable-image" data-aspect=3D"=
+ORIGINAL" style=3D"padding:0;"><img class=3D"section-thumbnail-image" src=
+=3D"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/b81=
+3cb3e-b2e3-48f2-be8b-e01ef2ed3c73/2025-05-11-3.jpg?content-type=3Dimage%2Fj=
+peg&amp;format=3D750w" width=3D"175.20000000000002" style=3D"font-size:.579=
+4190358467243em;display:block;border:0;text-decoration:none;line-height:0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;h=
+eight:auto;max-width:100%;max-height:250px;width:175.20000000000002px;" alt=
+=3D""></td>
+                      <td width=3D"0" height=3D"0"></td>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-image-cell section-content-cell section-hoverable-image" data-aspect=3D"=
+ORIGINAL" style=3D"padding:0;"><img class=3D"section-thumbnail-image" src=
+=3D"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/076=
+83087-b660-4537-bba8-5007a186b7dc/2025-05-02-12.jpg?content-type=3Dimage%2F=
+jpeg&amp;format=3D750w" width=3D"175.20000000000002" style=3D"font-size:.57=
+94190358467243em;display:block;border:0;text-decoration:none;line-height:0;=
+font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu San=
+s Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;=
+height:auto;max-width:100%;max-height:250px;width:175.20000000000002px;" al=
+t=3D""></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-12">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font=
+-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mo=
+no', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;line=
+-height:1.8;margin-top:0pt;margin-bottom:0pt;" class=3D"">Our bicycle cultu=
+re is about reimagining the bounds of what bikes can be used for, along wit=
+h what they can look like. The newest addition to my gaggle of bikes is a f=
+ront bucket Larry v. Harry Bullitt, bought just to cart my giant puppy arou=
+nd. Molly Haden flies around the city on her cargo bike with people, plants=
+, and pressure cargo every day of the week, and the countless cargo bike pa=
+rents doing morning drop off via bike instead of car are sweet reminders th=
+at cities are navigable without the constraints of a motor vehicle. In fact=
+, not only is the city navigable, but it is a source of immense joy when yo=
+u aren=E2=80=99t stuck behind red lights in a metal box. Running your daily=
+ errands while pedaling your legs isn=E2=80=99t just a means of movement, i=
+t is a means of resistance. That is what our bicycle culture is about.&nbsp=
+;&nbsp;</p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;=
+font-weight:normal;height:1.618em;font-family:'Andale Mono', 'Lucida Consol=
+e', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Cour=
+ier, monospace;line-height:1.8;margin-top:0pt;margin-bottom:0pt;" class=3D"=
+"></p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-=
+weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mon=
+o', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-=
+height:1.8;margin-top:0pt;margin-bottom:0pt;" class=3D"">There is a place f=
+or <em>you</em> within the world of bicycles. This magical tool is not rese=
+rved for athletes and children. It is for everyone, in every season of thei=
+r lives.&nbsp;</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"spacer-spacer-section-13">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"spacer-se=
+ction section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell" height=3D"22" style=3D"height:22px;"></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-14">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:97%;min-width:97%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:3px;padding-right:0;pa=
+dding-bottom:3px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-15">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;margin-bottom:0;=
+font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream=
+ Vera Sans Mono', 'Liberation Mono', Courier, monospace;">This month at Sce=
+nic Routes. Things are happening. Community is happening:</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"spacer-spacer-section-16">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"spacer-se=
+ction section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell" height=3D"22" style=3D"height:22px;"></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-17">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p style=3D"color:inherit;font-size:.9375em;line-height:1.618em;marg=
+in:0 0 1.25em 0;font-weight:normal;margin-top:0;font-family:'Andale Mono', =
+'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberati=
+on Mono', Courier, monospace;text-align:center;" class=3D""><strong>Thursda=
+y, July 10th, 7:30pm</strong> - NIGHT MOVES COMMUNITY BIKE RIDE&nbsp;</p><p=
+ style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:n=
+ormal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bit=
+stream Vera Sans Mono', 'Liberation Mono', Courier, monospace;text-align:ce=
+nter;line-height:1.8;margin-top:0pt;margin-bottom:0pt;" class=3D"">Join us =
+for a bop to the beach. We will meet at the shop, meander through Golden Ga=
+te Park, and post up Ocean Beach to (hopefully) watch the sun set and liste=
+n to the waves crash. I=E2=80=99m making homemade fudge (I just bought a ca=
+ndy thermometer and I=E2=80=99m really excited about it haha!) and we will =
+be serving tea. Bring a mug, warm clothes, and bike lights if you have them=
+=2E This is a beginner friendly, goo=
+d times, slow rollin=E2=80=99 kind of rid=
+e. We=E2=80=99ll see you there!&nbsp;</p><p style=3D"color:inherit;font-siz=
+e:.9375em;margin:0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono',=
+ 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberat=
+ion Mono', Courier, monospace;text-align:center;line-height:1.8;margin-top:=
+0pt;margin-bottom:0pt;" class=3D"">Meet at 7:15, Roll at 7:30.</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"spacer-spacer-section-18">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"spacer-se=
+ction section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell" height=3D"22" style=3D"height:22px;"></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-19">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p style=3D"color:inherit;font-size:.9375em;line-height:1.618em;marg=
+in:0 0 1.25em 0;font-weight:normal;margin-top:0;font-family:'Andale Mono', =
+'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberati=
+on Mono', Courier, monospace;text-align:center;" class=3D""><strong>Thursda=
+y, July 17th, 7:00pm Rotating Mechanic=E2=80=99s Class</strong> - ALL ABOUT=
+ BRAKES!</p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0=
+;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sa=
+ns Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace=
+;line-height:1.8;margin-top:0pt;margin-bottom:0pt;" class=3D"">Come learn a=
+ll the ways in which your bike stops rollin=E2=80=99. Rim Brakes, Disc Brak=
+es, Mechanical Brakes, Hydraulic Brakes, All about BRAKES! Learn how to tel=
+l when your pads need changing, how to use your barrel adjusters, and how t=
+o skid out like a 12 year old boy trying to impress his crush. Sign up here=
+:&nbsp;</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"button-button-section-20">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"button-se=
+ction section-content" style=3D"width:100%;background-color:transparent;">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell section-text-area" style=3D"padding-top:22px;padding-right:22px=
+;padding-bottom:22px;padding-left:22px;"><a href=3D"https://mgcp03.engage.s=
+quarespace-mail.com/r?m=3D686992be230d32367079ba38&amp;u=3Dhttps%3A%2F%2Fww=
+w.scenicroutessf.com%2Fgoodsandclasses%2Fclasses%3Fss_source%3Dsscampaigns%=
+26ss_campaign_id%3D6867265d93049403844c3902%26ss_email_id%3D686992be230d323=
+67079ba38%26ss_campaign_name%3DSlow%2BNews%2B-%2BScenic%2BRoutes%2BCenter%2=
+Bfor%2BBicycle%2BCulture%26ss_campaign_sent_date%3D2025-07-05T21%253A02%253=
+A12Z&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_6867265d93049403844c3902&am=
+p;l=3Den-US&amp;s=3Dg0b_4HQsl_3qkaIqnP3OLgKkRXk%3D" class=3D"button-section=
+-box button-style-solid" style=3D"color:#0e8ac4 !important;display:inline-b=
+lock;line-height:11px;margin:0;mso-padding-alt:0;text-align:center;text-dec=
+oration:none;transition:.15s;width:auto;background-color:#000;border:0;padd=
+ing:17px 0;"><i class=3D"button-section-mso" style=3D"letter-spacing:29.92p=
+x;mso-font-width:-100%;mso-text-raise:26.950000000000003px;">&nbsp;</i><spa=
+n class=3D"button-section-label" style=3D"line-height:inherit;margin:0;font=
+-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Ver=
+a Sans Mono', 'Liberation Mono', Courier, monospace;font-weight:700;color:#=
+efefef;display:inline-block;font-size:11px;min-width:1px;mso-text-raise:15.=
+95px;"><span data-letter-spacing=3D"3" style=3D"font-size:inherit;font-weig=
+ht:inherit;line-height:inherit;margin:0;letter-spacing:0.2em;">Class Signup=
+</span></span><i class=3D"button-section-mso" style=3D"letter-spacing:29.92=
+px;mso-font-width:-100%;mso-text-raise:26.950000000000003px;">&nbsp;</i></a=
+></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-21">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font=
+-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mo=
+no', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;text=
+-align:center;line-height:1.8;margin-top:0pt;margin-bottom:0pt;" class=3D""=
+><strong>Thursday, July 31st, 7:00pm - </strong>SCENIC ROUTES COMMUNITY NIG=
+HT!</p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font=
+-weight:normal;height:1.618em;font-family:'Andale Mono', 'Lucida Console', =
+'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier,=
+ monospace;text-align:center;line-height:1.8;margin-top:0pt;margin-bottom:0=
+pt;" class=3D""></p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 =
+1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'D=
+ejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, m=
+onospace;text-align:center;line-height:1.8;margin-top:0pt;margin-bottom:0pt=
+;" class=3D"">Join us at the shop to gab and giggle and have a sweet night =
+of friendship and connection. Bring your bike questions, your life question=
+s, and a generous spirit. Community Night was Scenic Routes=E2=80=99 first =
+event, and will forever be my favorite. See you there!&nbsp;</p><p style=3D=
+"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;fo=
+nt-weight:normal;height:1.618em;font-family:'Andale Mono', 'Lucida Console'=
+, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courie=
+r, monospace;text-align:center;" class=3D""></p><p style=3D"color:inherit;f=
+ont-size:.9375em;margin:0 0 1.25em 0;font-weight:normal;font-family:'Andale=
+ Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', '=
+Liberation Mono', Courier, monospace;text-align:center;line-height:1.8;marg=
+in-top:0pt;margin-bottom:0pt;" class=3D""><strong>Sunday, July 27th, 11:00a=
+m - </strong>DAY GROOVES QUEER COMMUNITY BIKE RIDE!&nbsp;</p><p style=3D"co=
+lor:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:normal;height=
+:1.618em;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', '=
+Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;text-align=
+:center;line-height:1.8;margin-top:0pt;margin-bottom:0pt;" class=3D""></p><=
+p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:=
+normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bi=
+tstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;text-align:c=
+enter;line-height:1.8;margin-top:0pt;margin-bottom:0pt;" class=3D"">A ride =
+for the girls, the gays, the theys, the queens, and the queers. Everyone cr=
+ushed last month=E2=80=99s Twin Peaks ride, but let=E2=80=99s keep things a=
+ little more casual this month. We are going to bop around the dirt trails =
+in the park, and post up at the Fly Wheel Coffee Kiosk for some giggling an=
+d gossiping to end the day.&nbsp;</p><p style=3D"color:inherit;font-size:.9=
+375em;margin:0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Lu=
+cida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation =
+Mono', Courier, monospace;text-align:center;line-height:1.8;margin-top:0pt;=
+margin-bottom:0pt;" class=3D"">Meet at 10:45, Roll at 11:00.&nbsp;</p><p st=
+yle=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25e=
+m 0;font-weight:normal;height:1.618em;font-family:'Andale Mono', 'Lucida Co=
+nsole', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', =
+Courier, monospace;text-align:center;" class=3D""></p><p style=3D"color:inh=
+erit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:normal;font-family:'=
+Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mo=
+no', 'Liberation Mono', Courier, monospace;line-height:1.8;margin-top:0pt;m=
+argin-bottom:0pt;" class=3D"">P.S. Starting in August, Scenic Routes will h=
+ave a new monthly ride geared towards families! We will meet outside the Co=
+nservatory of Flowers on JFK, cruise around the car-free areas of the park,=
+ and end somewhere for a little picnic and a story time! The ride will be t=
+he first Sunday of every month at 9:00am. More details to come, but I=E2=80=
+=99m really excited for this new addition to our calendar!&nbsp;</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"image-image-section-below-22">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                    <tbody>
+                     <tr>
+                      <td class=3D"show-desktop-only section-spacing-left" =
+width=3D"44"></td>
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"><img class=3D"section-scaleable-image" src=3D"=
+https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/808c248=
+3-3ce0-4ee0-b2a2-46fce3284a47/2025-06-22-2.jpg?content-type=3Dimage%2Fjpeg&=
+amp;format=3D750w" width=3D"594" alt=3D"" style=3D"font-size:.5794190358467=
+243em;display:block;border:0;text-decoration:none;line-height:0;background-=
+color:transparent;font-weight:normal;height:auto;width:100%;max-width:100%;=
+font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream=
+ Vera Sans Mono', 'Liberation Mono', Courier, monospace;"></td>
+                      <td class=3D"show-desktop-only section-spacing-right"=
+ width=3D"44"></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-23">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">I hope you=E2=80=99re all finding=
+ pockets of sunshine in our foggy little neighborhood, and basking in the w=
+armth of your community.</p><p class=3D"" style=3D"color:inherit;font-size:=
+=2E9375em;line-height:1.618em;margin:0=20=
+0 1.25em 0;font-weight:normal;font-fam=
+ily:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sa=
+ns Mono', 'Liberation Mono', Courier, monospace;">We=E2=80=99ll see you soo=
+n :)</p>
+                   <ul data-rte-list=3D"dash" type=3D"dash" style=3D"paddin=
+g-left:25px;">
+                    <li style=3D"font-weight:normal;margin-top:0px;margin-b=
+ottom:0px;margin-left:15px;font-family:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-heigh=
+t:1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-top:0;margin-bottom=
+:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstr=
+eam Vera Sans Mono', 'Liberation Mono', Courier, monospace;">Ayla</p></li>
+                   </ul></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-24">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:96%;min-width:96%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:3px;padding-right:0;pa=
+dding-bottom:4px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"button-button-section-25">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"button-se=
+ction section-content" style=3D"width:100%;background-color:transparent;">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell section-text-area" style=3D"padding-top:22px;padding-right:22px=
+;padding-bottom:22px;padding-left:22px;"><a href=3D"https://mgcp03.engage.s=
+quarespace-mail.com/r?m=3D686992be230d32367079ba38&amp;u=3Dhttps%3A%2F%2Fww=
+w.scenicroutessf.com%2Fabout%3Fss_source%3Dsscampaigns%26ss_campaign_id%3D6=
+867265d93049403844c3902%26ss_email_id%3D686992be230d32367079ba38%26ss_campa=
+ign_name%3DSlow%2BNews%2B-%2BScenic%2BRoutes%2BCenter%2Bfor%2BBicycle%2BCul=
+ture%26ss_campaign_sent_date%3D2025-07-05T21%253A02%253A12Z&amp;w=3D618d615=
+066c6445d2a0e947f&amp;c=3Db_6867265d93049403844c3902&amp;l=3Den-US&amp;s=3D=
+lw7XTfEpGo-i31e8HxNq0Qcz_OU%3D" class=3D"button-section-box button-style-so=
+lid" style=3D"color:#0e8ac4 !important;display:inline-block;line-height:11p=
+x;margin:0;mso-padding-alt:0;text-align:center;text-decoration:none;transit=
+ion:.15s;width:auto;background-color:#000;border:0;padding:17px 0;"><i clas=
+s=3D"button-section-mso" style=3D"letter-spacing:29.92px;mso-font-width:-10=
+0%;mso-text-raise:26.950000000000003px;">&nbsp;</i><span class=3D"button-se=
+ction-label" style=3D"line-height:inherit;margin:0;font-family:'Andale Mono=
+', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liber=
+ation Mono', Courier, monospace;font-weight:700;color:#efefef;display:inlin=
+e-block;font-size:11px;min-width:1px;mso-text-raise:15.95px;"><span data-le=
+tter-spacing=3D"3" style=3D"font-size:inherit;font-weight:inherit;line-heig=
+ht:inherit;margin:0;letter-spacing:0.2em;">Visit Our Site!</span></span><i =
+class=3D"button-section-mso" style=3D"letter-spacing:29.92px;mso-font-width=
+:-100%;mso-text-raise:26.950000000000003px;">&nbsp;</i></a></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-26">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:96%;min-width:96%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:2px;padding-right:0;pa=
+dding-bottom:2px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div></td>
+            </tr>
+           </tbody>
+          </table>
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-footer">
+           <tbody>
+            <tr>
+             <td align=3D"center" valign=3D"top" id=3D"newsletter-section-f=
+ooter-cell">
+              <div id=3D"footer-footer-section-stacked-top-0">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"footer-se=
+ction footer-section-stacked section-content" style=3D"background-color:tra=
+nsparent;">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"top" class=3D"section-text=
+-area section-content-cell" style=3D"padding-top:22px;padding-right:22px;pa=
+dding-bottom:22px;padding-left:22px;"><p class=3D"footer-company-info" styl=
+e=3D"line-height:1.618em;font-weight:normal;margin-top:0;font-family:'Andal=
+e Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', =
+'Liberation Mono', Courier, monospace;color:#111;font-size:11px;margin:0 0 =
+13.75px 0;padding:0;"><a style=3D"color:#111;text-decoration:none;font-size=
+:inherit;font-family:inherit;font-weight:inherit;line-height:inherit;cursor=
+:default;">Scenic Routes Community Bicycle Center, 521 Balboa Street, San F=
+rancisco, United States</a></p> <p class=3D"footer-links" style=3D"line-hei=
+ght:1.618em;font-weight:normal;font-family:'Andale Mono', 'Lucida Console',=
+ 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier=
+, monospace;font-size:11px;color:#313131;margin:0 0 13.75px 0;padding:0;">P=
+owered by <a href=3D"https://mgcp03.engage.squarespace-mail.com/r?m=3D68699=
+2be230d32367079ba38&amp;u=3Dhttps%3A%2F%2Fwww.squarespace.com%3Fchannel%3Dp=
+roduct_refer%26subchannel%3Dcustomer%26source%3Demail_campaigns_button%26ca=
+mpaign%3D618d615066c6445d2a0e947f%26utm_medium%3Dproduct_refer%26utm_source=
+%3Demail_campaigns_button%26ss_source%3Dsscampaigns%26ss_campaign_id%3D6867=
+265d93049403844c3902%26ss_email_id%3D686992be230d32367079ba38%26ss_campaign=
+_name%3DSlow%2BNews%2B-%2BScenic%2BRoutes%2BCenter%2Bfor%2BBicycle%2BCultur=
+e%26ss_campaign_sent_date%3D2025-07-05T21%253A02%253A12Z&amp;w=3D618d615066=
+c6445d2a0e947f&amp;c=3Db_6867265d93049403844c3902&amp;l=3Den-US&amp;s=3D8TR=
+7OxKbHw0xf-eM5qM2S73C-tg%3D" class=3D"sqsp-link" style=3D"color:#313131;tex=
+t-decoration:underline;display:inline-block;">Squarespace</a></p> <p class=
+=3D"footer-links" style=3D"line-height:1.618em;font-weight:normal;margin-bo=
+ttom:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bi=
+tstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;font-size:11=
+px;color:#313131;margin:0 0 13.75px 0;padding:0;"><a href=3D"https://mgcp03=
+=2Eengage.squarespace-mail.com/r?m=3D68=
+6992be230d32367079ba38&amp;u=3Dhttps%3=
+A%2F%2Fcampaign-preferences.com%2Funsubscribe%2FsrWYWUrcbx7TpGe5xUDcaoxf4LW=
+uyl69Suwv5gznAPftngJ0_CHpCWDtsEScPAKdz0zB-CbBW-aw_wu8zH-XhmxXnpQowKhYEByDOn=
+ZRM7sb9yK1Y69aGQBLnEFU-v8f42oSeWuhqp5t3m_yNVdK-_CToyGzzuoC7sVU6ct-bxx_ZNqyF=
+2LIuNBZOhpAReKyIr4NaTXXypRiFLZ2qNkGUp77lQ_nnypug623vnrS9rK7OWiaL_oAEWZkYtGD=
+V2bs2_oFLAkoaG2GhWUnar7Hvp8RVOKqZFcsXQW-r7BPWBS1G-h6T9D31T4Nh44k5c2sge4CoGk=
+Pjwm6Zz40AWR9mUMQtDMBNHAoRqovKMy8pUYTDx3XT3Q14us%3D&amp;w=3D618d615066c6445=
+d2a0e947f&amp;c=3Db_6867265d93049403844c3902&amp;l=3Den-US&amp;s=3DINyhvItV=
+eZl266r9aDu3ubDNa-U%3D" class=3D"unsubscribe-link" style=3D"color:#313131;t=
+ext-decoration:underline;"> <span class=3D"unsubscribe-link-text" style=3D"=
+font-size:inherit;font-weight:inherit;line-height:inherit;margin:0;">Unsubs=
+cribe</span> </a></p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div></td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table></td>
+    </tr>
+   </tbody>
+  </table> <img src=3D"https://mgcp03.engage.squarespace-mail.com/v2/a.gif?=
+m=3D686992be230d32367079ba38&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_686=
+7265d93049403844c3902&amp;s=3Dh67S2hiyvp4__vjUWhecxjNBJkg%3D" alt=3D"" widt=
+h=3D"0" height=3D"0">
+ </body>
+</html>
+--7d686f1ea6cb8709837edd3f54f13fbe4cb777abaf8bad4ffa8a019e68f2--

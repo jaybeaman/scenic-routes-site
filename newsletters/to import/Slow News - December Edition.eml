@@ -1,0 +1,1996 @@
+Delivered-To: jbeaman@gmail.com
+Received: by 2002:a05:6851:93:b0:6e5:24d9:8239 with SMTP id df19csp9577095nnb;
+        Thu, 4 Dec 2025 13:11:37 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHkCanSCKxCHmjMVoeuS0rPhpMDp8XEZnW11P0chlrtz6PXtcidTEcZNKNwm3JKbsdfK/Xd
+X-Received: by 2002:a17:90b:1a81:b0:341:88c1:6a89 with SMTP id 98e67ed59e1d1-34921049077mr3995205a91.2.1764882697062;
+        Thu, 04 Dec 2025 13:11:37 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1764882697; cv=none;
+        d=google.com; s=arc-20240605;
+        b=HwwkRhC9kRTLdrhuQSuCjdrUgoNLAmsJq40r708bGA1SNxhJE80Zfa7wn9jbLhTlkW
+         /QU33zgHAbkpoByiF82JwwASZ+wM0MTBExQr25PkY7x9QtZ9oxVEiu3nU9Gk2bhY32ac
+         bmfreps3ugehLF/WcrSBapS7Gct0WdbjnwGghyUr+EzQEyQeqzk/Vnkj0agCUdLfksDN
+         6oG48HsS+v3pfgGB84uIEvIIR7wDECxb0ga4Wv6pQRjJLjWGjuNB4Wdvszhd7i4lMtHV
+         i/iVNCaFaAC7l31S3772LWKJGOyw34AdI339/qC+ygM9XTGDPm4lI7/H4qw+yGQSw0cW
+         h9Wg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:list-unsubscribe-post:sender:message-id
+         :list-unsubscribe:to:from:subject:mime-version:date:dkim-signature
+         :dkim-signature;
+        bh=ZozUhtepVrOZAN9/BfQg0+bqm6GPyKeHfsyR02s2l3A=;
+        fh=4TbKyGIWs6U4EHh2/Sj8bLShT5RJP4c38C8Cdm/ez/E=;
+        b=EH63FlrmE2utbIKGVWA4gJvQH41782mSJXlCoUr3ZBCtInd1LIB6eYwqB4coYn4+8y
+         wuUJTGXIeNbMXbrnLNmdwUFZFUqmIdjnEkRtE0d4YvF7IzVx+bXKcvQR0nXat5wnhKqv
+         dZR8t98kXw+WyU5A1BTIdchVz4mzi0kyPS1MuPvA8RRlhM7GqkRf3elYWMx/HMJEL8Es
+         zQvz3GKF447tjhH9ZURpl80yRpzuVcFRDEbwKtfi1Ha6CIgytjuwI5V3+x8Lbc1FauYb
+         OklEd0EyWV7GRKn0sU28yGxDWmVXnzmQ9OHHj5ZnYH4txvXK96a4cLtovDXPRBTDMchU
+         wPGA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mgcp03.squarespace-mail.com header.s=squarespace-mg header.b=HqvCJ1P+;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b="EYzQ0/M3";
+       spf=pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.95 as permitted sender) smtp.mailfrom="bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com"
+Return-Path: <bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com>
+Received: from m201-95.mailgun.net (m201-95.mailgun.net. [161.38.201.95])
+        by mx.google.com with UTF8SMTPS id 41be03b00d2f7-bf6a32e2275si1081716a12.779.2025.12.04.13.11.36
+        for <jbeaman@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 04 Dec 2025 13:11:37 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.95 as permitted sender) client-ip=161.38.201.95;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mgcp03.squarespace-mail.com header.s=squarespace-mg header.b=HqvCJ1P+;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b="EYzQ0/M3";
+       spf=pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.95 as permitted sender) smtp.mailfrom="bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com"
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mgcp03.squarespace-mail.com; q=dns/txt; s=squarespace-mg; t=1764882696; x=1764889896;
+ h=List-Unsubscribe-Post: Sender: Sender: Message-Id: List-Unsubscribe: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id;
+ bh=ZozUhtepVrOZAN9/BfQg0+bqm6GPyKeHfsyR02s2l3A=;
+ b=HqvCJ1P+JvsvGZ7bXyY7aYt+mEMOOqBtUH5eRDt6uIWszr2iEpw2Fi22MahyK5vbvQWXkUxMokVB7oBYfLX46RrBIWiN+CUcGnY1p2JafN1BN0qT7UjgsQw23fo3IbWznwO3pLtLOXe2Nm1m6UhE5VsxveBiooHVfx6uN1qwPedwLwj1M7iITYtWESz8JWdQquuF9T/Nu3wxZ5RAVtg1Bl92S3JgYrXl31VZ/qK7yupqGaVlxWul3SOMWiqeD76Jg3K6cheuroavJReHtrDAgkWt3UZ6eMYTAYX8MKK2bxiCYN00UP9WGL+yA/XW5MLyefvleP1bxh+GpkMSxlrFCw==
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1764882696; x=1764889896;
+ h=List-Unsubscribe-Post: Sender: Sender: Message-Id: List-Unsubscribe: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id;
+ bh=ZozUhtepVrOZAN9/BfQg0+bqm6GPyKeHfsyR02s2l3A=;
+ b=EYzQ0/M3+GuI1gg5/nM1QEgssMu4o0mwXxxglPjaN9q3uMYl5gOszTquvrjmQYv3Q68CtZy468VBFHq3CjTKWxpClQfvQM8m18WPQCbvKFWLd9jl0rwTzOLU8gA4vPpyGlYOuDPfZ3wDkgefI3CQldYM0h8bxF7OHFhpYw3dR+w=
+X-Mailgun-Sid: WyIyZTU4NyIsImpiZWFtYW5AZ21haWwuY29tIiwiMzJjNGFjIl0=
+X-Feedback-Id: postmaster@mgcp03.squarespace-mail.com:UNSIGNED_CAMPAIGN-618d615066c6445d2a0e947f:610aa31bfaf8743c84887869:mailgun
+Received: by 46e2a142e6c834f57cd0c0df1366e43ca096422f7f694bad9b9c71cecc3571d2 with HTTP
+ id 6931f9084cae073640b29af8; Thu, 04 Dec 2025 21:11:36 GMT
+X-Mailgun-Sending-Ip: 161.38.201.95
+Date: Thu, 04 Dec 2025 21:11:36 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="c2495cc1897b1c06b7f813c0d6da0101f3aa9d1fb50ffc1144b3ea26399c"
+Subject: Slow News - December Edition
+From: Scenic Routes Community Bicycle Center <info@scenicroutessf.com>
+To: jbeaman@gmail.com
+X-Mailgun-Tag: UNSIGNED_CAMPAIGN
+X-Mailgun-Tag: 618d615066c6445d2a0e947f
+List-Unsubscribe: <https://campaign-preferences.com/unsubscribe/-sgkX6w0CP68bDCDZ1AVqLaixaGxoZuRJslTvTiGdyfKqQclCusdWZr4LNFopMnzNnRu1YJ3ms3I8jjXkdHPo0iH1yfkyd2q4GkzJs6Hl49SFMOJ1bU8W-okieQZiS9Ao15It_ZtHuD1HCf3QJDs2WAOgklESHpXteKDvVdgsMONsRojfCZg8nEl9ImRkdN7P47j62kPVWhnK-9GoVZhhxm6botmkPZaUrXScr8mI522yUWMw1-Llf07T0yl07jvKyB2C7TgXQC_kYBK78j383D2Br5cHx3xox8GHdGQKRZF-j-OUD27I6gzgwPimKZH20mPwOUgwiZFVmji2U5vKs_M-oV-n-jHYYmfMEtQMhBpCzfrTDGMrJI=>
+X-Website-Id: 618d615066c6445d2a0e947f
+Message-Id: <6931f8f9a666330af25648e5.618d615066c6445d2a0e947f@mgcp03.squarespace-mail.com>
+Sender: Scenic Routes Community Bicycle Center <info@scenicroutessf.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Feedback-Id: b_6930f0b47a39620a60513473:618d615066c6445d2a0e947f:mailgun
+X-Mailgun-Variables: {"emailMessageId": "6931f8f9a666330af25648e5", "mailingId":
+ "b_6930f0b47a39620a60513473", "websiteId": "618d615066c6445d2a0e947f"}
+
+--c2495cc1897b1c06b7f813c0d6da0101f3aa9d1fb50ffc1144b3ea26399c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+<https://www.scenicroutessf.com/?ss_source=3Dsscampaigns&ss_campaign_id=3D6=
+930f0b47a39620a60513473&ss_email_id=3D6931f8f9a666330af25648e5&ss_campaign_=
+name=3DSlow+News+-+December+Edition&ss_campaign_sent_date=3D2025-12-04T21%3=
+A11%3A34Z> Take 15, December 4th, 2025 Slow News. Hi Neighbors, Although it=
+ is undeniably clich=C3=A9 to say, I cannot believe that December is upon u=
+s; the season of dinners and parties and hosting and music and lights and f=
+enders and cold hands and muddy tires. When the sun started setting barely =
+an hour after we eat lunch, my heart lurched at the departure of warmth and=
+ iced matchas and my cats laying in the sunbeams that cast themselves acros=
+s my apartment=E2=80=99s floors. Change is often unpleasant, even when we s=
+hould be anticipating it long before it makes itself known, even when the r=
+eality of the change isn=E2=80=99t all that unpleasant at all. But I was st=
+uck in my sore mood and the unhappiness of being cold and wishing away the =
+inevitable, cyclical change of seasons. I=E2=80=99m still cold, and Lily, w=
+ho is more grandma than millenial and thinks a jacket should suffice, won=
+=E2=80=99t let us turn on the heater at the shop (and gives me dirty looks =
+when I even suggest it), but my mood has shifted. Last week, I was riding d=
+own Page Street on my way home from work, well after the dog walkers and jo=
+ggers had abandoned the lanes for the shelter of their Victorian apartments=
+=2E My tires were sticky on the wet pav=
+ement and made a delicate squelching n=
+oise as my glasses collected droplets from the foggy air. The air smelled l=
+ike the soil of a damp redwood forest and the city was so silent it was imp=
+ossible to imagine the infinite lives existing within a seven-mile-radius o=
+f me. I was alone with my bicycle surrounded by a drizzling night in the pl=
+ace that I call home, and I felt at home. My hands were cold, but only enou=
+gh to remind me that I am alive. In that moment on Page Street, I was overc=
+ome by gratitude that this absolute joy ride was my commute home from my jo=
+b doing what I love with people that I love serving my community that I lov=
+e. The winter evenings give us a reason to make soup for our neighbors, the=
+ crisp mornings make a cup of tea in bed all the more enticing, and the dar=
+k nights make even our commutes home feel magical. There is a trope in the =
+bike shop world that winter is dead. No one is riding and the work is dried=
+ up. We certainly have fewer bikes in the queue than we did six months ago,=
+ but the shop has never felt more alive to me. We are building Quercus Bike=
+s at a rate never seen before, our friend Jesper is making new Scenic Route=
+s merch, we are reimagining the layout of the shop, and our rides have more=
+ people attending every month. The thing about being a community bike shop =
+is that there is no off season. There is no off season for creating room fo=
+r connection, for rewriting the narrative of the bicycle, and for providing=
+ service to those of us who use our bikes every single day of the year, no =
+matter the weather. The shop spent the last weekend of November on Angel Is=
+land with 25 of you, braving the elements and making memories. I looked aro=
+und at the row of tents and the campers bundled up in layers and was so pro=
+ud of the world we=E2=80=99ve created - one where a ferry ride transports y=
+ou to a far away land and it only takes two days for strangers to become fr=
+iends. Please do us the honor of helping us close out the year on the highe=
+st note yet. On December 11th at 7:00pm we will be hosting the annual Sceni=
+c Routes Holiday Party. We=E2=80=99ll be moving the bikes out of the way, d=
+oning our favorite Christmas sweaters, and serving up some serious holiday =
+cheer. There will be a live three piece band, Mary=E2=80=99s famous punch, =
+a Christmas cake, and treats covering every surface of the shop to be enjoy=
+ed. You are invited to bring something to share, and we might suggest that =
+you label it=E2=80=99s allergens so our gluten free, vegan, dietary restric=
+tion freaks can partake without fear. There will be joy and company and lau=
+ghter and warmth, so much warmth (Lily might even let us turn the heater on=
+). If you can=E2=80=99t attend the Holiday Party (or even if you can!!!) pl=
+ease let us send you a Christmas Card! It means the world to us to create r=
+eal, tangible moments of joy, and this is one little way for us to show our=
+ thanks. Pop your address down below and await something besides junk-mail =
+being pushed through the mail slot. Address Form  <https://docs.google.com/=
+forms/d/e/1FAIpQLScM9rVtlkusRmV9CloHlmDfip_n7j9DZtjbEhjGCcMsYL0TXQ/viewform=
+> This Sunday, December 7th is the last Quercus Family Bike Ride of the yea=
+r. We will meet at 9:00am at the Love Blocks in front of the Conservatory o=
+f Flowers and bop down to Metson Lake for a story time in the grass. We rol=
+l at 9:15. Bring a blanket for sitting and warm clothes for wearing! We rid=
+e as slow as our slowest rider can go. Kids on balance bikes, pedal bikes, =
+and cargo bikes are all welcome. (art work by one of our regular riders). A=
+nd all month long we will be open for your bike needs, your sitting-on-our-=
+couch needs, and your holiday shopping needs. Below, I have highlighted a f=
+ew of our favorite items that would be a real treat to receive as a gift. Y=
+our grandma is going to buy you something, so why not direct her towards yo=
+ur favorite anti-profit bike shop? Or perhaps you need something for a Secr=
+et Santa you=E2=80=99re being forced to participate in - we have doodads at=
+ every price range. Or maybe this email was sent to you by your bike riding=
+, tree hugging, pot smoking commie-anarchist relative out in San Francisco =
+who=E2=80=99s trying to hint at what they want you to buy them. May we sugg=
+est a gift certificate to everyone's favorite anti-profit community bicycle=
+ center, Scenic Routes. Gift Certificates redeemed will be used exclusively=
+ for bike joy. Gift certificates never redeemed will also be used exclusive=
+ly for bike joy. Come by the shop, poke around, try things on, and listen t=
+o the Christmas vinyls spin. Joel=E2=80=99s favorite item is Full Coverage =
+Fenders. ($80) Joel says =E2=80=9CHere is why: 1- They protect you when it'=
+s raining. 2- They keep you dry and clean when the ground is wet but it=E2=
+=80=99s not raining. Riding on wet pavement sounds and feels so good when y=
+ou stay dry. 3- They keep your bike/drivetrain clean and lessen drivetrain =
+wear 4- They look so good 5- Fenders provide a perfect spot to mount your g=
+enerator taillight A $100 gift certificate would cover the cost of most fen=
+ders we sell and some of the install price of the plastic fenders.=E2=80=9D=
+ Lily=E2=80=99s favorite item is the Park Tool AWS-1 Three-Way Hex Wrench. =
+($17) Lily says =E2=80=9CI don't recommend buying gifts for your loved ones=
+: I believe you should exchange dorky handmade gifts instead, as is traditi=
+on. But, if you must buy a gift, consider the Park Tool AWS-1 Three-Way Hex=
+ Wrench. It's more comfortable to use than a multitool or the small Allen k=
+eys that come with Ikea furniture. The extra leverage is perfect for adjust=
+ing rim brakes. If you want to go all out, pair a new tool with a gift card=
+ to Scenic Routes: we love to help DIYers with that tricky final 10% of the=
+ project.=E2=80=9D Jay=E2=80=99s favorite item is the Paul Component Brake =
+Levers. ($200) Jay says =E2=80=9COkay so I'm not a gift guide person. Gift =
+guides are for people who believe in solutions, and I'm more of a problems =
+person, generally speaking. My feeling is you shouldn't buy stuff you don't=
+ need and you really shouldn't buy other people stuff they don't need, whic=
+h is basically all stuff, but here we are, alive, buying things. So if you'=
+re going to do it, buy something that lasts. Buy something that will still =
+be there when everything else has gone to hell, which it will. I've had the=
+se Paul Component brake levers on my commuter bike for years. They've been =
+through rain, grime, getting knocked over approximately ten thousand times,=
+ crashes, =E2=80=9Cthe whole catastrophe=E2=80=9D as my grandma would say. =
+And one of them broke, back before I owned a bike shop, back when I was jus=
+t a person with a broken brake lever and a telephone. I called Paul up in C=
+hico, California, and asked if I could buy the part to fix it myself. They =
+sent it to me for free. I said, look, I'm pretty hard on these things. I do=
+n't expect them to last forever. They said, we expect them to last forever.=
+ Can you imagine? Expecting something to last forever? The audacity. The be=
+autiful stupid hope of it. They've been making parts in Chico since the lat=
+e eighties. Some engineer named Paul quit his real job - his real job, as i=
+f making things with your hands isn't real - and bought a falling apart hou=
+se with a big garage and started machining components. They still make ever=
+ything there. American aluminum. Built to be fixed, not thrown away. You bu=
+y them once. You repair them. You move them from bike to bike like they're =
+family heirlooms, which I guess they are now (like the Buck 110 my Uncle Le=
+e gave me on my 10th birthday). And eventually you forget you bought them a=
+t all because they just work, quietly, asking for nothing, which is more th=
+an you can say for most things in this life.=E2=80=9D SKH=E2=80=99s favorit=
+e item is the Beverage Buddy. ($10) SKH says, =E2=80=9CThe bottle buddy cam=
+e into my life on a last minute overnighter to China Camp when Ayla gave me=
+ and Ben each one on our way out the door! It kept my stem caddy dry and my=
+ spirits high as it reminded me that even a small gesture can mean a lot. G=
+et a bottle buddy for you and a buddy and cheers to the small things and bi=
+g friendships.=E2=80=9D Nishad=E2=80=99s favorite item is a Wald/Tanaka 137=
+ or 139 Basket. ($40-60) Nishad says =E2=80=9CNothing will make you feel mo=
+re smug than riding up to your holiday potluck with that pie in your front =
+basket. Take in that freshly baked aroma as you roll down the street feelin=
+g grateful that you didn't have to give up that coveted parking spot just t=
+o get the damn pie to the party. Getting too hot for those gloves? Stop faf=
+fing about with those hard-to-reach jersey pockets - just dump 'em in the b=
+asket! We have 'em big, we have 'em small. We even have some half as tall.=
+=E2=80=9D Beaux=E2=80=99s favorite item is a Squeezy Bean BART Brake. ($8) =
+Beaux says, =E2=80=9CAs a new commuter on BART, the Squeezy Bean keeps my b=
+ike in one place and makes my ride a little less chaotic. Just slip it over=
+ your handle bar and pull it tight around your brake lever! It also functio=
+ns as a cute bracelet when relieved of its braking duties.=E2=80=9D Ben=E2=
+=80=99s favorite item is a pair of the Ornot Merino Wool Gloves. ($45) Ben =
+says =E2=80=9CI wasn=E2=80=99t a daily glove guy until picking these up. Th=
+ey=E2=80=99re great! The perfect amount of warm for San Francisco and all t=
+he grip you need. I=E2=80=99m on my third pair (lost one, burned one, don=
+=E2=80=99t ask) and they=E2=80=99re a must-replace every time.=E2=80=9D Jer=
+ry=E2=80=99s favorite item is an Arno Lashing Strap. ($8-15) Jerry says, =
+=E2=80=9CMade in Sweden, solid stainless steel buckles. Easy to adjust and =
+cinch items down snug, I=E2=80=99ve never had one slip. I use them to strap=
+ the crate that my dog rides in and other hauls of various sizes on my carg=
+o bike. They=E2=80=99re also awesome for strapping a pizza to your Wald 139=
+ basket on your Quercus. Bundle firewood, organize camp gear, strap your li=
+fe to your favorite bike or wear a 100cm Arno strap as a belt like I do. It=
+ might really save your ass one day.=E2=80=9D And as far as my favorite ite=
+m goes, I don=E2=80=99t know where I would be without my Tunitas Creative S=
+towaway Bag. ($60) Each and every one of my bikes is adorned with a little =
+bag to compliment its colorway. Nestled right against my stem and my handle=
+bars, it puts all of my treasures in perfect arm=E2=80=99s reach. Chapstick=
+, phone, a handful of peanut butter pretzels, my keys, that one really cool=
+ rock my favorite 4 year old gave me. I didn=E2=80=99t know how much I love=
+d my stem caddies until one got stolen off my Lightning Bolt while parked i=
+n front of Jay=E2=80=99s house. MY stem caddy?! My precious little treasure=
+ chest?! I rode straight to the shop and bought myself a new one because I =
+couldn=E2=80=99t bear the thought of being without it for my ride home. Ste=
+m Caddies are perfect for commuters, long distance riders, roadies, people =
+on tour, kids, and literally everyone else. The owner of Tunitas sews her b=
+ags in San Francisco and delivers them by bicycle to the shop. She even buy=
+s pink fabric just for us. What=E2=80=99s not to love? Of course, you don=
+=E2=80=99t need to buy anything, especially not from us, but if you=E2=80=
+=99re anything like me, you love stuff. Trinkets and tools and treasure, an=
+d if you ARE going to buy stuff, why not buy it from us? It=E2=80=99s chall=
+enging to reckon with our anti-consumerist ideals during the most consumeri=
+st month of the year, but what can I say, we=E2=80=99re trying our best. Th=
+e more money you spend at Scenic Routes, the more money Scenic Routes has t=
+o subsidize bikes, feed people lunch, do repairs for free and host free eve=
+nts. Your money is not going to waste in our hands, and also, we sell prett=
+y good stuff. If you=E2=80=99re in the giving mood and want to spend some m=
+oney but you got your gift shopping done months ago and you don=E2=80=99t n=
+eed any more junk in your 300 square foot apartment, consider giving to the=
+ =E2=80=9CYou get a Quercus Fund.=E2=80=9D We will be using the money raise=
+d in December to get people, who can=E2=80=99t otherwise afford them, BIKE =
+LIGHTS! Help us keep our neighbors safe and give the gift of a niterider fr=
+ont and rear light. Any money left over will go to subsidizing Quercus bike=
+s for members of our community. Quercus Fund  <https://www.scenicroutessf.c=
+om/membership?ss_source=3Dsscampaigns&ss_campaign_id=3D6930f0b47a39620a6051=
+3473&ss_email_id=3D6931f8f9a666330af25648e5&ss_campaign_name=3DSlow+News+-+=
+December+Edition&ss_campaign_sent_date=3D2025-12-04T21%3A11%3A34Z> If you=
+=E2=80=99ve made it this far through my ramblings, please allow me one last=
+ opportunity to say thank you. There are no words to describe the gratitude=
+ I feel in the face of the support you continue to show our store front on =
+Balboa Street. I walk the streets of my neighborhood and see people I don=
+=E2=80=99t recognize wearing =E2=80=9Cslow is forever=E2=80=9D hats and my =
+mind is blown. I ride through the park and notice bikes with pink and yello=
+w housing and can=E2=80=99t help but wonder if they had their bike worked o=
+n here. The shop is growing, slowly but surely, and we are growing, as peop=
+le, as mechanics, as workers, and as friends. It is an honor to have spent =
+another year as your bicycle mechanics. We=E2=80=99ll see you in the new ye=
+ar. Ayla Visit Our Website!  <https://www.scenicroutessf.com/about?ss_sourc=
+e=3Dsscampaigns&ss_campaign_id=3D6930f0b47a39620a60513473&ss_email_id=3D693=
+1f8f9a666330af25648e5&ss_campaign_name=3DSlow+News+-+December+Edition&ss_ca=
+mpaign_sent_date=3D2025-12-04T21%3A11%3A34Z> Scenic Routes Community Bicycl=
+e Center, 521 Balboa Street, San Francisco, United States Powered by Square=
+space <https://www.squarespace.com?channel=3Dproduct_refer&subchannel=3Dcus=
+tomer&source=3Demail_campaigns_button&campaign=3D618d615066c6445d2a0e947f&u=
+tm_medium=3Dproduct_refer&utm_source=3Demail_campaigns_button&ss_source=3Ds=
+scampaigns&ss_campaign_id=3D6930f0b47a39620a60513473&ss_email_id=3D6931f8f9=
+a666330af25648e5&ss_campaign_name=3DSlow+News+-+December+Edition&ss_campaig=
+n_sent_date=3D2025-12-04T21%3A11%3A34Z> Unsubscribe  <https://campaign-pref=
+erences.com/unsubscribe/8XjmAROWNJImDlUesOVdUlX8l36xxp_dYuVj3i5Tk8RqqTDykWb=
+5-wQlzAnXX0InIPXZ5bYeyE-v8Ls8ZbaDrKqNzTdfKTA7HLJzZk5SU2Ec5g5Ir1S_N0ksq0q7Ay=
+Pr1ta_lqSoHwt994T193pKCsmNUXq82eLdNft3lbMKs8x0QvhTbMxAVW2Mn_6eVcKvwOpfDRUCQ=
+G__9bhtqfS42AxdtQPJQ89QGEvXU1beKRDMHwYMSWrmv4P4CERNgbCh0OLGSnkcMJ1CXFFA2wkj=
+RGqHXKoTS8tbECQNha8YUnMWmcj5AP-JoI7GwaWwjmIoR5Qa1rXxcBgMC6L2JXzvrLo3iZ1EYJ-=
+RgGHyv2444qG8YMpSWLktyCY=3D>
+--c2495cc1897b1c06b7f813c0d6da0101f3aa9d1fb50ffc1144b3ea26399c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" lang=3D"en-=
+US" xml:lang=3D"en-US">
+ <head>
+  <title data-ignore-plain-text>Slow News - December Edition</title>
+  <meta http-equiv=3D"content-type" content=3D"text/html; charset=3Dutf-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1, maximum-scale=3D1">
+  <meta name=3D"format-detection" content=3D"address=3Dno"> <!--[if (gte ms=
+o 9)|(IE)]>
+    <style type=3D"text/css" media=3D"screen">
+      li {
+        text-indent: -1em;
+      }
+    </style>
+    <![endif]-->
+  <style type=3D"text/css" media=3D"all">
+      body,
+=2Esection-text-area,
+=2Esection-text-area-wrapper,
+=2Esection-text-cell {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+}
+body {
+    width: 100% !important;
+    min-width: 100% !important;
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    mso-line-height-rule: exactly;
+}
+p {
+    margin-block: 0;
+}
+@media only screen and (max-width:  593px ) {
+    table#newsletter-table {
+        border: 0 !important;
+    }
+    table#newsletter-email {
+        width: 100% !important;
+    }
+    img.section-scaleable-image,
+    img.section-empty-img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    .bg-none {
+        background: none !important;
+    }
+    .hauto {
+        height: auto !important;
+    }
+    .show-desktop-only {
+        display: none !important;
+    }
+    .show-mobile-only {
+        display: block !important;
+        float: none !important;
+        line-height: auto !important;
+        max-height: inherit !important;
+        max-width: inherit !important;
+        margin-top: 0px !important;
+        overflow: visible !important;
+        visibility: inherit !important;
+        width: auto !important;
+    }
+    .stack-cell-wrap {
+        display: block !important;
+    }
+    .stack-cell-up {
+        display: table-header-group !important;
+    }
+    .stack-cell-down {
+        display: table-footer-group !important;
+    }
+    .mw100p {
+        max-width: 100% !important;
+    }
+    .section-horizontal-padding,
+    .padding-mobile-both {
+        padding-left: 22px !important;
+        padding-right: 22px !important;
+    }
+    .padding-mobile-left {
+        padding-left: 22px !important;
+    }
+    .padding-mobile-right {
+        padding-right: 22px !important;
+    }
+    .text-left {
+        text-align: left !important;
+    }
+    .text-right {
+        text-align: right !important;
+    }
+    .w100p {
+        width: 100% !important;
+    }
+}
+=2Ebutton-style-solid:hover,
+=2Ebutton-style-rounded:hover {
+    opacity: .8 !important;
+}
+a:hover {
+    text-decoration: none !important;
+}
+span.mail-merge-preview {
+    border-bottom: 2px dotted currentColor;
+    display: inline-block;
+    line-height: 1em !important;
+    margin-bottom: .125em !important;
+}
+table#newsletter-section-body .linked-site-title-link {
+    color: #0e8ac4 !important;
+}
+#header-header-section-split-left-0 .brand-name .linked-site-title-link {
+    color: #272727;
+    text-decoration: none;
+}
+#footer-footer-section-stacked-top-0 .brand-name .linked-site-title-link {
+    color: #000;
+    text-decoration: none;
+}
+#footer-footer-section-stacked-top-0 .footer-text .linked-site-title-link {
+    color: #0e8ac4;
+}
+body.renderedPreview #line-line-section-0 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-2 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+#button-button-section-8 .button-style-outline:hover {
+    background-color: #000 !important;
+    border: 1px solid #000 !important;
+}
+#button-button-section-8 .button-style-outline:hover .button-section-label =
+{
+    color: #fff !important;
+}
+body.renderedPreview #line-line-section-11 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-15 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-17 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-19 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-21 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-23 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-25 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-27 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-29 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-32 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+#button-button-section-34 .button-style-outline:hover {
+    background-color: #000 !important;
+    border: 1px solid #000 !important;
+}
+#button-button-section-34 .button-style-outline:hover .button-section-label=
+ {
+    color: #fff !important;
+}
+#button-button-section-37 .button-style-outline:hover {
+    background-color: #000 !important;
+    border: 1px solid #000 !important;
+}
+#button-button-section-37 .button-style-outline:hover .button-section-label=
+ {
+    color: #fff !important;
+}
+
+    </style> <!--[if mso]>
+    <noscript>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    </noscript>
+    <![endif]--> <!--[if (mso)|(mso 16)]>
+      <style type=3D"text/css">
+        a {text-decoration: none;}
+      </style>
+    <![endif]-->
+ </head>
+ <body style=3D"padding:0;margin:0;text-align:center;background-color:#fff;=
+">
+  <table role=3D"article" aria-label=3D"Slow News - December Edition" lang=
+=3D"en-US" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"center=
+" id=3D"newsletter-table" style=3D"font-size:16px;font-weight:normal;width:=
+100%;padding:0px;background-color:#fff;border-top:44px solid #fff;border-bo=
+ttom:44px solid #fff;margin:0 auto;text-align:center;table-layout:fixed;">
+   <tbody>
+    <tr>
+     <td align=3D"center" valign=3D"top" bgcolor=3D"#FFFFFF" id=3D"newslett=
+er-cell" style=3D"font-size:.9375em;">
+      <div data-ignore-plain-text class=3D"newsletter-preview-text" style=
+=3D"color:transparent;display:none !important;height:0;max-height:0;max-wid=
+th:0;opacity:0;overflow:hidden;mso-hide:all;visibility:hidden;width:0;">
+       Hi Neighbors, Happy December! =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F
+      </div>
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"594"=
+ bgcolor=3D"#D9E5DD" id=3D"newsletter-email">
+       <tbody>
+        <tr>
+         <td align=3D"center" valign=3D"top" id=3D"newsletter-email-wrapper=
+" class=3D"fixed-sans">
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-header">
+           <tbody>
+            <tr>
+             <td align=3D"center" valign=3D"middle" id=3D"newsletter-sectio=
+n-header-cell">
+              <div id=3D"header-header-section-split-left-0">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"header-se=
+ction header-section-split section-content" style=3D"background-color:trans=
+parent;">
+                <tbody>
+                 <tr>
+                  <td class=3D"section-content-cell" style=3D"padding-top:2=
+2px;padding-right:22px;padding-bottom:0px;padding-left:22px;">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                    <tbody>
+                     <tr>
+                      <td align=3D"left" valign=3D"middle" width=3D"50%" cl=
+ass=3D"section-text-area"><a class=3D"brand-logo-link" href=3D"https://q8w2=
+=2Eengage.squarespace-mail.com/r?m=3D69=
+31f8f9a666330af25648e5&amp;u=3Dhttps%3=
+A%2F%2Fwww.scenicroutessf.com%2F%3Fss_source%3Dsscampaigns%26ss_campaign_id=
+%3D6930f0b47a39620a60513473%26ss_email_id%3D6931f8f9a666330af25648e5%26ss_c=
+ampaign_name%3DSlow%2BNews%2B-%2BDecember%2BEdition%26ss_campaign_sent_date=
+%3D2025-12-04T21%253A11%253A34Z&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_=
+6930f0b47a39620a60513473&amp;l=3Den-US&amp;s=3D3pGt6JsRgx07-jMGv5pzhcTHFj8%=
+3D" style=3D"color:#0e8ac4 !important;"><img class=3D"brand-logo" src=3D"ht=
+tps://images.squarespace-cdn.com/content/v1/618d615066c6445d2a0e947f/6d9767=
+f2-4d83-4528-a527-15a5475b6d66/slow+is+forever+logo.png" height=3D"66" alt=
+=3D"Scenic Routes Community Bicycle Center" style=3D"font-size:.57941903584=
+67243em;display:block;border:0;text-decoration:none;line-height:0;font-weig=
+ht:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', =
+'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;color:#27=
+2727;height:auto;max-height:66px;max-width:100%;width:auto;margin-left:0px;=
+"></a></td>
+                      <td align=3D"right" valign=3D"middle" width=3D"50%" c=
+lass=3D"section-text-area"><p class=3D"email-title" style=3D"line-height:1.=
+618em;margin:0 0 1.25em 0;font-weight:normal;margin-top:0;margin-bottom:0;f=
+ont-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream =
+Vera Sans Mono', 'Liberation Mono', Courier, monospace;font-size:11px;mso-l=
+ine-height-alt:11px;color:#000;white-space:pre-wrap;margin-right:0px;"><em>=
+Take 15, December 4th, 2025</em></p></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div></td>
+            </tr>
+           </tbody>
+          </table>
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-body">
+           <tbody>
+            <tr>
+             <td align=3D"center" valign=3D"top" width=3D"100%" id=3D"newsl=
+etter-section-body-cell">
+              <div id=3D"line-line-section-0">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:92%;min-width:92%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:10px;padding-right:0;p=
+adding-bottom:10px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#272727;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-1">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell" style=3D"padding-top:0px;padding-right:9px;padding-bottom:0px;pa=
+dding-left:9px;color:#272727;background-color:transparent;"><h2 style=3D"co=
+lor:inherit;margin:1.414em 0 .5em;font-weight:400;line-height:1.25em;font-s=
+ize:3.9710634675000014em;mso-line-height-alt:3.9710634675000014em;margin-to=
+p:0;margin-bottom:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sa=
+ns Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace=
+;letter-spacing:-.05em;text-align:center;">Slow News.</h2></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-2">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:95%;min-width:95%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:2px;padding-right:0;pa=
+dding-bottom:2px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-3">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">Hi Neighbors,</p><p class=3D"" st=
+yle=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25e=
+m 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu=
+ Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monosp=
+ace;">Although it is undeniably clich=C3=A9 to say, I cannot believe that D=
+ecember is upon us; the season of dinners and parties and hosting and music=
+ and lights and fenders and cold hands and muddy tires. When the sun starte=
+d setting barely an hour after we eat lunch, my heart lurched at the depart=
+ure of warmth and iced matchas and my cats laying in the sunbeams that cast=
+ themselves across my apartment=E2=80=99s floors. Change is often unpleasan=
+t, even when we should be anticipating it long before it makes itself known=
+, even when the reality of the change isn=E2=80=99t all that unpleasant at =
+all.&nbsp;</p><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-h=
+eight:1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-bottom:0;font-f=
+amily:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera =
+Sans Mono', 'Liberation Mono', Courier, monospace;">But I was stuck in my s=
+ore mood and the unhappiness of being cold and wishing away the inevitable,=
+ cyclical change of seasons. I=E2=80=99m still cold, and Lily, who is more =
+grandma than millenial and thinks a jacket should suffice, won=E2=80=99t le=
+t us turn on the heater at the shop (and gives me dirty looks when I even s=
+uggest it), but my mood has shifted. Last week, I was riding down Page Stre=
+et on my way home from work, well after the dog walkers and joggers had aba=
+ndoned the lanes for the shelter of their Victorian apartments. My tires we=
+re sticky on the wet pavement and made a delicate squelching noise as my gl=
+asses collected droplets from the foggy air. The air smelled like the soil =
+of a damp redwood forest and the city was so silent it was impossible to im=
+agine the infinite lives existing within a seven-mile-radius of me. I was a=
+lone with my bicycle surrounded by a drizzling night in the place that I ca=
+ll home, and I felt <em>at home.&nbsp;</em></p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"image-image-section-below-4">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                    <tbody>
+                     <tr>
+                      <td class=3D"show-desktop-only section-spacing-left" =
+width=3D"44"></td>
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"><img class=3D"section-scaleable-image" src=3D"=
+https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/80848a1=
+f-8e8a-4e0a-9007-a7552ee457fd/2025-11-13-13.jpg?content-type=3Dimage%2Fjpeg=
+&amp;format=3D750w" width=3D"594" alt=3D"" style=3D"font-size:.579419035846=
+7243em;display:block;border:0;text-decoration:none;line-height:0;background=
+-color:transparent;font-weight:normal;height:auto;width:100%;max-width:100%=
+;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstrea=
+m Vera Sans Mono', 'Liberation Mono', Courier, monospace;"></td>
+                      <td class=3D"show-desktop-only section-spacing-right"=
+ width=3D"44"></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-5">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">My hands were cold, but only enou=
+gh to remind me that I am alive. In that moment on Page Street, I&nbsp; was=
+ overcome by gratitude that this absolute joy ride was my commute home from=
+ my job doing what I love with people that I love serving my community that=
+ I love. The winter evenings give us a reason to make soup for our neighbor=
+s, the crisp mornings make a cup of tea in bed all the more enticing, and t=
+he dark nights make even our commutes home feel magical.&nbsp;</p><p class=
+=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin:0=
+ 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console',=
+ 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier=
+, monospace;">There is a trope in the bike shop world that winter is dead. =
+No one is riding and the work is dried up. We certainly have fewer bikes in=
+ the queue than we did six months ago, but the shop has never felt more ali=
+ve to me. We are building Quercus Bikes at a rate never seen before, our fr=
+iend Jesper is making new Scenic Routes merch, we are reimagining the layou=
+t of the shop, and our rides have more people attending every month. The th=
+ing about being a community bike shop is that there is no off season. There=
+ is no off season for creating room for connection, for rewriting the narra=
+tive of the bicycle, and for providing service to those of us who use our b=
+ikes every single day of the year, no matter the weather.</p><p class=3D"" =
+style=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.2=
+5em 0;font-weight:normal;margin-bottom:0;font-family:'Andale Mono', 'Lucida=
+ Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono=
+', Courier, monospace;">The shop spent the last weekend of November on Ange=
+l Island with 25 of you, braving the elements and making memories. I looked=
+ around at the row of tents and the campers bundled up in layers and was so=
+ proud of the world we=E2=80=99ve created - one where a ferry ride transpor=
+ts you to a far away land and it only takes two days for strangers to becom=
+e friends.&nbsp;</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"image-image-section-below-6">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                    <tbody>
+                     <tr>
+                      <td class=3D"show-desktop-only section-spacing-left" =
+width=3D"44"></td>
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"><img class=3D"section-scaleable-image" src=3D"=
+https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/820f73e=
+9-8f30-43a7-b3a3-0c4397e1989c/2025-11-13-15.jpg?content-type=3Dimage%2Fjpeg=
+&amp;format=3D750w" width=3D"594" alt=3D"" style=3D"font-size:.579419035846=
+7243em;display:block;border:0;text-decoration:none;line-height:0;background=
+-color:transparent;font-weight:normal;height:auto;width:100%;max-width:100%=
+;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstrea=
+m Vera Sans Mono', 'Liberation Mono', Courier, monospace;"></td>
+                      <td class=3D"show-desktop-only section-spacing-right"=
+ width=3D"44"></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-7">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">Please do us the honor of helping=
+ us close out the year on the highest note yet.&nbsp;</p><p class=3D"" styl=
+e=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em =
+0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu S=
+ans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospac=
+e;"><strong><span data-letter-spacing=3D"2" style=3D"font-size:inherit;font=
+-weight:inherit;line-height:inherit;margin:0;letter-spacing:0.1em;">On Dece=
+mber 11th at 7:00pm we will be hosting the annual Scenic Routes Holiday Par=
+ty.</span></strong><span data-letter-spacing=3D"2" style=3D"font-size:inher=
+it;font-weight:inherit;line-height:inherit;margin:0;letter-spacing:0.1em;">=
+&nbsp;</span></p><p class=3D"" style=3D"color:inherit;font-size:.9375em;lin=
+e-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;font-family:'Andale=
+ Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', '=
+Liberation Mono', Courier, monospace;">We=E2=80=99ll be moving the bikes ou=
+t of the way, doning our favorite Christmas sweaters, and serving up some s=
+erious holiday cheer. There will be a live three piece band, Mary=E2=80=99s=
+ famous punch, a Christmas cake, and treats covering every surface of the s=
+hop to be enjoyed. You are invited to bring something to share, and we migh=
+t suggest that you label it=E2=80=99s allergens so our gluten free, vegan, =
+dietary restriction freaks can partake without fear. There will be joy and =
+company and laughter and warmth, so much warmth (Lily might even let us tur=
+n the heater on).&nbsp;</p><p class=3D"" style=3D"color:inherit;font-size:.=
+9375em;line-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-bo=
+ttom:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bi=
+tstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;">If you can=
+=E2=80=99t attend the Holiday Party (or even if you can!!!) please let us s=
+end you a Christmas Card! It means the world to us to create real, tangible=
+ moments of joy, and this is one little way for us to show our thanks. Pop =
+your address down below and await something besides junk-mail being pushed =
+through the mail slot.&nbsp;</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"button-button-section-8">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"button-se=
+ction section-content" style=3D"width:100%;background-color:transparent;">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell section-text-area" style=3D"padding-top:8px;padding-right:22px;=
+padding-bottom:8px;padding-left:22px;"><a href=3D"https://q8w2.engage.squar=
+espace-mail.com/r?m=3D6931f8f9a666330af25648e5&amp;u=3Dhttps%3A%2F%2Fdocs.g=
+oogle.com%2Fforms%2Fd%2Fe%2F1FAIpQLScM9rVtlkusRmV9CloHlmDfip_n7j9DZtjbEhjGC=
+cMsYL0TXQ%2Fviewform&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_6930f0b47a3=
+9620a60513473&amp;l=3Den-US&amp;s=3DDZwFpfaH-3WO14RlzwCHcLKzloY%3D" class=
+=3D"button-section-box button-style-solid" style=3D"color:#0e8ac4 !importan=
+t;display:inline-block;line-height:11px;margin:0;mso-padding-alt:0;text-ali=
+gn:center;text-decoration:none;transition:.15s;width:auto;background-color:=
+#000;border:0;padding:17px 0;"><i class=3D"button-section-mso" style=3D"let=
+ter-spacing:29.92px;mso-font-width:-100%;mso-text-raise:26.950000000000003p=
+x;">&nbsp;</i><span class=3D"button-section-label" style=3D"line-height:inh=
+erit;margin:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mon=
+o', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;font-=
+weight:700;color:#efefef;display:inline-block;font-size:11px;min-width:1px;=
+mso-text-raise:15.95px;"><span data-letter-spacing=3D"3" style=3D"font-size=
+:inherit;font-weight:inherit;line-height:inherit;margin:0;letter-spacing:0.=
+2em;">Address Form</span></span><i class=3D"button-section-mso" style=3D"le=
+tter-spacing:29.92px;mso-font-width:-100%;mso-text-raise:26.950000000000003=
+px;">&nbsp;</i></a></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"image-image-section-below-9">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                    <tbody>
+                     <tr>
+                      <td class=3D"show-desktop-only section-spacing-left" =
+width=3D"44"></td>
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"><img class=3D"section-scaleable-image" src=3D"=
+https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/ff19617=
+5-546d-4151-8e79-622159dfa541/IMG_6290.jpg?content-type=3Dimage%2Fjpeg&amp;=
+format=3D750w" width=3D"594" alt=3D"" style=3D"font-size:.5794190358467243e=
+m;display:block;border:0;text-decoration:none;line-height:0;background-colo=
+r:transparent;font-weight:normal;height:auto;width:100%;max-width:100%;font=
+-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Ver=
+a Sans Mono', 'Liberation Mono', Courier, monospace;"></td>
+                      <td class=3D"show-desktop-only section-spacing-right"=
+ width=3D"44"></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-10">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;"><strong><span data-letter-spacing=
+=3D"2" style=3D"font-size:inherit;font-weight:inherit;line-height:inherit;m=
+argin:0;letter-spacing:0.1em;">This Sunday, December 7th is the last Quercu=
+s Family Bike Ride of the year.</span></strong>&nbsp;</p><p class=3D"" styl=
+e=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em =
+0;font-weight:normal;margin-bottom:0;font-family:'Andale Mono', 'Lucida Con=
+sole', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', C=
+ourier, monospace;">We will meet at 9:00am at the Love Blocks in front of t=
+he Conservatory of Flowers and bop down to Metson Lake for a story time in =
+the grass. We roll at 9:15. Bring a blanket for sitting and warm clothes fo=
+r wearing! We ride as slow as our slowest rider can go. Kids on balance bik=
+es, pedal bikes, and cargo bikes are all welcome. (art work by one of our r=
+egular riders).</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-11">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:97%;min-width:97%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:3px;padding-right:0;pa=
+dding-bottom:3px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-12">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">And all month long we will be ope=
+n for your bike needs, your sitting-on-our-couch needs, and your holiday sh=
+opping needs. Below, I have highlighted a few of our favorite items that wo=
+uld be a real treat to receive as a gift. Your grandma is <em>going</em> to=
+ buy you something, so why not direct her towards your favorite anti-profit=
+ bike shop? Or perhaps you need something for a Secret Santa you=E2=80=99re=
+ being forced to participate in - we have doodads at every price range.</p>=
+<p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1.618em;=
+margin:0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Lucida C=
+onsole', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono',=
+ Courier, monospace;">Or maybe this email was sent to you by your bike ridi=
+ng, tree hugging, pot smoking commie-anarchist relative out in San Francisc=
+o who=E2=80=99s trying to hint at what they want you to buy them. May we su=
+ggest a gift certificate to everyone's favorite anti-profit community bicyc=
+le center, Scenic Routes. Gift Certificates redeemed will be used exclusive=
+ly for bike joy. Gift certificates never redeemed will also be used exclusi=
+vely for bike joy.</p><p class=3D"" style=3D"color:inherit;font-size:.9375e=
+m;line-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-bottom:=
+0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstre=
+am Vera Sans Mono', 'Liberation Mono', Courier, monospace;">Come by the sho=
+p, poke around, try things on, and listen to the Christmas vinyls spin.&nbs=
+p;</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"image-image-section-thumbnail-13">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" align=3D"center" bgcolor=3D"transparent" c=
+lass=3D"image-section thumbnail-layout section-content">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-image-cell section-content-cell section-hoverable-image" data-aspect=3D"=
+ORIGINAL" style=3D"padding:0;"><img class=3D"section-thumbnail-image" src=
+=3D"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/a87=
+80162-197e-404d-9ee7-babc65cf3a26/2025-04-12-1-17.jpg?content-type=3Dimage%=
+2Fjpeg&amp;format=3D750w" width=3D"175.20000000000002" style=3D"font-size:.=
+5794190358467243em;display:block;border:0;text-decoration:none;line-height:=
+0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu S=
+ans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospac=
+e;height:auto;max-width:100%;max-height:250px;width:175.20000000000002px;" =
+alt=3D""></td>
+                      <td width=3D"0" height=3D"0"></td>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-image-cell section-content-cell section-hoverable-image" data-aspect=3D"=
+ORIGINAL" style=3D"padding:0;"><img class=3D"section-thumbnail-image" src=
+=3D"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/2fc=
+42b46-8989-4ef4-9ebd-fbad6cfd52c9/2025-05-09-37.jpg?content-type=3Dimage%2F=
+jpeg&amp;format=3D750w" width=3D"175.20000000000002" style=3D"font-size:.57=
+94190358467243em;display:block;border:0;text-decoration:none;line-height:0;=
+font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu San=
+s Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;=
+height:auto;max-width:100%;max-height:250px;width:175.20000000000002px;" al=
+t=3D""></td>
+                      <td width=3D"0" height=3D"0"></td>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-image-cell section-content-cell section-hoverable-image" data-aspect=3D"=
+ORIGINAL" style=3D"padding:0;"><img class=3D"section-thumbnail-image" src=
+=3D"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/b17=
+fe827-f222-44e6-a44f-1ff18c0029f0/2025-07-20-5.jpg?content-type=3Dimage%2Fj=
+peg&amp;format=3D750w" width=3D"175.20000000000002" style=3D"font-size:.579=
+4190358467243em;display:block;border:0;text-decoration:none;line-height:0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;h=
+eight:auto;max-width:100%;max-height:250px;width:175.20000000000002px;" alt=
+=3D""></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-14">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">Joel=E2=80=99s favorite item is <=
+strong>Full Coverage Fenders</strong>. ($80)</p><p class=3D"" style=3D"colo=
+r:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font-we=
+ight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono'=
+, 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;">Joel =
+says =E2=80=9CHere is why:</p><p class=3D"" style=3D"color:inherit;font-siz=
+e:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;font-f=
+amily:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera =
+Sans Mono', 'Liberation Mono', Courier, monospace;">1- They protect you whe=
+n it's raining.&nbsp;</p><p class=3D"" style=3D"color:inherit;font-size:.93=
+75em;line-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;font-family=
+:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans =
+Mono', 'Liberation Mono', Courier, monospace;">2- They keep you dry and cle=
+an when the ground is wet but it=E2=80=99s not raining. Riding on wet pavem=
+ent sounds and feels so good when you stay dry.&nbsp;</p><p class=3D"" styl=
+e=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em =
+0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu S=
+ans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospac=
+e;">3- They keep your bike/drivetrain clean and lessen drivetrain wear&nbsp=
+;</p><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1.6=
+18em;margin:0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Luc=
+ida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation M=
+ono', Courier, monospace;">4- They look so good&nbsp;</p><p class=3D"" styl=
+e=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em =
+0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu S=
+ans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospac=
+e;">5- Fenders provide a perfect spot to mount your generator taillight</p>=
+<p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1.618em;=
+margin:0 0 1.25em 0;font-weight:normal;margin-bottom:0;font-family:'Andale =
+Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'L=
+iberation Mono', Courier, monospace;">A $100 gift certificate would cover t=
+he cost of most fenders we sell and some of the install price of the plasti=
+c fenders.=E2=80=9D&nbsp;</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-15">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:50%;min-width:50%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:2px;padding-right:0;pa=
+dding-bottom:2px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-16">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">Lily=E2=80=99s favorite item is t=
+he <strong>Park Tool AWS-1 Three-Way Hex Wrench</strong>. ($17)&nbsp;</p><p=
+ class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1.618em;ma=
+rgin:0 0 1.25em 0;font-weight:normal;margin-bottom:0;font-family:'Andale Mo=
+no', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lib=
+eration Mono', Courier, monospace;">Lily says =E2=80=9CI don't recommend bu=
+ying gifts for your loved ones: I believe you should exchange dorky handmad=
+e gifts instead, as is tradition. But, if you must buy a gift, consider the=
+ Park Tool AWS-1 Three-Way Hex Wrench. It's more comfortable to use than a =
+multitool or the small Allen keys that come with Ikea furniture. The extra =
+leverage is perfect for adjusting rim brakes. If you want to go all out, pa=
+ir a new tool with a gift card to Scenic Routes: we love to help DIYers wit=
+h that tricky final 10% of the project.=E2=80=9D</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-17">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:50%;min-width:50%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:2px;padding-right:0;pa=
+dding-bottom:2px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-18">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">Jay=E2=80=99s favorite item is th=
+e <strong>Paul Component Brake Levers</strong>. ($200)</p><p class=3D"" sty=
+le=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em=
+ 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu =
+Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospa=
+ce;">Jay says =E2=80=9COkay so I'm not a gift guide person. Gift guides are=
+ for people who believe in solutions, and I'm more of a problems person, ge=
+nerally speaking. My feeling is you shouldn't buy stuff you don't need and =
+you really shouldn't buy other people stuff they don't need, which is basic=
+ally all stuff, but here we are, alive, buying things.</p><p class=3D"" sty=
+le=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em=
+ 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu =
+Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospa=
+ce;">So if you're going to do it, buy something that lasts. Buy something t=
+hat will still be there when everything else has gone to hell, which it wil=
+l.</p><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1.=
+618em;margin:0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Lu=
+cida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation =
+Mono', Courier, monospace;">I've had these Paul Component brake levers on m=
+y commuter bike for years. They've been through rain, grime, getting knocke=
+d over approximately ten thousand times, crashes, =E2=80=9Cthe whole catast=
+rophe=E2=80=9D as my grandma would say. And one of them broke, back before =
+I owned a bike shop, back when I was just a person with a broken brake leve=
+r and a telephone. I called Paul up in Chico, California, and asked if I co=
+uld buy the part to fix it myself.</p><p class=3D"" style=3D"color:inherit;=
+font-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font-weight:norma=
+l;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstre=
+am Vera Sans Mono', 'Liberation Mono', Courier, monospace;">They sent it to=
+ me for free.</p><p class=3D"" style=3D"color:inherit;font-size:.9375em;lin=
+e-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;font-family:'Andale=
+ Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', '=
+Liberation Mono', Courier, monospace;">I said, look, I'm pretty hard on the=
+se things. I don't expect them to last forever.</p><p class=3D"" style=3D"c=
+olor:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font=
+-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mo=
+no', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;">Th=
+ey said, we expect them to last forever.</p><p class=3D"" style=3D"color:in=
+herit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font-weight=
+:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'B=
+itstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;">Can you i=
+magine? Expecting something to last forever? The audacity. The beautiful st=
+upid hope of it.</p><p class=3D"" style=3D"color:inherit;font-size:.9375em;=
+line-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">They've been making parts in Chic=
+o since the late eighties. Some engineer named Paul quit his real job - his=
+ <em>real</em> job, as if making things with your hands isn't real - and bo=
+ught a falling apart house with a big garage and started machining componen=
+ts. They still make everything there. American aluminum. Built to be fixed,=
+ not thrown away.</p><p class=3D"" style=3D"color:inherit;font-size:.9375em=
+;line-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-bottom:0=
+;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstrea=
+m Vera Sans Mono', 'Liberation Mono', Courier, monospace;">You buy them onc=
+e. You repair them. You move them from bike to bike like they're family hei=
+rlooms,&nbsp; which I guess they are now (like the Buck 110 my Uncle Lee ga=
+ve me on my 10th birthday). And eventually you forget you bought them at al=
+l because they just work, quietly, asking for nothing, which is more than y=
+ou can say for most things in this life.=E2=80=9D</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-19">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:50%;min-width:50%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:2px;padding-right:0;pa=
+dding-bottom:2px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-20">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">SKH=E2=80=99s favorite item is th=
+e <strong>Beverage Buddy</strong>. ($10)&nbsp;</p><p class=3D"" style=3D"co=
+lor:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font-=
+weight:normal;margin-bottom:0;font-family:'Andale Mono', 'Lucida Console', =
+'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier,=
+ monospace;">SKH says, =E2=80=9CThe bottle buddy came into my life on a las=
+t minute overnighter to China Camp when Ayla gave me and Ben each one on ou=
+r way out the door! It kept my stem caddy dry and my spirits high as it rem=
+inded me that even a small gesture can mean a lot. Get a bottle buddy for y=
+ou and a buddy and cheers to the small things and big friendships.=E2=80=9D=
+&nbsp;</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-21">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:50%;min-width:50%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:2px;padding-right:0;pa=
+dding-bottom:2px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-22">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">Nishad=E2=80=99s favorite item is=
+ a <strong>Wald/Tanaka 137 or 139 Basket</strong>. ($40-60)&nbsp;</p><p cla=
+ss=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin=
+:0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console=
+', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Couri=
+er, monospace;">Nishad says =E2=80=9CNothing will make you feel more smug t=
+han riding up to your holiday potluck with that pie in your front basket. T=
+ake in that freshly baked aroma as you roll down the street feeling gratefu=
+l that you didn't have to give up that coveted parking spot just to get the=
+ damn pie to the party.</p><p class=3D"" style=3D"color:inherit;font-size:.=
+9375em;line-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;font-fami=
+ly:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera San=
+s Mono', 'Liberation Mono', Courier, monospace;">Getting too hot for those =
+gloves? Stop faffing about with those hard-to-reach jersey pockets - just d=
+ump 'em in the basket!&nbsp;</p><p class=3D"" style=3D"color:inherit;font-s=
+ize:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;marg=
+in-bottom:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono'=
+, 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;">We ha=
+ve 'em big, we have 'em small. We even have some half as tall.=E2=80=9D</p>=
+</td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-23">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:50%;min-width:50%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:2px;padding-right:0;pa=
+dding-bottom:2px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-24">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">Beaux=E2=80=99s favorite item is =
+a <strong>Squeezy Bean BART Brake</strong>. ($8)&nbsp;</p><p class=3D"" sty=
+le=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em=
+ 0;font-weight:normal;margin-bottom:0;font-family:'Andale Mono', 'Lucida Co=
+nsole', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', =
+Courier, monospace;">Beaux says, =E2=80=9CAs a new commuter on BART, the Sq=
+ueezy Bean keeps my bike in one place and makes my ride a little less chaot=
+ic. Just slip it over your handle bar and pull it tight around your brake l=
+ever! It also functions as a cute bracelet when relieved of its braking dut=
+ies.=E2=80=9D&nbsp;</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-25">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:50%;min-width:50%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:2px;padding-right:0;pa=
+dding-bottom:2px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-26">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">Ben=E2=80=99s favorite item is a =
+pair of the <strong>Ornot Merino Wool Gloves</strong>. ($45)&nbsp;</p><p cl=
+ass=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1.618em;margi=
+n:0 0 1.25em 0;font-weight:normal;margin-bottom:0;font-family:'Andale Mono'=
+, 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Libera=
+tion Mono', Courier, monospace;">Ben says =E2=80=9CI wasn=E2=80=99t a daily=
+ glove guy until picking these up. They=E2=80=99re great! The perfect amoun=
+t of warm for San Francisco and all the grip you need. I=E2=80=99m on my th=
+ird pair (lost one, burned one, don=E2=80=99t ask) and they=E2=80=99re a mu=
+st-replace every time.=E2=80=9D</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-27">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:50%;min-width:50%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:2px;padding-right:0;pa=
+dding-bottom:2px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-28">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">Jerry=E2=80=99s favorite item is =
+an <strong>Arno Lashing Strap</strong>. ($8-15)&nbsp;</p><p class=3D"" styl=
+e=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em =
+0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu S=
+ans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospac=
+e;">Jerry says, =E2=80=9CMade in Sweden, solid stainless steel buckles. Eas=
+y to adjust and cinch items down snug, I=E2=80=99ve never had one slip. I u=
+se them to strap the crate that my dog rides in and other hauls of various =
+sizes on my cargo bike. They=E2=80=99re also awesome for strapping a pizza =
+to your Wald 139 basket on your Quercus.&nbsp;</p><p class=3D"" style=3D"co=
+lor:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font-=
+weight:normal;margin-bottom:0;font-family:'Andale Mono', 'Lucida Console', =
+'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier,=
+ monospace;">Bundle firewood, organize camp gear, strap your life to your f=
+avorite bike or wear a 100cm Arno strap as a belt like I do. It might reall=
+y save your ass one day.=E2=80=9D</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-29">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:50%;min-width:50%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:2px;padding-right:0;pa=
+dding-bottom:10px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"image-image-section-thumbnail-30">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" align=3D"center" bgcolor=3D"transparent" c=
+lass=3D"image-section thumbnail-layout section-content">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-image-cell section-content-cell section-hoverable-image" data-aspect=3D"=
+ORIGINAL" style=3D"padding:0;"><img class=3D"section-thumbnail-image" src=
+=3D"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/567=
+afa5c-995d-4621-a5a8-202f693c2a6b/IMG_8711.jpg?content-type=3Dimage%2Fjpeg&=
+amp;format=3D750w" width=3D"175.20000000000002" style=3D"font-size:.5794190=
+358467243em;display:block;border:0;text-decoration:none;line-height:0;font-=
+weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mon=
+o', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;heigh=
+t:auto;max-width:100%;max-height:250px;width:175.20000000000002px;" alt=3D"=
+"></td>
+                      <td width=3D"0" height=3D"0"></td>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-image-cell section-content-cell section-hoverable-image" data-aspect=3D"=
+ORIGINAL" style=3D"padding:0;"><img class=3D"section-thumbnail-image" src=
+=3D"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/a6c=
+326fa-c0b1-4cd2-b919-e2f212c29e5d/2025-08-14-50.jpg?content-type=3Dimage%2F=
+jpeg&amp;format=3D750w" width=3D"175.20000000000002" style=3D"font-size:.57=
+94190358467243em;display:block;border:0;text-decoration:none;line-height:0;=
+font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu San=
+s Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;=
+height:auto;max-width:100%;max-height:250px;width:175.20000000000002px;" al=
+t=3D""></td>
+                      <td width=3D"0" height=3D"0"></td>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-image-cell section-content-cell section-hoverable-image" data-aspect=3D"=
+ORIGINAL" style=3D"padding:0;"><img class=3D"section-thumbnail-image" src=
+=3D"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/788=
+3b12c-eba3-4123-b6ba-e7237b9cb279/2025-05-08-4.jpg?content-type=3Dimage%2Fj=
+peg&amp;format=3D750w" width=3D"175.20000000000002" style=3D"font-size:.579=
+4190358467243em;display:block;border:0;text-decoration:none;line-height:0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;h=
+eight:auto;max-width:100%;max-height:250px;width:175.20000000000002px;" alt=
+=3D""></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-31">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">And as far as <em>my</em> favorit=
+e item goes, I don=E2=80=99t know where I would be without my <strong>Tunit=
+as Creative Stowaway Ba</strong>g. ($60)</p><p class=3D"" style=3D"color:in=
+herit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font-weight=
+:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'B=
+itstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;">Each and =
+every one of my bikes is adorned with a little bag to compliment its colorw=
+ay. Nestled right against my stem and my handlebars, it puts all of my trea=
+sures in perfect arm=E2=80=99s reach. Chapstick, phone, a handful of peanut=
+ butter pretzels, my keys, that one really cool rock my favorite 4 year old=
+ gave me.&nbsp;</p><p class=3D"" style=3D"color:inherit;font-size:.9375em;l=
+ine-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;font-family:'Anda=
+le Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',=
+ 'Liberation Mono', Courier, monospace;">I didn=E2=80=99t know how much I l=
+oved my stem caddies until one got stolen off my Lightning Bolt while parke=
+d in front of Jay=E2=80=99s house. MY stem caddy?! My precious little treas=
+ure chest?! I rode straight to the shop and bought myself a new one because=
+ I couldn=E2=80=99t bear the thought of being without it for my ride home.&=
+nbsp;</p><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height=
+:1.618em;margin:0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', =
+'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberati=
+on Mono', Courier, monospace;">Stem Caddies are perfect for commuters, long=
+ distance riders, roadies, people on tour, kids, and literally everyone els=
+e. The owner of Tunitas sews her bags in San Francisco and delivers them by=
+ bicycle to the shop. She even buys pink fabric just for us.&nbsp;</p><p cl=
+ass=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1.618em;margi=
+n:0 0 1.25em 0;font-weight:normal;margin-bottom:0;font-family:'Andale Mono'=
+, 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Libera=
+tion Mono', Courier, monospace;">What=E2=80=99s not to love?&nbsp;</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"line-line-section-32">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:50%;min-width:50%;">
+                    <tbody>
+                     <tr>
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:2px;padding-right:0;pa=
+dding-bottom:2px;padding-left:0;">
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-33">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">Of course, you don=E2=80=99t need=
+ to buy anything, especially not from us, but if you=E2=80=99re anything li=
+ke me, you love stuff. Trinkets and tools and treasure, and if you ARE goin=
+g to buy stuff, why not buy it from us? It=E2=80=99s challenging to reckon =
+with our anti-consumerist ideals during the most consumerist month of the y=
+ear, but what can I say, we=E2=80=99re trying our best. The more money you =
+spend at Scenic Routes, the more money Scenic Routes has to subsidize bikes=
+, feed people lunch, do repairs for free and host free events. Your money i=
+s not going to waste in our hands, and also, we sell pretty good stuff.</p>=
+<p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1.618em;=
+margin:0 0 1.25em 0;font-weight:normal;margin-bottom:0;font-family:'Andale =
+Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'L=
+iberation Mono', Courier, monospace;">If you=E2=80=99re in the giving mood =
+and want to spend some money but you got your gift shopping done months ago=
+ and you don=E2=80=99t need any more junk in your 300 square foot apartment=
+, consider giving to the =E2=80=9CYou get a Quercus Fund.=E2=80=9D We will =
+be using the money raised in December to get people, who can=E2=80=99t othe=
+rwise afford them, BIKE LIGHTS! Help us keep our neighbors safe and give th=
+e gift of a niterider front and rear light. Any money left over will go to =
+subsidizing Quercus bikes for members of our community.</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"button-button-section-34">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"button-se=
+ction section-content" style=3D"width:100%;background-color:transparent;">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell section-text-area" style=3D"padding-top:8px;padding-right:22px;=
+padding-bottom:8px;padding-left:22px;"><a href=3D"https://q8w2.engage.squar=
+espace-mail.com/r?m=3D6931f8f9a666330af25648e5&amp;u=3Dhttps%3A%2F%2Fwww.sc=
+enicroutessf.com%2Fmembership%3Fss_source%3Dsscampaigns%26ss_campaign_id%3D=
+6930f0b47a39620a60513473%26ss_email_id%3D6931f8f9a666330af25648e5%26ss_camp=
+aign_name%3DSlow%2BNews%2B-%2BDecember%2BEdition%26ss_campaign_sent_date%3D=
+2025-12-04T21%253A11%253A34Z&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_693=
+0f0b47a39620a60513473&amp;l=3Den-US&amp;s=3Dpz7K9zKjozfxRnwnfzvBt2zTAzw%3D"=
+ class=3D"button-section-box button-style-solid" style=3D"color:#0e8ac4 !im=
+portant;display:inline-block;line-height:11px;margin:0;mso-padding-alt:0;te=
+xt-align:center;text-decoration:none;transition:.15s;width:auto;background-=
+color:#000;border:0;padding:17px 0;"><i class=3D"button-section-mso" style=
+=3D"letter-spacing:29.92px;mso-font-width:-100%;mso-text-raise:26.950000000=
+000003px;">&nbsp;</i><span class=3D"button-section-label" style=3D"line-hei=
+ght:inherit;margin:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu S=
+ans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospac=
+e;font-weight:700;color:#efefef;display:inline-block;font-size:11px;min-wid=
+th:1px;mso-text-raise:15.95px;"><span data-letter-spacing=3D"3" style=3D"fo=
+nt-size:inherit;font-weight:inherit;line-height:inherit;margin:0;letter-spa=
+cing:0.2em;">Quercus Fund</span></span><i class=3D"button-section-mso" styl=
+e=3D"letter-spacing:29.92px;mso-font-width:-100%;mso-text-raise:26.95000000=
+0000003px;">&nbsp;</i></a></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"text-text-section-35">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">
+                <tbody>
+                 <tr>
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"><p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;">If you=E2=80=99ve made it this fa=
+r through my ramblings, please allow me one last opportunity to say thank y=
+ou. There are no words to describe the gratitude I feel in the face of the =
+support you continue to show our store front on Balboa Street. I walk the s=
+treets of my neighborhood and see people I don=E2=80=99t recognize wearing =
+=E2=80=9Cslow is forever=E2=80=9D hats and my mind is blown. I ride through=
+ the park and notice bikes with pink and yellow housing and can=E2=80=99t h=
+elp but wonder if they had their bike worked on here. The shop is growing, =
+slowly but surely, and we are growing, as people, as mechanics, as workers,=
+ and as friends. It is an honor to have spent another year as your bicycle =
+mechanics. We=E2=80=99ll see you in the new year.</p><p class=3D"" style=3D=
+"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;fo=
+nt-weight:normal;margin-bottom:0;font-family:'Andale Mono', 'Lucida Console=
+', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Couri=
+er, monospace;">Ayla</p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"image-image-section-below-36">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                    <tbody>
+                     <tr>
+                      <td class=3D"show-desktop-only section-spacing-left" =
+width=3D"44"></td>
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"><img class=3D"section-scaleable-image" src=3D"=
+https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/8966d25=
+0-56f9-4322-9cdf-bcbd1eba544f/2025-11-13-4.jpg?content-type=3Dimage%2Fjpeg&=
+amp;format=3D750w" width=3D"594" alt=3D"" style=3D"font-size:.5794190358467=
+243em;display:block;border:0;text-decoration:none;line-height:0;background-=
+color:transparent;font-weight:normal;height:auto;width:100%;max-width:100%;=
+font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream=
+ Vera Sans Mono', 'Liberation Mono', Courier, monospace;"></td>
+                      <td class=3D"show-desktop-only section-spacing-right"=
+ width=3D"44"></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div id=3D"button-button-section-37">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"button-se=
+ction section-content" style=3D"width:100%;background-color:transparent;">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell section-text-area" style=3D"padding-top:22px;padding-right:22px=
+;padding-bottom:22px;padding-left:22px;"><a href=3D"https://q8w2.engage.squ=
+arespace-mail.com/r?m=3D6931f8f9a666330af25648e5&amp;u=3Dhttps%3A%2F%2Fwww.=
+scenicroutessf.com%2Fabout%3Fss_source%3Dsscampaigns%26ss_campaign_id%3D693=
+0f0b47a39620a60513473%26ss_email_id%3D6931f8f9a666330af25648e5%26ss_campaig=
+n_name%3DSlow%2BNews%2B-%2BDecember%2BEdition%26ss_campaign_sent_date%3D202=
+5-12-04T21%253A11%253A34Z&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_6930f0=
+b47a39620a60513473&amp;l=3Den-US&amp;s=3DtJ7BW2SmNNk8yDucDb0qn4JJ1_A%3D" cl=
+ass=3D"button-section-box button-style-solid" style=3D"color:#0e8ac4 !impor=
+tant;display:inline-block;line-height:11px;margin:0;mso-padding-alt:0;text-=
+align:center;text-decoration:none;transition:.15s;width:auto;background-col=
+or:#000;border:0;padding:17px 0;"><i class=3D"button-section-mso" style=3D"=
+letter-spacing:29.92px;mso-font-width:-100%;mso-text-raise:26.9500000000000=
+03px;">&nbsp;</i><span class=3D"button-section-label" style=3D"line-height:=
+inherit;margin:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans =
+Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;fo=
+nt-weight:700;color:#efefef;display:inline-block;font-size:11px;min-width:1=
+px;mso-text-raise:15.95px;"><span data-letter-spacing=3D"3" style=3D"font-s=
+ize:inherit;font-weight:inherit;line-height:inherit;margin:0;letter-spacing=
+:0.2em;">Visit Our Website!</span></span><i class=3D"button-section-mso" st=
+yle=3D"letter-spacing:29.92px;mso-font-width:-100%;mso-text-raise:26.950000=
+000000003px;">&nbsp;</i></a></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div></td>
+            </tr>
+           </tbody>
+          </table>
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-footer">
+           <tbody>
+            <tr>
+             <td align=3D"center" valign=3D"top" id=3D"newsletter-section-f=
+ooter-cell">
+              <div id=3D"footer-footer-section-stacked-top-0">
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"footer-se=
+ction footer-section-stacked section-content" style=3D"background-color:tra=
+nsparent;">
+                <tbody>
+                 <tr>
+                  <td align=3D"center" valign=3D"top" class=3D"section-text=
+-area section-content-cell" style=3D"padding-top:22px;padding-right:22px;pa=
+dding-bottom:22px;padding-left:22px;"><p class=3D"footer-company-info" styl=
+e=3D"line-height:1.618em;font-weight:normal;margin-top:0;font-family:'Andal=
+e Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', =
+'Liberation Mono', Courier, monospace;color:#111;font-size:11px;margin:0 0 =
+13.75px 0;padding:0;"><a style=3D"color:#111;text-decoration:none;font-size=
+:inherit;font-family:inherit;font-weight:inherit;line-height:inherit;cursor=
+:default;">Scenic Routes Community Bicycle Center, 521 Balboa Street, San F=
+rancisco, United States</a></p> <p class=3D"footer-links" style=3D"line-hei=
+ght:1.618em;font-weight:normal;font-family:'Andale Mono', 'Lucida Console',=
+ 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier=
+, monospace;font-size:11px;color:#313131;margin:0 0 13.75px 0;padding:0;">P=
+owered by <a href=3D"https://q8w2.engage.squarespace-mail.com/r?m=3D6931f8f=
+9a666330af25648e5&amp;u=3Dhttps%3A%2F%2Fwww.squarespace.com%3Fchannel%3Dpro=
+duct_refer%26subchannel%3Dcustomer%26source%3Demail_campaigns_button%26camp=
+aign%3D618d615066c6445d2a0e947f%26utm_medium%3Dproduct_refer%26utm_source%3=
+Demail_campaigns_button%26ss_source%3Dsscampaigns%26ss_campaign_id%3D6930f0=
+b47a39620a60513473%26ss_email_id%3D6931f8f9a666330af25648e5%26ss_campaign_n=
+ame%3DSlow%2BNews%2B-%2BDecember%2BEdition%26ss_campaign_sent_date%3D2025-1=
+2-04T21%253A11%253A34Z&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_6930f0b47=
+a39620a60513473&amp;l=3Den-US&amp;s=3DQAtkHKUYmfzN-wFbSLq99UsvOxo%3D" class=
+=3D"sqsp-link" style=3D"color:#313131;text-decoration:underline;display:inl=
+ine-block;">Squarespace</a></p> <p class=3D"footer-links" style=3D"line-hei=
+ght:1.618em;font-weight:normal;margin-bottom:0;font-family:'Andale Mono', '=
+Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberatio=
+n Mono', Courier, monospace;font-size:11px;color:#313131;margin:0 0 13.75px=
+ 0;padding:0;"><a href=3D"https://q8w2.engage.squarespace-mail.com/r?m=3D69=
+31f8f9a666330af25648e5&amp;u=3Dhttps%3A%2F%2Fcampaign-preferences.com%2Funs=
+ubscribe%2F8XjmAROWNJImDlUesOVdUlX8l36xxp_dYuVj3i5Tk8RqqTDykWb5-wQlzAnXX0In=
+IPXZ5bYeyE-v8Ls8ZbaDrKqNzTdfKTA7HLJzZk5SU2Ec5g5Ir1S_N0ksq0q7AyPr1ta_lqSoHwt=
+994T193pKCsmNUXq82eLdNft3lbMKs8x0QvhTbMxAVW2Mn_6eVcKvwOpfDRUCQG__9bhtqfS42A=
+xdtQPJQ89QGEvXU1beKRDMHwYMSWrmv4P4CERNgbCh0OLGSnkcMJ1CXFFA2wkjRGqHXKoTS8tbE=
+CQNha8YUnMWmcj5AP-JoI7GwaWwjmIoR5Qa1rXxcBgMC6L2JXzvrLo3iZ1EYJ-RgGHyv2444qG8=
+YMpSWLktyCY%3D&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_6930f0b47a39620a6=
+0513473&amp;l=3Den-US&amp;s=3Dm4_kzzPdjcVhpvuX139HBDvhAas%3D" class=3D"unsu=
+bscribe-link" style=3D"color:#313131;text-decoration:underline;"> <span cla=
+ss=3D"unsubscribe-link-text" style=3D"font-size:inherit;font-weight:inherit=
+;line-height:inherit;margin:0;">Unsubscribe</span> </a></p></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div></td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table></td>
+    </tr>
+   </tbody>
+  </table> <img src=3D"https://q8w2.engage.squarespace-mail.com/v2/a.gif?m=
+=3D6931f8f9a666330af25648e5&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_6930=
+f0b47a39620a60513473&amp;s=3DLCKMkyxzMi76a3dDSwT6to9UNAE%3D" alt=3D"" width=
+=3D"0" height=3D"0">
+ </body>
+</html>
+--c2495cc1897b1c06b7f813c0d6da0101f3aa9d1fb50ffc1144b3ea26399c--

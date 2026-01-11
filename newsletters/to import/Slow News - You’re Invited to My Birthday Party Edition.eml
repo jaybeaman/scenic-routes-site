@@ -1,0 +1,1496 @@
+Delivered-To: jbeaman@gmail.com
+Received: by 2002:a05:6850:260c:b0:63d:136f:e81a with SMTP id x12csp1909706nnd;
+        Sat, 3 May 2025 23:18:28 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEio4+/0dIYNp5kOBOu8AbmvQwXfW1UvG/2ael/VZXcdn94ckppeR+lbEIg3a8vwWIFGfVZ
+X-Received: by 2002:a17:90b:4d07:b0:2ee:acea:9ec4 with SMTP id 98e67ed59e1d1-30a4e69e6c0mr4818561a91.3.1746339508220;
+        Sat, 03 May 2025 23:18:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1746339508; cv=none;
+        d=google.com; s=arc-20240605;
+        b=A1n4pc5+orb7gQb8ZbLbp0RaRUfoKUf1JmYyTBP/vKNESVLhOwSuBdUVoXqQl1BVGK
+         Q8wFh9Tnawvm4BuJmzEz0WIuBtnm+bY/Gg7wAtlq5LWTYUsihLwzw7jm4OqZHfpp0rhY
+         MZf6TzlHg02OQyH4OzvriQkR6ZcnF32nrljqlwJ06a+Zskod5itsff9h9En9auyXe/nq
+         TjR/4WSjR80dw90s4et2xJf+TW9ZlRt77X6LpEfPyaHNTqfAWWNOa6dDp988oIDmT/hC
+         l0l4R5IFQxlEQRA6QLDu5fOlGi4IoKMkvXgwJnnMetquMcAw3799Th3ujR1d43vruimh
+         v50g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe-post:feedback-id:list-unsubscribe:message-id
+         :sender:to:from:subject:mime-version:date:dkim-signature
+         :dkim-signature;
+        bh=RX6uRRzOWpf6GKQaJjNt7QZ47SqgL7RYbLQ4PLoYJCM=;
+        fh=4TbKyGIWs6U4EHh2/Sj8bLShT5RJP4c38C8Cdm/ez/E=;
+        b=aB90wQf63KSwkyMRu4keqgEv6JHzJ3pZvYf+hitipmHE3wsKzus7iynCUKow4FUSH4
+         kg4ucd9gU0OSDyH1cC0lSG8C6Zfgsesb8Yy4HvD+/hz+5DCPWUdvEmkrgWuxhpG0zeZW
+         faddp0fmhLhawahJZSWMYj26745/tjoO7UdFo7Vu0+DfFHI0jr+4oUBHe1kD3v0e6L6V
+         Jo/AeYhKHVjX9oCo/fCbRK9/XgWUvxDsJNXqk3bxzSDuWO+otAgTo5P77N+PNuDUIuqu
+         9pZ9UEPHPniOCKILtWu3g69g7zXJBY47qGwWZF8XsBIKEcTHMswWdiCTklgHc0HySSCf
+         gpPg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mgcp03.squarespace-mail.com header.s=squarespace-mg header.b=PWytqu8h;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=WZqfs5jk;
+       spf=pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.95 as permitted sender) smtp.mailfrom="bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com"
+Return-Path: <bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com>
+Received: from m201-95.mailgun.net (m201-95.mailgun.net. [161.38.201.95])
+        by mx.google.com with UTF8SMTPS id 98e67ed59e1d1-30a3480af35si12672419a91.117.2025.05.03.23.18.27
+        for <jbeaman@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 03 May 2025 23:18:28 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.95 as permitted sender) client-ip=161.38.201.95;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mgcp03.squarespace-mail.com header.s=squarespace-mg header.b=PWytqu8h;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=WZqfs5jk;
+       spf=pass (google.com: domain of bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com designates 161.38.201.95 as permitted sender) smtp.mailfrom="bounce+eecb67.32c4ac-jbeaman=gmail.com@mgcp03.squarespace-mail.com"
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mgcp03.squarespace-mail.com; q=dns/txt; s=squarespace-mg; t=1746339506; x=1746346706;
+ h=List-Unsubscribe-Post: List-Unsubscribe: message-id: sender: sender: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id;
+ bh=RX6uRRzOWpf6GKQaJjNt7QZ47SqgL7RYbLQ4PLoYJCM=;
+ b=PWytqu8hUEng28I5HjAIelWBO3ChXXZ4tAlpedmvjHggwSN0mnhv+LE0dz4S7ds8t77jFB5vEe0ZoLsL8KXUhWSpoUNxmHIm+dTBgDZPsUJwO47WKHMbEpsQJoTcp1W7rnZLzvOul/0h3r/Dbug3O/lRRe79IOieDfCeFfEtvBqgbMiQZ7xAvd3U0qJleVnzVlb/J9E0FSAdHR1tc+5yvuvK/4DagzKFOXbB2cbK23FuT8pfvm1FrwHGEhfcdy+fDdAs3+8502tYCS5ocnXUk8H7VMmXYT6yC/2GdDBR5vQlEZPzj+DFpBPBENZXFBKulkCCe2V5LE7Ufd9JT+suXQ==
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1746339506; x=1746346706;
+ h=List-Unsubscribe-Post: List-Unsubscribe: message-id: sender: sender: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id;
+ bh=RX6uRRzOWpf6GKQaJjNt7QZ47SqgL7RYbLQ4PLoYJCM=;
+ b=WZqfs5jkE2cyyKBfFABOJrKkG99N5bLVFp1LNPX9lc3Fo9PPXkeKkTbBcGTFgAoiU1xH8Gc5TnjMZLvFxwWD4iD1wVvpCwDQhXkI1EXqYo543EZ1WvQvmuqGym+8bdIAxSwXp513IapE8KH5ZoqiM8fmzjlTQRHyLzmyfq/dl5E=
+X-Feedback-Id: postmaster@mgcp03.squarespace-mail.com:UNSIGNED_CAMPAIGN:610aa31bfaf8743c84887869:mailgun
+X-Mailgun-Sending-Ip: 161.38.201.95
+X-Mailgun-Sending-Ip-Pool-Name: 
+X-Mailgun-Sending-Ip-Pool: 
+X-Mailgun-Sid: WyIyZTU4NyIsImpiZWFtYW5AZ21haWwuY29tIiwiMzJjNGFjIl0=
+Received: by 993ab76374d6 with HTTP id 681706b2cdc8c3c642558a17; Sun, 04 May 2025
+ 06:18:26 GMT
+Date: Sun, 04 May 2025 06:18:26 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="a681a75de17c492e07811a87f6a8b22e46dac1047159a8081f324e60a83d"
+Subject: =?UTF-8?q?Slow_News_-_You=E2=80=99re_Invited_to_My_Birthday_Party_Edition?=
+From: Scenic Routes Community Bicycle Center <info@scenicroutessf.com>
+To: jbeaman@gmail.com
+X-Mailgun-Tag: UNSIGNED_CAMPAIGN
+sender: Scenic Routes Community Bicycle Center <info@scenicroutessf.com>
+message-id: <681706a5fe3c3e2f50291335.618d615066c6445d2a0e947f@mgcp03.squarespace-mail.com>
+List-Unsubscribe: <https://campaign-preferences.com/unsubscribe/Z28LeBK0WGGE0V36vl4vXbYoU3LxaGkS8PSqA2-cNnE6WhjBEfc5fyw3KOoRLD91svWtt6a42P7n6yyq-dHzdgBg3s1r6nWxNdWxHUPOiTVkM-Yf0syedPOFV5N-J2JxYYXmg9h2RhoeeaZFuUmLp52_v5SoHYXEB58z_Eon1hZMRUFWbsMiusyUnCHj4W6Ts5-HVKXezDf0XguIL1b8r15cWj-DCd3T4rED_-yKlWeWmCM18rsXjvF-0SoXx9RDXPR2hlrx7yc9-InALB5jR9rg04xFbvD5F5TKYhYqhZbVY4cZUi_2Cbvnw7lyvYiYsqdrEA4fSLwZNSm5XwceE9_InbMGGF965M2xxXCkJeqkzNQktWQ7CwY=>
+X-Website-Id: 618d615066c6445d2a0e947f
+Feedback-ID: b_6816c6180960e50fb6cb11ea:618d615066c6445d2a0e947f:mailgun
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailgun-Variables: {"emailMessageId": "681706a5fe3c3e2f50291335", "mailingId":
+ "b_6816c6180960e50fb6cb11ea", "websiteId": "618d615066c6445d2a0e947f"}
+
+--a681a75de17c492e07811a87f6a8b22e46dac1047159a8081f324e60a83d
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+<https://www.scenicroutessf.com/?ss_source=3Dsscampaigns&ss_campaign_id=3D6=
+816c6180960e50fb6cb11ea&ss_email_id=3D681706a5fe3c3e2f50291335&ss_campaign_=
+name=3DSlow+News+-+You%E2%80%99re+Invited+to+My+Birthday+Party+Edition&ss_c=
+ampaign_sent_date=3D2025-05-04T06%3A18%3A26Z> Take 9, May 3rd 2025 Slow New=
+s. Hi Neighbors, Tomorrow is my birthday. When I was turning eight years ol=
+d I planned a birthday party with my mom, went to school with my backpack f=
+ull of invitations, handed them out to the kids in my class, and waited in =
+excited anticipation. I was too cool for an RSVP, I said, =E2=80=9CMOM, Nob=
+ody wants to RSVP, people will just come.=E2=80=9D Crazy thing is, my mom w=
+as right (aren=E2=80=99t they always), and nobody showed up except my best =
+friend. Turns out eight year olds don=E2=80=99t put things on their parent=
+=E2=80=99s calendar for them. Turns out I wasn=E2=80=99t too cool for an RS=
+VP; I was heartbroken. My mom took me to the movies with my best friend and=
+ I ate enough cake to make my stomach hurt and the year after I did include=
+ a note to PLEASE RSVP on my invitations. Since then, I haven=E2=80=99t bee=
+n much of a birthday girl. The planning seems like more hassle than it=E2=
+=80=99s worth and asking people to celebrate me makes me uncomfortable in a=
+ way that can probably only be explained in therapy. I just want to have a =
+nice day. Eat a nice meal, ride my bike, bake a cake, and spend a little mo=
+re money on myself than I usually would. Unfortunately, the world doesn=E2=
+=80=99t revolve around me, and living in a community has taught me that eve=
+n your birthday isn=E2=80=99t yours alone to enjoy. People need to be given=
+ a reason to get together: to hold hands and hug and remember that the worl=
+d is actually full of joy. People want to show you they care, and sometimes=
+ you need to give them a day, a time, and a location to do so. Which is to =
+say: You=E2=80=99re Invited! Night Moves - Birthday Edition Thursday, May 8=
+th 521 Balboa Street Meet at 7:15, Roll at 7:30 I=E2=80=99m turning 23, whi=
+ch is nice. It puts me solidly into my 20s in a way that almost makes me fe=
+el like a real adult. Jay is turning 51 two days later, which is also nice =
+in that it puts him solidly into adulthood in a way that makes his musings =
+more wise than wishful. One such musing was that it was important to invite=
+ people to celebrate us. That we should have a ride that isn=E2=80=99t just=
+ a ride, isn=E2=80=99t just another Thursday, but is a reason to get togeth=
+er and have a jolly good time with our friends and neighbors. Life is busy =
+and the world is full of stress, but I=E2=80=99m happy to be another year o=
+lder. I=E2=80=99m happy to witness Jay turn another year older. Marking the=
+ passage of time is painful, and requires reflection that sometimes feels i=
+mpossible to do given the circumstances of society, but usually ends up bei=
+ng worth it. I=E2=80=99m so scared to be 8 years old again at my birthday p=
+arty with a table set for 10 and only have one kid show up that I don=E2=80=
+=99t want to give people the opportunity to celebrate me. But, we are all l=
+earning and growing, and this year I=E2=80=99ve decided that even if only o=
+ne kid shows up, I=E2=80=99ll consider myself lucky. What a gift to share e=
+ach other=E2=80=99s company on a day that could=E2=80=99ve been just anothe=
+r Tuesday. What a gift to be alive. Two years ago at the end of May a group=
+ of us gathered down at Ocean Beach to celebrate the birthdays of Kat and H=
+ansel. (Why were we all born in May?? Will one of the astrology girls tell =
+me?). If I remember correctly, Hansel was not thrilled to be the center of =
+attention (though we all know they secretly were), felt bad about asking ev=
+eryone to be there on a foggy day, and had been talked into having a party.=
+ What an idiot. If only we had one more birthday party in which we could he=
+ar Hansel=E2=80=99s laugh, take 700 selfies, and see their smile light up t=
+he entire beach. The world would be a better place. My heart would be a lit=
+tle less broken. Our community would be a little bit stronger. Hansel had a=
+ way of making every day feel like a celebration, so you can only imagine t=
+he way a day as auspicious as a birthday could feel. We cannot stop living =
+in light of those we have lost. We cannot stop celebrating. In fact, I thin=
+k we must celebrate more. Let=E2=80=99s ride our bikes to the top of Twin P=
+eaks on a Thursday with chocolate cake in our baskets and call it a party b=
+ecause we CAN. Let=E2=80=99s get together on Sunday=E2=80=99s and drink tea=
+ and call it a soiree because no one is stopping us. Let=E2=80=99s wear our=
+ cute outfits and turn up the music and send each other cards and dance in =
+the bike shop and make our mundane lives a little more magical. You deserve=
+ it, and the people who love you deserve it too. So come to our birthday ri=
+de, and plan your own birthday party. Let this be your push to get together=
+ with your friends in a way that isn=E2=80=99t just sitting on the couch wa=
+tching TV or running errands. Life is all work and no fun unless you do som=
+ething about it. Let=E2=80=99s have a party! And Jay=E2=80=99s only request=
+ for this letter about both of our birthdays was that I sign off with the f=
+ollowing: Celebrate. Good times. Come on. Ayla P.S. Other things happening =
+this month: Rotating Mechanic=E2=80=99s Class! Thursday May 15th at 7:15 As=
+ a gift to myself (this is the day before my final Graduate thesis is due) =
+we are phoning it in a bit for this class: Have you ever looked at our bike=
+s and thought, WOW, I wish my bike was cute like that. Now it can be! Come =
+deck your bike out with all the cuteness your heart could desire. Yassify y=
+our bike, if you will. You bring your bike, leave with a bike you don=E2=80=
+=99t even recognize! Sign up here: Beautify your Bike Day!  <https://www.sc=
+enicroutessf.com/goodsandclasses/classes?ss_source=3Dsscampaigns&ss_campaig=
+n_id=3D6816c6180960e50fb6cb11ea&ss_email_id=3D681706a5fe3c3e2f50291335&ss_c=
+ampaign_name=3DSlow+News+-+You%E2%80%99re+Invited+to+My+Birthday+Party+Edit=
+ion&ss_campaign_sent_date=3D2025-05-04T06%3A18%3A26Z> Day Grooves! Sunday M=
+ay 25th Meet at 11:00, Roll at 11:15 A ride for the girls and the gays. We=
+=E2=80=99ll cruise around the city on a TBD route. Like 10 miles, with lots=
+ of breaks, and at least one stop for snacks. Community Night! Thursday May=
+ 29th We=E2=80=99ll be keepin=E2=80=99 the doors open till 9:00, turning up=
+ the music, and pulling out the LaCroix from the fridge. We=E2=80=99ll have=
+ birthday cake in honor of Hansel and play the gayest vinyls we have in the=
+ shop. One more note: Our dear friend and mechanic Joel is doing a fundrais=
+ing ride in honor of his late sister. The ride will aid Leukemia and Lympho=
+ma research while Joel sweats his butt off riding 100 miles around Lake Tah=
+oe. Find more information and donate here: Support Joel Here!  <https://pag=
+es.lls.org/tnt/oak/ambbr25/JBartell> Alrighty friends, that=E2=80=99s all I=
+=E2=80=99ve got for you. We=E2=80=99ll see you at our ride and at the shop =
+and in the panhandle and hopefully at the next party you throw! CELEBRATE. =
+GOOD TIMES. COME ON!! Visit Our Website  <https://www.scenicroutessf.com/ho=
+me?ss_source=3Dsscampaigns&ss_campaign_id=3D6816c6180960e50fb6cb11ea&ss_ema=
+il_id=3D681706a5fe3c3e2f50291335&ss_campaign_name=3DSlow+News+-+You%E2%80%9=
+9re+Invited+to+My+Birthday+Party+Edition&ss_campaign_sent_date=3D2025-05-04=
+T06%3A18%3A26Z> Scenic Routes Community Bicycle Center, 521 Balboa Street, =
+San Francisco, United States Powered by Squarespace <https://www.squarespac=
+e.com?channel=3Dproduct_refer&subchannel=3Dcustomer&source=3Demail_campaign=
+s_button&campaign=3D618d615066c6445d2a0e947f&utm_medium=3Dproduct_refer&utm=
+_source=3Demail_campaigns_button&ss_source=3Dsscampaigns&ss_campaign_id=3D6=
+816c6180960e50fb6cb11ea&ss_email_id=3D681706a5fe3c3e2f50291335&ss_campaign_=
+name=3DSlow+News+-+You%E2%80%99re+Invited+to+My+Birthday+Party+Edition&ss_c=
+ampaign_sent_date=3D2025-05-04T06%3A18%3A26Z> Unsubscribe  <https://campaig=
+n-preferences.com/unsubscribe/T6Lg_ZEb381uBJuj8RmtMTZs5TVrUMIR5IoSQmhFuHwAh=
+QapSZi5HODMViv1KiadfSZTCJh9KBSEXZM0RZ3k3QRCFxacFtZUcvhz3OL3C7nhHhdUl6D9x-UP=
+irPo9j9JL4qsaqzYc4eGwm8OtWQbHu3B7K2rEpKoVHAqzvz6mPWG6L_CzFaTEqPxfAmoSCzgihZ=
+Y70gRWV9CWx_XupPAq5DdR4CK6BX7Kcyu-GNhuVg6gVvef1CP6BK_EGnSgFG42ZNOtvjBJQ-iZN=
+BylMvHdnuT1tFsWn2wyqvMjc0-B4QaDEbvq0b9b6GyAcjHlxoCNsC36Qdy50m4g_ycnK4lM-wM_=
+VV4Dx18dV-5j5k7cJ5p2DFqSMpdkZU=3D>
+--a681a75de17c492e07811a87f6a8b22e46dac1047159a8081f324e60a83d
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" lang=3D"en-=
+US" xml:lang=3D"en-US">
+ <head>=20
+  <title data-ignore-plain-text>Slow News - You=E2=80=99re Invited to My Bi=
+rthday Party Edition</title>=20
+  <meta http-equiv=3D"content-type" content=3D"text/html; charset=3Dutf-8">=
+=20
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1, maximum-scale=3D1">=20
+  <meta name=3D"format-detection" content=3D"address=3Dno">=20
+  <!--[if (gte mso 9)|(IE)]>
+    <style type=3D"text/css" media=3D"screen">
+      li {
+        text-indent: -1em;
+      }
+    </style>
+    <![endif]-->=20
+  <style type=3D"text/css" media=3D"all">
+      body,
+=2Esection-text-area,
+=2Esection-text-area-wrapper,
+=2Esection-text-cell {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+}
+body {
+    width: 100% !important;
+    min-width: 100% !important;
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    mso-line-height-rule: exactly;
+}
+p {
+    margin-block: 0;
+}
+@media only screen and (max-width:  593px ) {
+    table#newsletter-table {
+        border: 0 !important;
+    }
+    table#newsletter-email {
+        width: 100% !important;
+    }
+    img.section-scaleable-image,
+    img.section-empty-img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    .bg-none {
+        background: none !important;
+    }
+    .hauto {
+        height: auto !important;
+    }
+    .show-desktop-only {
+        display: none !important;
+    }
+    .show-mobile-only {
+        display: block !important;
+        float: none !important;
+        line-height: auto !important;
+        max-height: inherit !important;
+        max-width: inherit !important;
+        margin-top: 0px !important;
+        overflow: visible !important;
+        visibility: inherit !important;
+        width: auto !important;
+    }
+    .stack-cell-wrap {
+        display: block !important;
+    }
+    .stack-cell-up {
+        display: table-header-group !important;
+    }
+    .stack-cell-down {
+        display: table-footer-group !important;
+    }
+    .mw100p {
+        max-width: 100% !important;
+    }
+    .section-horizontal-padding,
+    .padding-mobile-both {
+        padding-left: 22px !important;
+        padding-right: 22px !important;
+    }
+    .padding-mobile-left {
+        padding-left: 22px !important;
+    }
+    .padding-mobile-right {
+        padding-right: 22px !important;
+    }
+    .text-left {
+        text-align: left !important;
+    }
+    .text-right {
+        text-align: right !important;
+    }
+    .w100p {
+        width: 100% !important;
+    }
+}
+=2Ebutton-style-solid:hover,
+=2Ebutton-style-rounded:hover {
+    opacity: .8 !important;
+}
+a:hover {
+    text-decoration: none !important;
+}
+span.mail-merge-preview {
+    border-bottom: 2px dotted currentColor;
+    display: inline-block;
+    line-height: 1em !important;
+    margin-bottom: .125em !important;
+}
+table#newsletter-section-body .linked-site-title-link {
+    color: #0e8ac4 !important;
+}
+#header-header-section-split-left-0 .brand-name .linked-site-title-link {
+    color: #272727;
+    text-decoration: none;
+}
+#footer-footer-section-stacked-top-0 .brand-name .linked-site-title-link {
+    color: #000;
+    text-decoration: none;
+}
+#footer-footer-section-stacked-top-0 .footer-text .linked-site-title-link {
+    color: #0e8ac4;
+}
+body.renderedPreview #line-line-section-0 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-2 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-7 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-9 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+body.renderedPreview #line-line-section-15 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+#button-button-section-17 .button-style-outline:hover {
+    background-color: #000 !important;
+    border: 1px solid #000 !important;
+}
+#button-button-section-17 .button-style-outline:hover .button-section-label=
+ {
+    color: #fff !important;
+}
+body.renderedPreview #line-line-section-20 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+#button-button-section-23 .button-style-outline:hover {
+    background-color: #000 !important;
+    border: 1px solid #000 !important;
+}
+#button-button-section-23 .button-style-outline:hover .button-section-label=
+ {
+    color: #fff !important;
+}
+body.renderedPreview #line-line-section-24 div.basic-line[data-line=3D"dash=
+ed"] {
+    border-width: .5px 0 !important;
+}
+#button-button-section-26 .button-style-outline:hover {
+    background-color: #000 !important;
+    border: 1px solid #000 !important;
+}
+#button-button-section-26 .button-style-outline:hover .button-section-label=
+ {
+    color: #fff !important;
+}
+
+    </style>=20
+  <!--[if mso]>
+    <noscript>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    </noscript>
+    <![endif]-->=20
+  <!--[if (mso)|(mso 16)]>
+      <style type=3D"text/css">
+        a {text-decoration: none;}
+      </style>
+    <![endif]-->=20
+ </head>=20
+ <body style=3D"padding:0;margin:0;text-align:center;background-color:#fff;=
+">=20
+  <table role=3D"article" aria-label=3D"Slow News - You=E2=80=99re Invited =
+to My Birthday Party Edition" lang=3D"en-US" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" align=3D"center" id=3D"newsletter-table" style=3D"font-=
+size:16px;font-weight:normal;width:100%;padding:0px;background-color:#fff;b=
+order-top:44px solid #fff;border-bottom:44px solid #fff;margin:0 auto;text-=
+align:center;table-layout:fixed;">=20
+   <tbody>
+    <tr>=20
+     <td align=3D"center" valign=3D"top" bgcolor=3D"#FFFFFF" id=3D"newslett=
+er-cell" style=3D"font-size:.9375em;">=20
+      <div data-ignore-plain-text class=3D"newsletter-preview-text" style=
+=3D"color:transparent;display:none !important;height:0;max-height:0;max-wid=
+th:0;opacity:0;overflow:hidden;mso-hide:all;visibility:hidden;width:0;">
+        Hi Neighbors, Happy May! =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F=20
+      </div>=20
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"594"=
+ bgcolor=3D"#D9E5DD" id=3D"newsletter-email">=20
+       <tbody>
+        <tr>=20
+         <td align=3D"center" valign=3D"top" id=3D"newsletter-email-wrapper=
+" class=3D"fixed-sans">=20
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-header">=20
+           <tbody>
+            <tr>=20
+             <td align=3D"center" valign=3D"middle" id=3D"newsletter-sectio=
+n-header-cell">=20
+              <div id=3D"header-header-section-split-left-0">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"header-se=
+ction header-section-split section-content" style=3D"background-color:trans=
+parent;">=20
+                <tbody>
+                 <tr>=20
+                  <td class=3D"section-content-cell" style=3D"padding-top:2=
+2px;padding-right:22px;padding-bottom:0px;padding-left:22px;">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"left" valign=3D"middle" width=3D"50%" cl=
+ass=3D"section-text-area"> <a class=3D"brand-logo-link" href=3D"https://mgc=
+p03.engage.squarespace-mail.com/r?m=3D681706a5fe3c3e2f50291335&amp;u=3Dhttp=
+s%3A%2F%2Fwww.scenicroutessf.com%2F%3Fss_source%3Dsscampaigns%26ss_campaign=
+_id%3D6816c6180960e50fb6cb11ea%26ss_email_id%3D681706a5fe3c3e2f50291335%26s=
+s_campaign_name%3DSlow%2BNews%2B-%2BYou%25E2%2580%2599re%2BInvited%2Bto%2BM=
+y%2BBirthday%2BParty%2BEdition%26ss_campaign_sent_date%3D2025-05-04T06%253A=
+18%253A26Z&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_6816c6180960e50fb6cb1=
+1ea&amp;l=3Den-US&amp;s=3DNz6txcr-Mjey18VZnHM616QBqY8%3D" style=3D"color:#0=
+e8ac4 !important;"><img class=3D"brand-logo" src=3D"https://images.squaresp=
+ace-cdn.com/content/v1/618d615066c6445d2a0e947f/6d9767f2-4d83-4528-a527-15a=
+5475b6d66/slow+is+forever+logo.png" height=3D"66" alt=3D"Scenic Routes Comm=
+unity Bicycle Center" style=3D"font-size:.5794190358467243em;display:block;=
+border:0;text-decoration:none;line-height:0;font-weight:normal;font-family:=
+'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans M=
+ono', 'Liberation Mono', Courier, monospace;color:#272727;height:auto;max-h=
+eight:66px;max-width:100%;width:auto;margin-left:0px;"></a> </td>=20
+                      <td align=3D"right" valign=3D"middle" width=3D"50%" c=
+lass=3D"section-text-area"> <p class=3D"email-title" style=3D"line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;margin-bottom:0;=
+font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream=
+ Vera Sans Mono', 'Liberation Mono', Courier, monospace;font-size:11px;mso-=
+line-height-alt:11px;color:#000;white-space:pre-wrap;margin-right:0px;"><em=
+>Take 9, May 3rd 2025</em></p> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div> </td>=20
+            </tr>=20
+           </tbody>
+          </table>=20
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-body">=20
+           <tbody>
+            <tr>=20
+             <td align=3D"center" valign=3D"top" width=3D"100%" id=3D"newsl=
+etter-section-body-cell">=20
+              <div id=3D"line-line-section-0">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:92%;min-width:92%;">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:10px;padding-right:0;p=
+adding-bottom:10px;padding-left:0;">=20
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#272727;">
+                        &nbsp;
+                       </div> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-1">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell" style=3D"padding-top:0px;padding-right:9px;padding-bottom:0px;pa=
+dding-left:9px;color:#272727;background-color:transparent;"> <h2 style=3D"c=
+olor:inherit;margin:1.414em 0 .5em;font-weight:400;line-height:1.25em;font-=
+size:3.9710634675000014em;mso-line-height-alt:3.9710634675000014em;margin-t=
+op:0;margin-bottom:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu S=
+ans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospac=
+e;letter-spacing:-.05em;text-align:center;">Slow News. </h2> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"line-line-section-2">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:95%;min-width:95%;">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:2px;padding-right:0;pa=
+dding-bottom:2px;padding-left:0;">=20
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"spacer-spacer-section-3">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"spacer-se=
+ction section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell" height=3D"22" style=3D"height:22px;"> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"image-image-section-below-4">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td>=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td class=3D"show-desktop-only section-spacing-left" =
+width=3D"44"></td>=20
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"> <img class=3D"section-scaleable-image" src=3D=
+"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/2301b4=
+4b-f454-4b8e-8a6f-69a71a896d75/2025-03-28-12.jpg?content-type=3Dimage%2Fjpe=
+g&amp;format=3D750w" width=3D"594" alt=3D"" style=3D"font-size:.57941903584=
+67243em;display:block;border:0;text-decoration:none;line-height:0;backgroun=
+d-color:transparent;font-weight:normal;height:auto;width:100%;max-width:100=
+%;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstre=
+am Vera Sans Mono', 'Liberation Mono', Courier, monospace;"> </td>=20
+                      <td class=3D"show-desktop-only section-spacing-right"=
+ width=3D"44"></td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"spacer-spacer-section-5">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"spacer-se=
+ction section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell" height=3D"22" style=3D"height:22px;"> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-6">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:=
+1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-top:0;font-family:'An=
+dale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono=
+', 'Liberation Mono', Courier, monospace;">Hi Neighbors,<br></p><p style=3D=
+"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:normal;fon=
+t-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Ve=
+ra Sans Mono', 'Liberation Mono', Courier, monospace;line-height:1.38;margi=
+n-top:0pt;margin-bottom:0pt;" class=3D"">Tomorrow is my birthday. When I wa=
+s turning eight years old I planned a birthday party with my mom, went to s=
+chool with my backpack full of invitations, handed them out to the kids in =
+my class, and waited in excited anticipation. I was too cool for an RSVP, I=
+ said, =E2=80=9CMOM, Nobody wants to RSVP, people will just come.=E2=80=9D =
+Crazy thing is, my mom was right (aren=E2=80=99t they always), and nobody s=
+howed up except my best friend. Turns out eight year olds don=E2=80=99t put=
+ things on their parent=E2=80=99s calendar for them. Turns out I wasn=E2=80=
+=99t too cool for an RSVP; I was heartbroken. My mom took me to the movies =
+with my best friend and I ate enough cake to make my stomach hurt and the y=
+ear after I did include a note to PLEASE RSVP on my invitations.&nbsp;<br><=
+/p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-wei=
+ght:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono',=
+ 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-hei=
+ght:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D"">Since then, I haven=
+=E2=80=99t been much of a birthday girl. The planning seems like more hassl=
+e than it=E2=80=99s worth and asking people to celebrate me makes me uncomf=
+ortable in a way that can probably only be explained in therapy. I just wan=
+t to have a nice day. Eat a nice meal, ride my bike, bake a cake, and spend=
+ a little more money on myself than I usually would. </p><p style=3D"color:=
+inherit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:normal;height:1.6=
+18em;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bits=
+tream Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-height:1.=
+38;margin-top:0pt;margin-bottom:0pt;" class=3D""></p><p style=3D"color:inhe=
+rit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:normal;font-family:'A=
+ndale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mon=
+o', 'Liberation Mono', Courier, monospace;line-height:1.38;margin-top:0pt;m=
+argin-bottom:0pt;" class=3D"">Unfortunately, the world doesn=E2=80=99t revo=
+lve around me, and living in a community has taught me that even your birth=
+day isn=E2=80=99t yours alone to enjoy. People need to be given a reason to=
+ get together: to hold hands and hug and remember that the world is actuall=
+y full of joy. People want to show you they care, and sometimes you need to=
+ give them a day, a time, and a location to do so.&nbsp;</p><p class=3D"" s=
+tyle=3D"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25=
+em 0;font-weight:normal;height:1.618em;font-family:'Andale Mono', 'Lucida C=
+onsole', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono',=
+ Courier, monospace;"></p><p class=3D"" style=3D"color:inherit;font-size:.9=
+375em;line-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-bot=
+tom:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bit=
+stream Vera Sans Mono', 'Liberation Mono', Courier, monospace;">Which is to=
+ say:</p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"line-line-section-7">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:96%;min-width:96%;">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:3px;padding-right:0;pa=
+dding-bottom:3px;padding-left:0;">=20
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-8">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"> <p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;fon=
+t-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans M=
+ono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;tex=
+t-align:center;line-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D=
+""><strong>You=E2=80=99re Invited!&nbsp;</strong></p><p style=3D"color:inhe=
+rit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:normal;font-family:'A=
+ndale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mon=
+o', 'Liberation Mono', Courier, monospace;text-align:center;line-height:1.3=
+8;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>Night Moves - Birth=
+day Edition</strong></p><p style=3D"color:inherit;font-size:.9375em;margin:=
+0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console'=
+, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courie=
+r, monospace;text-align:center;line-height:1.38;margin-top:0pt;margin-botto=
+m:0pt;" class=3D""><strong>Thursday, May 8th</strong></p><p style=3D"color:=
+inherit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:normal;font-famil=
+y:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans=
+ Mono', 'Liberation Mono', Courier, monospace;text-align:center;line-height=
+:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>521 Balboa Stre=
+et</strong></p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25e=
+m 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu=
+ Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monosp=
+ace;text-align:center;line-height:1.38;margin-top:0pt;margin-bottom:0pt;" c=
+lass=3D""><strong>Meet at 7:15, Roll at 7:30</strong></p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"line-line-section-9">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:96%;min-width:96%;">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:3px;padding-right:0;pa=
+dding-bottom:3px;padding-left:0;">=20
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"spacer-spacer-section-10">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"spacer-se=
+ction section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell" height=3D"22" style=3D"height:22px;"> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"image-image-section-below-11">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td>=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td class=3D"show-desktop-only section-spacing-left" =
+width=3D"44"></td>=20
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"> <img class=3D"section-scaleable-image" src=3D=
+"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/274b4f=
+d7-aa89-40de-9aa5-c13960d66c04/2025-04-27-6.jpg?content-type=3Dimage%2Fjpeg=
+&amp;format=3D750w" width=3D"594" alt=3D"" style=3D"font-size:.579419035846=
+7243em;display:block;border:0;text-decoration:none;line-height:0;background=
+-color:transparent;font-weight:normal;height:auto;width:100%;max-width:100%=
+;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstrea=
+m Vera Sans Mono', 'Liberation Mono', Courier, monospace;"> </td>=20
+                      <td class=3D"show-desktop-only section-spacing-right"=
+ width=3D"44"></td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-12">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:=
+1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-top:0;font-family:'An=
+dale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono=
+', 'Liberation Mono', Courier, monospace;">I=E2=80=99m turning 23, which is=
+ nice. It puts me solidly into my 20s in a way that almost makes me feel li=
+ke a real adult. Jay is turning 51 two days later, which is also nice in th=
+at it puts him solidly into adulthood in a way that makes his musings more =
+wise than wishful. One such musing was that it was important to invite peop=
+le to celebrate us. That we should have a ride that isn=E2=80=99t just a ri=
+de, isn=E2=80=99t just another Thursday, but is a reason to get together an=
+d have a jolly good time with our friends and neighbors. Life is busy and t=
+he world is full of stress, but I=E2=80=99m happy to be another year older.=
+ I=E2=80=99m happy to witness Jay turn another year older. Marking the pass=
+age of time is painful, and requires reflection that sometimes feels imposs=
+ible to do given the circumstances of society, but usually ends up being wo=
+rth it.&nbsp;</p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.2=
+5em 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'Deja=
+Vu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mono=
+space;line-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D"">I=E2=
+=80=99m so scared to be 8 years old again at my birthday party with a table=
+ set for 10 and only have one kid show up that I don=E2=80=99t want to give=
+ people the opportunity to celebrate me. But, we are all learning and growi=
+ng, and this year I=E2=80=99ve decided that even if only one kid shows up, =
+I=E2=80=99ll consider myself lucky. What a gift to share each other=E2=80=
+=99s company on a day that could=E2=80=99ve been just another Tuesday. What=
+ a gift to be alive.</p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"image-image-section-below-13">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td>=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td class=3D"show-desktop-only section-spacing-left" =
+width=3D"44"></td>=20
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"> <img class=3D"section-scaleable-image" src=3D=
+"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/688321=
+a7-7b04-47ed-a53b-7e08c38b9980/2024-07-27-1-6.jpg?content-type=3Dimage%2Fjp=
+eg&amp;format=3D750w" width=3D"594" alt=3D"" style=3D"font-size:.5794190358=
+467243em;display:block;border:0;text-decoration:none;line-height:0;backgrou=
+nd-color:transparent;font-weight:normal;height:auto;width:100%;max-width:10=
+0%;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstr=
+eam Vera Sans Mono', 'Liberation Mono', Courier, monospace;"> </td>=20
+                      <td class=3D"show-desktop-only section-spacing-right"=
+ width=3D"44"></td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-14">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:=
+1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-top:0;font-family:'An=
+dale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono=
+', 'Liberation Mono', Courier, monospace;">Two years ago at the end of May =
+a group of us gathered down at Ocean Beach to celebrate the birthdays of Ka=
+t and Hansel. (Why were we all born in May?? Will one of the astrology girl=
+s tell me?). If I remember correctly, Hansel was not thrilled to be the cen=
+ter of attention (though we all know they secretly were), felt bad about as=
+king everyone to be there on a foggy day, and had been talked into having a=
+ party. What an idiot. If only we had one more birthday party in which we c=
+ould hear Hansel=E2=80=99s laugh, take 700 selfies, and see their smile lig=
+ht up the entire beach. The world would be a better place. My heart would b=
+e a little less broken. Our community would be a little bit stronger. Hanse=
+l had a way of making every day feel like a celebration, so you can only im=
+agine the way a day as auspicious as a birthday could feel.&nbsp;</p><p sty=
+le=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:norma=
+l;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstre=
+am Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-height:1.38;=
+margin-top:0pt;margin-bottom:0pt;" class=3D"">We cannot stop living in ligh=
+t of those we have lost. We cannot stop celebrating. In fact, I think we mu=
+st celebrate more. Let=E2=80=99s ride our bikes to the top of Twin Peaks on=
+ a Thursday with chocolate cake in our baskets and call it a party because =
+we CAN. Let=E2=80=99s get together on Sunday=E2=80=99s and drink tea and ca=
+ll it a soiree because no one is stopping us. Let=E2=80=99s wear our cute o=
+utfits and turn up the music and send each other cards and dance in the bik=
+e shop and make our mundane lives a little more magical. You deserve it, an=
+d the people who love you deserve it too.</p><p style=3D"color:inherit;font=
+-size:.9375em;margin:0 0 1.25em 0;font-weight:normal;height:1.618em;font-fa=
+mily:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera S=
+ans Mono', 'Liberation Mono', Courier, monospace;line-height:1.38;margin-to=
+p:0pt;margin-bottom:0pt;" class=3D""></p><p style=3D"color:inherit;font-siz=
+e:.9375em;margin:0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono',=
+ 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberat=
+ion Mono', Courier, monospace;line-height:1.38;margin-top:0pt;margin-bottom=
+:0pt;" class=3D"">So come to our birthday ride, and plan your own birthday =
+party. Let this be your push to get together with your friends in a way tha=
+t isn=E2=80=99t just sitting on the couch watching TV or running errands. L=
+ife is all work and no fun unless you do something about it. Let=E2=80=99s =
+have a party!&nbsp;</p><p style=3D"color:inherit;font-size:.9375em;margin:0=
+ 0 1.25em 0;font-weight:normal;height:1.618em;font-family:'Andale Mono', 'L=
+ucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation=
+ Mono', Courier, monospace;line-height:1.38;margin-top:0pt;margin-bottom:0p=
+t;" class=3D""></p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1=
+=2E25em 0;font-weight:normal;font-famil=
+y:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;line-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D"">And =
+Jay=E2=80=99s only request for this letter about both of our birthdays was =
+that I sign off with the following:&nbsp;</p><p class=3D"" style=3D"color:i=
+nherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;height:1.618em;font-family:'Andale Mono', 'Lucida Console', 'DejaV=
+u Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monos=
+pace;"></p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;=
+font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu San=
+s Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;=
+line-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D"">Celebrate. G=
+ood times. Come on.&nbsp;</p><p class=3D"" style=3D"color:inherit;font-size=
+:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;height:=
+1.618em;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'B=
+itstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;"></p><p st=
+yle=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:norm=
+al;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstr=
+eam Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-height:1.38=
+;margin-top:0pt;margin-bottom:0pt;" class=3D""> Ayla&nbsp;</p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"line-line-section-15">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:97%;min-width:97%;">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:3px;padding-right:0;pa=
+dding-bottom:3px;padding-left:0;">=20
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-16">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:=
+1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-top:0;font-family:'An=
+dale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono=
+', 'Liberation Mono', Courier, monospace;">P.S. Other things happening this=
+ month:<br></p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25e=
+m 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu=
+ Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monosp=
+ace;line-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D""><strong>=
+Rotating Mechanic=E2=80=99s Class!</strong>&nbsp;</p><p class=3D"" style=3D=
+"color:inherit;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;fo=
+nt-weight:normal;height:1.618em;font-family:'Andale Mono', 'Lucida Console'=
+, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courie=
+r, monospace;"></p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1=
+=2E25em 0;font-weight:normal;font-famil=
+y:'Andale Mono', 'Lucida Console', 'De=
+jaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, mo=
+nospace;line-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D"">Thur=
+sday May 15th at 7:15</p><p style=3D"color:inherit;font-size:.9375em;margin=
+:0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console=
+', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Couri=
+er, monospace;line-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D"=
+">As a gift to myself (this is the day before my final Graduate thesis is d=
+ue) we are phoning it in a bit for this class: </p><p style=3D"color:inheri=
+t;font-size:.9375em;margin:0 0 1.25em 0;font-weight:normal;font-family:'And=
+ale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'=
+, 'Liberation Mono', Courier, monospace;line-height:1.38;margin-top:0pt;mar=
+gin-bottom:0pt;" class=3D"">Have you ever looked at our bikes and thought, =
+WOW, I wish my bike was cute like that. Now it can be! Come deck your bike =
+out with all the cuteness your heart could desire. Yassify your bike, if yo=
+u will. You bring your bike, leave with a bike you don=E2=80=99t even recog=
+nize! Sign up here:&nbsp;</p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"button-button-section-17">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"button-se=
+ction section-content" style=3D"width:100%;background-color:transparent;">=
+=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell section-text-area" style=3D"padding-top:22px;padding-right:22px=
+;padding-bottom:22px;padding-left:22px;"> <a href=3D"https://mgcp03.engage.=
+squarespace-mail.com/r?m=3D681706a5fe3c3e2f50291335&amp;u=3Dhttps%3A%2F%2Fw=
+ww.scenicroutessf.com%2Fgoodsandclasses%2Fclasses%3Fss_source%3Dsscampaigns=
+%26ss_campaign_id%3D6816c6180960e50fb6cb11ea%26ss_email_id%3D681706a5fe3c3e=
+2f50291335%26ss_campaign_name%3DSlow%2BNews%2B-%2BYou%25E2%2580%2599re%2BIn=
+vited%2Bto%2BMy%2BBirthday%2BParty%2BEdition%26ss_campaign_sent_date%3D2025=
+-05-04T06%253A18%253A26Z&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_6816c61=
+80960e50fb6cb11ea&amp;l=3Den-US&amp;s=3D7FjepmdmeVO-iXyapFXTQQgkf5w%3D" cla=
+ss=3D"button-section-box button-style-solid" style=3D"color:#0e8ac4 !import=
+ant;display:inline-block;line-height:11px;margin:0;mso-padding-alt:0;text-a=
+lign:center;text-decoration:none;transition:.15s;width:auto;background-colo=
+r:#000;border:0;padding:17px 0;"><i class=3D"button-section-mso" style=3D"l=
+etter-spacing:29.92px;mso-font-width:-100%;mso-text-raise:26.95000000000000=
+3px;">&nbsp;</i><span class=3D"button-section-label" style=3D"line-height:i=
+nherit;margin:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans M=
+ono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;fon=
+t-weight:700;color:#efefef;display:inline-block;font-size:11px;min-width:1p=
+x;mso-text-raise:15.95px;"><span data-letter-spacing=3D"3" style=3D"font-si=
+ze:inherit;font-weight:inherit;line-height:inherit;margin:0;letter-spacing:=
+0.2em;">Beautify your Bike Day!</span></span><i class=3D"button-section-mso=
+" style=3D"letter-spacing:29.92px;mso-font-width:-100%;mso-text-raise:26.95=
+0000000000003px;">&nbsp;</i></a> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"image-image-section-thumbnail-18">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" align=3D"center" bgcolor=3D"transparent" c=
+lass=3D"image-section thumbnail-layout section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td>=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-image-cell section-content-cell section-hoverable-image" data-aspect=3D"=
+ORIGINAL" style=3D"padding:0;"> <img class=3D"section-thumbnail-image" src=
+=3D"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/fb9=
+66acc-c8ac-46a2-a49b-384b597d442c/tempImageabvhoO.jpg?content-type=3Dimage%=
+2Fjpeg&amp;format=3D750w" width=3D"175.20000000000002" style=3D"font-size:.=
+5794190358467243em;display:block;border:0;text-decoration:none;line-height:=
+0;font-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu S=
+ans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospac=
+e;height:auto;max-width:100%;max-height:250px;width:175.20000000000002px;" =
+alt=3D""> </td>=20
+                      <td width=3D"0" height=3D"0"></td>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-image-cell section-content-cell section-hoverable-image" data-aspect=3D"=
+ORIGINAL" style=3D"padding:0;"> <img class=3D"section-thumbnail-image" src=
+=3D"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/67d=
+1f2f9-5c9e-4cba-91a9-9194ca0e25e9/IMG_3847.jpg?content-type=3Dimage%2Fjpeg&=
+amp;format=3D750w" width=3D"175.20000000000002" style=3D"font-size:.5794190=
+358467243em;display:block;border:0;text-decoration:none;line-height:0;font-=
+weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mon=
+o', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;heigh=
+t:auto;max-width:100%;max-height:250px;width:175.20000000000002px;" alt=3D"=
+"> </td>=20
+                      <td width=3D"0" height=3D"0"></td>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-image-cell section-content-cell section-hoverable-image" data-aspect=3D"=
+ORIGINAL" style=3D"padding:0;"> <img class=3D"section-thumbnail-image" src=
+=3D"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/2b8=
+e3b45-f5d4-426a-a86a-dddae002a350/2025-05-02-7.jpg?content-type=3Dimage%2Fj=
+peg&amp;format=3D750w" width=3D"175.20000000000002" style=3D"font-size:.579=
+4190358467243em;display:block;border:0;text-decoration:none;line-height:0;f=
+ont-weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans=
+ Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;h=
+eight:auto;max-width:100%;max-height:250px;width:175.20000000000002px;" alt=
+=3D""> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-19">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:=
+1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-top:0;font-family:'An=
+dale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono=
+', 'Liberation Mono', Courier, monospace;"><strong>Day Grooves!</strong></p=
+><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-weigh=
+t:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', '=
+Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-heigh=
+t:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D"">Sunday May 25th</p><p =
+style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:no=
+rmal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bits=
+tream Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-height:1.=
+38;margin-top:0pt;margin-bottom:0pt;" class=3D"">Meet at 11:00, Roll at 11:=
+15</p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-=
+weight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mon=
+o', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-=
+height:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D"">A ride for the gi=
+rls and the gays. We=E2=80=99ll cruise around the city on a TBD route. Like=
+ 10 miles, with lots of breaks, and at least one stop for snacks.&nbsp;</p>=
+<p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1.618em;=
+margin:0 0 1.25em 0;font-weight:normal;height:1.618em;font-family:'Andale M=
+ono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Li=
+beration Mono', Courier, monospace;"></p><p class=3D"" style=3D"color:inher=
+it;font-size:.9375em;line-height:1.618em;margin:0 0 1.25em 0;font-weight:no=
+rmal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bits=
+tream Vera Sans Mono', 'Liberation Mono', Courier, monospace;"><strong><br>=
+Community Night!</strong></p><p style=3D"color:inherit;font-size:.9375em;ma=
+rgin:0 0 1.25em 0;font-weight:normal;font-family:'Andale Mono', 'Lucida Con=
+sole', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', C=
+ourier, monospace;line-height:1.38;margin-top:0pt;margin-bottom:0pt;" class=
+=3D"">Thursday May 29th&nbsp;&nbsp;</p><p style=3D"color:inherit;font-size:=
+=2E9375em;margin:0 0 1.25em 0;font-weig=
+ht:normal;font-family:'Andale Mono', '=
+Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberatio=
+n Mono', Courier, monospace;line-height:1.38;margin-top:0pt;margin-bottom:0=
+pt;" class=3D"">We=E2=80=99ll be keepin=E2=80=99 the doors open till 9:00, =
+turning up the music, and pulling out the LaCroix from the fridge. We=E2=80=
+=99ll have birthday cake in honor of Hansel and play the gayest vinyls we h=
+ave in the shop.&nbsp;</p><p class=3D"" style=3D"color:inherit;font-size:.9=
+375em;line-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;height:1.6=
+18em;margin-bottom:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu S=
+ans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospac=
+e;"></p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"line-line-section-20">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:96%;min-width:96%;">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:3px;padding-right:0;pa=
+dding-bottom:3px;padding-left:0;">=20
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"image-image-section-below-21">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td>=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td class=3D"show-desktop-only section-spacing-left" =
+width=3D"44"></td>=20
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"> <img class=3D"section-scaleable-image" src=3D=
+"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/88e8b4=
+44-e4c4-41b6-9428-10af2e361ec1/2025-05-02-3.jpg?content-type=3Dimage%2Fjpeg=
+&amp;format=3D750w" width=3D"594" alt=3D"" style=3D"font-size:.579419035846=
+7243em;display:block;border:0;text-decoration:none;line-height:0;background=
+-color:transparent;font-weight:normal;height:auto;width:100%;max-width:100%=
+;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstrea=
+m Vera Sans Mono', 'Liberation Mono', Courier, monospace;"> </td>=20
+                      <td class=3D"show-desktop-only section-spacing-right"=
+ width=3D"44"></td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-22">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:=
+1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-top:0;font-family:'An=
+dale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono=
+', 'Liberation Mono', Courier, monospace;">One more note:&nbsp;</p><p style=
+=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-weight:normal;=
+font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream=
+ Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-height:1.38;ma=
+rgin-top:0pt;margin-bottom:0pt;" class=3D"">Our dear friend and mechanic Jo=
+el is doing a fundraising ride in honor of his late sister. The ride will a=
+id Leukemia and Lymphoma research while Joel sweats his butt off riding 100=
+ miles around Lake Tahoe. Find more information and donate here:&nbsp;<br><=
+/p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"button-button-section-23">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"button-se=
+ction section-content" style=3D"width:100%;background-color:transparent;">=
+=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell section-text-area" style=3D"padding-top:22px;padding-right:22px=
+;padding-bottom:22px;padding-left:22px;"> <a href=3D"https://mgcp03.engage.=
+squarespace-mail.com/r?m=3D681706a5fe3c3e2f50291335&amp;u=3Dhttps%3A%2F%2Fp=
+ages.lls.org%2Ftnt%2Foak%2Fambbr25%2FJBartell&amp;w=3D618d615066c6445d2a0e9=
+47f&amp;c=3Db_6816c6180960e50fb6cb11ea&amp;l=3Den-US&amp;s=3Dq6PBPz0Sz9vIA7=
+kDoFYY_6k5jBw%3D" class=3D"button-section-box button-style-solid" style=3D"=
+color:#0e8ac4 !important;display:inline-block;line-height:11px;margin:0;mso=
+-padding-alt:0;text-align:center;text-decoration:none;transition:.15s;width=
+:auto;background-color:#000;border:0;padding:17px 0;"><i class=3D"button-se=
+ction-mso" style=3D"letter-spacing:29.92px;mso-font-width:-100%;mso-text-ra=
+ise:26.950000000000003px;">&nbsp;</i><span class=3D"button-section-label" s=
+tyle=3D"line-height:inherit;margin:0;font-family:'Andale Mono', 'Lucida Con=
+sole', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', C=
+ourier, monospace;font-weight:700;color:#efefef;display:inline-block;font-s=
+ize:11px;min-width:1px;mso-text-raise:15.95px;"><span data-letter-spacing=
+=3D"3" style=3D"font-size:inherit;font-weight:inherit;line-height:inherit;m=
+argin:0;letter-spacing:0.2em;">Support Joel Here!</span></span><i class=3D"=
+button-section-mso" style=3D"letter-spacing:29.92px;mso-font-width:-100%;ms=
+o-text-raise:26.950000000000003px;">&nbsp;</i></a> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"line-line-section-24">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:96%;min-width:96%;">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:3px;padding-right:0;pa=
+dding-bottom:4px;padding-left:0;">=20
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#000;">
+                        &nbsp;
+                       </div> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-25">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:8px;padding-right:66px;=
+padding-bottom:8px;padding-left:66px;color:#313131;background-color:transpa=
+rent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:=
+1.618em;margin:0 0 1.25em 0;font-weight:normal;margin-top:0;font-family:'An=
+dale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono=
+', 'Liberation Mono', Courier, monospace;">Alrighty friends, that=E2=80=99s=
+ all I=E2=80=99ve got for you. We=E2=80=99ll see you at our ride and at the=
+ shop and in the panhandle and hopefully at the next party you throw!&nbsp;=
+</p><p style=3D"color:inherit;font-size:.9375em;margin:0 0 1.25em 0;font-we=
+ight:normal;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono'=
+, 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;line-he=
+ight:1.38;margin-top:0pt;margin-bottom:0pt;" class=3D"">CELEBRATE. GOOD TIM=
+ES. COME ON!!</p><p class=3D"" style=3D"color:inherit;font-size:.9375em;lin=
+e-height:1.618em;margin:0 0 1.25em 0;font-weight:normal;height:1.618em;marg=
+in-bottom:0;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono'=
+, 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier, monospace;"></p> =
+</td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"button-button-section-26">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"button-se=
+ction section-content" style=3D"width:100%;background-color:transparent;">=
+=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell section-text-area" style=3D"padding-top:22px;padding-right:22px=
+;padding-bottom:22px;padding-left:22px;"> <a href=3D"https://mgcp03.engage.=
+squarespace-mail.com/r?m=3D681706a5fe3c3e2f50291335&amp;u=3Dhttps%3A%2F%2Fw=
+ww.scenicroutessf.com%2Fhome%3Fss_source%3Dsscampaigns%26ss_campaign_id%3D6=
+816c6180960e50fb6cb11ea%26ss_email_id%3D681706a5fe3c3e2f50291335%26ss_campa=
+ign_name%3DSlow%2BNews%2B-%2BYou%25E2%2580%2599re%2BInvited%2Bto%2BMy%2BBir=
+thday%2BParty%2BEdition%26ss_campaign_sent_date%3D2025-05-04T06%253A18%253A=
+26Z&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_6816c6180960e50fb6cb11ea&amp=
+;l=3Den-US&amp;s=3DmIr-x-gfxtcBt4cGmh-DgmEBw0Y%3D" class=3D"button-section-=
+box button-style-solid" style=3D"color:#0e8ac4 !important;display:inline-bl=
+ock;line-height:11px;margin:0;mso-padding-alt:0;text-align:center;text-deco=
+ration:none;transition:.15s;width:auto;background-color:#000;border:0;paddi=
+ng:17px 0;"><i class=3D"button-section-mso" style=3D"letter-spacing:29.92px=
+;mso-font-width:-100%;mso-text-raise:26.950000000000003px;">&nbsp;</i><span=
+ class=3D"button-section-label" style=3D"line-height:inherit;margin:0;font-=
+family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera=
+ Sans Mono', 'Liberation Mono', Courier, monospace;font-weight:700;color:#e=
+fefef;display:inline-block;font-size:11px;min-width:1px;mso-text-raise:15.9=
+5px;"><span data-letter-spacing=3D"3" style=3D"font-size:inherit;font-weigh=
+t:inherit;line-height:inherit;margin:0;letter-spacing:0.2em;">Visit Our Web=
+site</span></span><i class=3D"button-section-mso" style=3D"letter-spacing:2=
+9.92px;mso-font-width:-100%;mso-text-raise:26.950000000000003px;">&nbsp;</i=
+></a> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"image-image-section-below-27">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td>=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"> <img class=3D"section-scaleable-image" src=3D=
+"https://images.squarespace-cdn.com/content/618d615066c6445d2a0e947f/f9f606=
+28-2c0e-4e10-8d8d-ec34d304fb8b/2025-05-03-1.jpg?content-type=3Dimage%2Fjpeg=
+&amp;format=3D750w" width=3D"594" alt=3D"" style=3D"font-size:.579419035846=
+7243em;display:block;border:0;text-decoration:none;line-height:0;background=
+-color:transparent;font-weight:normal;height:auto;width:100%;max-width:100%=
+;font-family:'Andale Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstrea=
+m Vera Sans Mono', 'Liberation Mono', Courier, monospace;"> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div> </td>=20
+            </tr>=20
+           </tbody>
+          </table>=20
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-footer">=20
+           <tbody>
+            <tr>=20
+             <td align=3D"center" valign=3D"top" id=3D"newsletter-section-f=
+ooter-cell">=20
+              <div id=3D"footer-footer-section-stacked-top-0">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"footer-se=
+ction footer-section-stacked section-content" style=3D"background-color:tra=
+nsparent;">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"top" class=3D"section-text=
+-area section-content-cell" style=3D"padding-top:22px;padding-right:22px;pa=
+dding-bottom:22px;padding-left:22px;"> <p class=3D"footer-company-info" sty=
+le=3D"line-height:1.618em;font-weight:normal;margin-top:0;font-family:'Anda=
+le Mono', 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',=
+ 'Liberation Mono', Courier, monospace;color:#111;font-size:11px;margin:0 0=
+ 13.75px 0;padding:0;"> <a style=3D"color:#111;text-decoration:none;font-si=
+ze:inherit;font-family:inherit;font-weight:inherit;line-height:inherit;curs=
+or:default;">Scenic Routes Community Bicycle Center, 521 Balboa Street, San=
+ Francisco, United States</a> </p> <p class=3D"footer-links" style=3D"line-=
+height:1.618em;font-weight:normal;font-family:'Andale Mono', 'Lucida Consol=
+e', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Cour=
+ier, monospace;font-size:11px;color:#313131;margin:0 0 13.75px 0;padding:0;=
+"> Powered by <a href=3D"https://mgcp03.engage.squarespace-mail.com/r?m=3D6=
+81706a5fe3c3e2f50291335&amp;u=3Dhttps%3A%2F%2Fwww.squarespace.com%3Fchannel=
+%3Dproduct_refer%26subchannel%3Dcustomer%26source%3Demail_campaigns_button%=
+26campaign%3D618d615066c6445d2a0e947f%26utm_medium%3Dproduct_refer%26utm_so=
+urce%3Demail_campaigns_button%26ss_source%3Dsscampaigns%26ss_campaign_id%3D=
+6816c6180960e50fb6cb11ea%26ss_email_id%3D681706a5fe3c3e2f50291335%26ss_camp=
+aign_name%3DSlow%2BNews%2B-%2BYou%25E2%2580%2599re%2BInvited%2Bto%2BMy%2BBi=
+rthday%2BParty%2BEdition%26ss_campaign_sent_date%3D2025-05-04T06%253A18%253=
+A26Z&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_6816c6180960e50fb6cb11ea&am=
+p;l=3Den-US&amp;s=3DHjM3llr8xu2Cwt8Xc4OIQze2GT4%3D" class=3D"sqsp-link" sty=
+le=3D"color:#313131;text-decoration:underline;display:inline-block;">Square=
+space</a> </p> <p class=3D"footer-links" style=3D"line-height:1.618em;font-=
+weight:normal;margin-bottom:0;font-family:'Andale Mono', 'Lucida Console', =
+'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', Courier,=
+ monospace;font-size:11px;color:#313131;margin:0 0 13.75px 0;padding:0;"> <=
+a href=3D"https://mgcp03.engage.squarespace-mail.com/r?m=3D681706a5fe3c3e2f=
+50291335&amp;u=3Dhttps%3A%2F%2Fcampaign-preferences.com%2Funsubscribe%2FT6L=
+g_ZEb381uBJuj8RmtMTZs5TVrUMIR5IoSQmhFuHwAhQapSZi5HODMViv1KiadfSZTCJh9KBSEXZ=
+M0RZ3k3QRCFxacFtZUcvhz3OL3C7nhHhdUl6D9x-UPirPo9j9JL4qsaqzYc4eGwm8OtWQbHu3B7=
+K2rEpKoVHAqzvz6mPWG6L_CzFaTEqPxfAmoSCzgihZY70gRWV9CWx_XupPAq5DdR4CK6BX7Kcyu=
+-GNhuVg6gVvef1CP6BK_EGnSgFG42ZNOtvjBJQ-iZNBylMvHdnuT1tFsWn2wyqvMjc0-B4QaDEb=
+vq0b9b6GyAcjHlxoCNsC36Qdy50m4g_ycnK4lM-wM_VV4Dx18dV-5j5k7cJ5p2DFqSMpdkZU%3D=
+&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_6816c6180960e50fb6cb11ea&amp;l=
+=3Den-US&amp;s=3D3YjKecGQ6SyK5KezrpRPJcmpoN4%3D" class=3D"unsubscribe-link"=
+ style=3D"color:#313131;text-decoration:underline;"> <span class=3D"unsubsc=
+ribe-link-text" style=3D"font-size:inherit;font-weight:inherit;line-height:=
+inherit;margin:0;">Unsubscribe</span> </a> </p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div> </td>=20
+            </tr>=20
+           </tbody>
+          </table> </td>=20
+        </tr>=20
+       </tbody>
+      </table> </td>=20
+    </tr>=20
+   </tbody>
+  </table> =20
+  <img src=3D"https://mgcp03.engage.squarespace-mail.com/v2/a.gif?m=3D68170=
+6a5fe3c3e2f50291335&amp;w=3D618d615066c6445d2a0e947f&amp;c=3Db_6816c6180960=
+e50fb6cb11ea&amp;s=3DOloXFZhUp8D0eVEXdO7Zro9fPEc%3D" alt=3D"" width=3D"0" h=
+eight=3D"0">
+ </body>
+</html>
+--a681a75de17c492e07811a87f6a8b22e46dac1047159a8081f324e60a83d--
