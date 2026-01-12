@@ -1,0 +1,215 @@
+{% comment %}
+  Scenic Routes Custom Header
+  Matches the main site at scenicroutessf.com
+{% endcomment %}
+
+<header class="scenic-header">
+  <div class="scenic-header__top">
+    <div class="scenic-header__left">
+      <a href="https://test.scenicroutessf.com" class="scenic-header__logo-link">
+        <img
+          src="https://test.scenicroutessf.com/images/logo.png"
+          alt="{{ shop.name }}"
+          class="scenic-header__logo"
+          height="210"
+          width="auto"
+          loading="eager"
+        >
+      </a>
+      <div class="scenic-header__info">
+        <a href="https://maps.google.com/?q=521+Balboa+Street,+San+Francisco,+CA+94118" target="_blank" rel="noopener">
+          521 Balboa Street, SF, CA 94118
+        </a>
+        <br>
+        Tuesday–Sunday, Noon–7pm
+      </div>
+    </div>
+
+    <nav class="scenic-header__nav">
+      <a href="https://test.scenicroutessf.com/about/">About</a>
+      <a href="/" class="{% if request.path == '/' or request.path contains '/collections' or request.path contains '/products' %}active{% endif %}">Shop</a>
+      <a href="#" target="_blank">Events</a>
+      <a href="https://buttondown.com/scenicroutessf/archive/" target="_blank" rel="noopener">Newsletter</a>
+      <a href="https://test.scenicroutessf.com/membership/">Membership</a>
+      <a href="/cart" class="scenic-header__cart">
+        Cart
+        {% if cart.item_count > 0 %}
+          <span class="scenic-header__cart-count">({{ cart.item_count }})</span>
+        {% endif %}
+      </a>
+    </nav>
+
+    {%- comment -%} Mobile menu toggle {%- endcomment -%}
+    <button class="scenic-header__menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="scenic-mobile-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  {%- comment -%} Mobile menu {%- endcomment -%}
+  <nav id="scenic-mobile-menu" class="scenic-header__mobile-nav" aria-hidden="true">
+    <a href="https://test.scenicroutessf.com/about/">About</a>
+    <a href="/" class="{% if request.path == '/' %}active{% endif %}">Shop</a>
+    <a href="#" target="_blank">Events</a>
+    <a href="https://buttondown.com/scenicroutessf/archive/" target="_blank" rel="noopener">Newsletter</a>
+    <a href="https://test.scenicroutessf.com/membership/">Membership</a>
+    <a href="/cart">
+      Cart
+      {% if cart.item_count > 0 %}
+        ({{ cart.item_count }})
+      {% endif %}
+    </a>
+  </nav>
+</header>
+
+<style>
+  /* Scenic Routes Header Styles */
+  .scenic-header {
+    padding: 2rem;
+    background-color: #D4DFD2;
+  }
+
+  .scenic-header__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .scenic-header__left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .scenic-header__logo-link {
+    display: block;
+  }
+
+  .scenic-header__logo {
+    height: 210px;
+    width: auto;
+  }
+
+  .scenic-header__info {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  .scenic-header__info a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+
+  .scenic-header__info a:hover {
+    color: #D64799;
+  }
+
+  .scenic-header__nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .scenic-header__nav a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #1a1a1a;
+    letter-spacing: 0.02em;
+    transition: all 0.2s ease;
+    padding: 0.5rem 0.875rem;
+    background-color: #b8c7b5;
+    border-radius: 100px;
+  }
+
+  .scenic-header__nav a:hover,
+  .scenic-header__nav a.active {
+    background-color: #D64799;
+    color: #fefefe;
+  }
+
+  .scenic-header__cart-count {
+    font-weight: 500;
+  }
+
+  .scenic-header__menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: #1a1a1a;
+  }
+
+  .scenic-header__mobile-nav {
+    display: none;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 900px) {
+    .scenic-header {
+      padding: 1.5rem;
+    }
+
+    .scenic-header__top {
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+      text-align: center;
+    }
+
+    .scenic-header__left {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .scenic-header__logo {
+      height: 160px;
+    }
+
+    .scenic-header__info {
+      white-space: normal;
+    }
+
+    .scenic-header__nav {
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .scenic-header__menu-toggle {
+      display: none; /* Keep nav visible on mobile for now */
+    }
+  }
+
+  @media (max-width: 600px) {
+    .scenic-header__nav a {
+      font-size: 0.875rem;
+      padding: 0.4rem 0.75rem;
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle (if needed in future)
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.scenic-header__menu-toggle');
+    const mobileNav = document.querySelector('.scenic-header__mobile-nav');
+
+    if (toggle && mobileNav) {
+      toggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        mobileNav.setAttribute('aria-hidden', isExpanded);
+        mobileNav.classList.toggle('is-open');
+      });
+    }
+  });
+</script>

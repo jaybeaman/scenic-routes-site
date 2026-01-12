@@ -1,0 +1,523 @@
+/* ==========================================================================
+   Scenic Routes - Shopify Theme Customizations
+   Overrides Dawn theme to match scenicroutessf.com
+
+   NOTE: Fonts are loaded via theme.liquid, not @import
+   ========================================================================== */
+
+/* ==========================================================================
+   CSS Custom Properties - Override Dawn defaults
+   ========================================================================== */
+
+:root {
+  /* Scenic Routes Colors */
+  --scenic-sage: #D4DFD2;
+  --scenic-sage-dark: #b8c7b5;
+  --scenic-sage-light: #e8ede7;
+  --scenic-pink: #D64799;
+  --scenic-pink-hover: #c13d87;
+  --scenic-black: #1a1a1a;
+  --scenic-white: #fefefe;
+
+  /* Override Dawn color scheme */
+  --color-base-background-1: 212, 223, 210; /* sage in RGB */
+  --color-base-background-2: 232, 237, 231; /* sage-light in RGB */
+  --color-base-text: 26, 26, 26; /* black in RGB */
+  --color-base-solid-button-labels: 254, 254, 254; /* white in RGB */
+  --color-base-accent-1: 214, 71, 153; /* pink in RGB */
+  --color-base-accent-2: 184, 199, 181; /* sage-dark in RGB */
+
+  /* Typography */
+  --font-heading-family: 'Instrument Serif', serif;
+  --font-body-family: 'DM Sans', sans-serif;
+  --font-body-weight: 400;
+  --font-heading-weight: 400;
+
+  /* Spacing */
+  --page-width: 1600px;
+  --spacing-sections-desktop: 2rem;
+  --spacing-sections-mobile: 1.5rem;
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+body {
+  font-family: var(--font-body-family);
+  background-color: var(--scenic-sage);
+  color: var(--scenic-black);
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-heading-family);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+h1, .h1 {
+  font-size: clamp(2.75rem, 5vw, 4rem);
+}
+
+h2, .h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+a {
+  color: var(--scenic-black);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--scenic-pink);
+}
+
+/* ==========================================================================
+   Header - Match Scenic Routes
+   ========================================================================== */
+
+.header {
+  padding: 2rem;
+  background-color: var(--scenic-sage);
+}
+
+.header__heading-link {
+  display: block;
+}
+
+.header__heading-logo {
+  height: 210px;
+  width: auto;
+}
+
+@media (max-width: 900px) {
+  .header__heading-logo {
+    height: 160px;
+  }
+}
+
+/* Header info text */
+.header__info {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.header__info a {
+  color: var(--scenic-black);
+  text-decoration: none;
+}
+
+.header__info a:hover {
+  color: var(--scenic-pink);
+}
+
+/* Navigation pills */
+.header__menu-item,
+.menu-drawer__menu-item {
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--scenic-black);
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  padding: 0.5rem 0.875rem;
+  background-color: var(--scenic-sage-dark);
+  border-radius: 100px;
+}
+
+.header__menu-item:hover,
+.menu-drawer__menu-item:hover,
+.header__menu-item[aria-current="page"],
+.menu-drawer__menu-item[aria-current="page"] {
+  background-color: var(--scenic-pink);
+  color: var(--scenic-white);
+}
+
+/* Remove default header borders */
+.header-wrapper {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   Buttons - Scenic Routes Style
+   ========================================================================== */
+
+.button,
+button,
+.shopify-challenge__button,
+.customer button {
+  font-family: var(--font-body-family);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  min-height: 48px;
+  border-radius: 0;
+}
+
+/* Primary button (pink) */
+.button--primary,
+.shopify-payment-button__button--unbranded {
+  background-color: var(--scenic-pink);
+  color: var(--scenic-white);
+  border: none;
+}
+
+.button--primary:hover,
+.shopify-payment-button__button--unbranded:hover {
+  background-color: var(--scenic-pink-hover);
+}
+
+/* Secondary button (outlined) */
+.button--secondary {
+  background-color: transparent;
+  color: var(--scenic-black);
+  border: 1px solid var(--scenic-black);
+}
+
+.button--secondary:hover {
+  background-color: var(--scenic-black);
+  color: var(--scenic-white);
+}
+
+/* Tertiary/text button */
+.button--tertiary {
+  background: none;
+  color: var(--scenic-pink);
+  border: none;
+  text-decoration: underline;
+}
+
+.button--tertiary:hover {
+  color: var(--scenic-pink-hover);
+}
+
+/* ==========================================================================
+   Product Cards
+   ========================================================================== */
+
+.card {
+  background: var(--scenic-white);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card__heading {
+  font-family: var(--font-heading-family);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.card__heading a {
+  text-decoration: none;
+  color: var(--scenic-black);
+}
+
+.card__heading a:hover {
+  color: var(--scenic-pink);
+}
+
+.price {
+  color: var(--scenic-pink);
+  font-weight: 500;
+}
+
+.price--on-sale .price-item--regular {
+  text-decoration: line-through;
+  color: var(--scenic-black);
+  opacity: 0.6;
+}
+
+/* Product badges */
+.badge {
+  background-color: var(--scenic-pink);
+  color: var(--scenic-white);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 2px;
+}
+
+.badge--sold-out {
+  background-color: var(--scenic-black);
+}
+
+/* ==========================================================================
+   Product Page
+   ========================================================================== */
+
+.product__title {
+  font-family: var(--font-heading-family);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 1rem;
+}
+
+.product__price {
+  font-size: 1.5rem;
+  color: var(--scenic-pink);
+  font-weight: 500;
+}
+
+.product__description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+/* Variant picker */
+.product-form__input label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.product-form__input input[type="radio"] + label {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--scenic-black);
+  transition: all 0.2s ease;
+}
+
+.product-form__input input[type="radio"]:checked + label {
+  background-color: var(--scenic-black);
+  color: var(--scenic-white);
+}
+
+/* Quantity input */
+.quantity__input {
+  font-family: var(--font-body-family);
+  font-size: 1rem;
+  border: 1px solid var(--scenic-black);
+  min-height: 48px;
+}
+
+/* Add to cart button */
+.product-form__submit {
+  background-color: var(--scenic-pink);
+  color: var(--scenic-white);
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  min-height: 48px;
+  border: none;
+  width: 100%;
+}
+
+.product-form__submit:hover {
+  background-color: var(--scenic-pink-hover);
+}
+
+.product-form__submit[disabled] {
+  background-color: var(--scenic-sage-dark);
+  color: var(--scenic-black);
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   Cart
+   ========================================================================== */
+
+.cart__heading {
+  font-family: var(--font-heading-family);
+}
+
+.cart-item__name {
+  font-family: var(--font-heading-family);
+  font-weight: 400;
+}
+
+.cart-item__name a {
+  text-decoration: none;
+  color: var(--scenic-black);
+}
+
+.cart-item__name a:hover {
+  color: var(--scenic-pink);
+}
+
+.totals__subtotal-value {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+/* ==========================================================================
+   Footer - Match Scenic Routes
+   ========================================================================== */
+
+.footer {
+  padding: 2.5rem;
+  margin-top: 2rem;
+  background-color: var(--scenic-white);
+  border-radius: 4px;
+}
+
+.footer__content-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.footer__heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.footer a {
+  color: var(--scenic-pink);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+  font-family: var(--font-body-family);
+  font-size: 1rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--scenic-black);
+  background: transparent;
+  min-height: 48px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--scenic-pink);
+}
+
+/* Newsletter form */
+.newsletter-form__field-wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newsletter-form__field-wrapper input[type="email"] {
+  flex: 1;
+}
+
+.newsletter-form__button {
+  background-color: var(--scenic-pink);
+  color: var(--scenic-white);
+  border: none;
+  padding: 0.875rem 1.5rem;
+  min-height: 48px;
+}
+
+.newsletter-form__button:hover {
+  background-color: var(--scenic-pink-hover);
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+
+.page-width {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 900px) {
+  .page-width {
+    padding: 0 1.5rem;
+  }
+}
+
+/* Tagline style */
+.tagline {
+  font-family: var(--font-heading-family);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--scenic-pink);
+}
+
+/* Beliefs/highlight style */
+.highlight {
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--scenic-pink);
+}
+
+.highlight strong {
+  color: var(--scenic-pink);
+}
+
+/* ==========================================================================
+   Collection Page
+   ========================================================================== */
+
+.collection-hero__title {
+  font-family: var(--font-heading-family);
+  font-size: clamp(2.75rem, 5vw, 4rem);
+}
+
+.collection-hero__description {
+  font-family: var(--font-heading-family);
+  font-style: italic;
+  color: var(--scenic-pink);
+}
+
+/* ==========================================================================
+   Mobile Responsive Overrides
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  body {
+    font-size: 16px;
+  }
+
+  .header {
+    padding: 1.5rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .newsletter-form__field-wrapper {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+   Password Page (Coming Soon)
+   ========================================================================== */
+
+.password-main {
+  background-color: var(--scenic-sage);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-content {
+  text-align: center;
+  max-width: 600px;
+  padding: 2rem;
+}
+
+.password-content h1 {
+  font-family: var(--font-heading-family);
+  font-size: clamp(2.75rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.password-content .tagline {
+  margin-bottom: 2rem;
+}

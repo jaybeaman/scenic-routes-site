@@ -7,7 +7,24 @@
       "WebSearch",
       "Bash(npm install)",
       "Bash(npm run build:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(node convert-to-shopify.js:*)",
+      "Bash(cat:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd events page with Luma calendar embed\n\n- Create events page with embedded Luma calendar \\(cal-EShUd8ttU57pjkB\\)\n- Update Events nav link to point to /events/\n- Add events page styling\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit --amend -m \"$\\(cat <<''EOF''\nAdd events page with Luma calendar embed\n\n- Create events page with embedded Luma calendar \\(cal-EShUd8ttU57pjkB\\)\n- Update Events nav link to point to /events/\n- Remove target=\"_blank\" from Newsletter link\n- Add events page styling\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nStyle Luma calendar embed with shadow instead of card\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(dig:*)",
+      "Bash(npx wrangler --version)",
+      "Bash(npx wrangler login)",
+      "Bash(npx wrangler:*)",
+      "Bash(ACCOUNT_ID=\"d284bde341506b65e64b08ceb12e1add\")",
+      "Bash(TOKEN=\"l7R4qZpiEDPTuD1w11XtjUTDCpc5BxraNi0qOmKbvJM.9DMt2v8BIfcTenmLh5VN6l2nCWmWv1J9L0YHuqHzmms\")",
+      "Bash(curl:*)",
+      "Bash(__NEW_LINE__ curl -s \"https://api.cloudflare.com/client/v4/accounts/$ACCOUNT_ID/pages/projects/scenic-routes-site/domains\" )"
     ]
   }
 }

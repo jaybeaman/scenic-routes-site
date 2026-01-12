@@ -1,0 +1,89 @@
+{% comment %}
+  Scenic Routes Custom Footer
+  Matches the main site at scenicroutessf.com
+{% endcomment %}
+
+<footer class="scenic-footer">
+  <div class="scenic-footer__content">
+    <div class="scenic-footer__location">
+      <strong>Scenic Routes Community Bicycle Center</strong>
+      <a href="https://maps.google.com/?q=521+Balboa+Street,+San+Francisco,+CA+94118" target="_blank" rel="noopener">
+        521 Balboa Street<br>
+        San Francisco, CA 94118
+      </a>
+    </div>
+    <div class="scenic-footer__hours">
+      <strong>Shop Hours</strong>
+      Tuesday–Sunday<br>
+      Noon–7pm
+    </div>
+  </div>
+</footer>
+
+<style>
+  .scenic-footer {
+    padding: 2.5rem;
+    margin-top: 2rem;
+    background-color: #fefefe;
+    border-radius: 4px;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .scenic-footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .scenic-footer__location {
+    line-height: 1.6;
+    font-size: 1.0625rem;
+  }
+
+  .scenic-footer__location strong {
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .scenic-footer__location a {
+    color: #D64799;
+    text-decoration: none;
+  }
+
+  .scenic-footer__location a:hover {
+    text-decoration: underline;
+  }
+
+  .scenic-footer__hours {
+    text-align: right;
+    line-height: 1.6;
+    font-size: 1.0625rem;
+  }
+
+  .scenic-footer__hours strong {
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  @media (max-width: 900px) {
+    .scenic-footer {
+      padding: 2rem;
+    }
+
+    .scenic-footer__content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .scenic-footer__hours {
+      text-align: center;
+    }
+  }
+</style>
