@@ -618,14 +618,13 @@ footer {
    ========================================================================== */
 
 .events-calendar {
-    background: var(--white);
-    border-radius: 4px;
-    padding: 1.5rem;
     margin-bottom: 4rem;
 }
 
 .events-calendar iframe {
     display: block;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* ==========================================================================
