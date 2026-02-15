@@ -620,6 +620,97 @@ footer {
 }
 
 /* ==========================================================================
+   Legal Pages (Terms & Privacy)
+   ========================================================================== */
+
+.legal-page {
+    max-width: 720px;
+    margin-bottom: 4rem;
+}
+
+.legal-page h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2.75rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+}
+
+.legal-page .tagline {
+    margin-bottom: 2rem;
+}
+
+.legal-page h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--sage-dark);
+}
+
+.legal-page p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.legal-page ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.legal-page li {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.legal-card {
+    background: var(--white);
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.legal-highlight {
+    border-left: 2px solid var(--pink);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.legal-highlight p {
+    margin-bottom: 0;
+}
+
+.legal-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--sage-dark);
+    font-size: 0.9375rem;
+    opacity: 0.75;
+}
+
+.legal-footer a {
+    color: var(--pink);
+    text-decoration: none;
+}
+
+.legal-footer a:hover {
+    text-decoration: underline;
+}
+
+.legal-page a {
+    color: var(--pink);
+    text-decoration: none;
+}
+
+.legal-page a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
    Events Page
    ========================================================================== */
 
